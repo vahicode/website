@@ -1,0 +1,28 @@
+{
+  "app": {
+    "title": "EyeFu", 
+    "tagline": "Dit verdient een betere titel"
+  },
+  "mainMenu": {
+    "home": "Start pagina",
+    "about": "Over EyeFu",
+    "rate": "Score",
+    "admin": "Admininstratie",
+    "login": "Aanmelden"
+  },
+  "inviteOnly": {
+    "title": "EyeFu is alleen toegankelijk via een uitnodiging",
+    "line1": "EyeFu is niet publiek beschikbaar, maar alleen via een uitnodiging link.",
+    "line2": "Als je een uitnoding hebt kan je je",
+    "link": "hier aanmelden"
+  },
+  "login": { 
+    "loginBelow": "Voer hieronder de code van je uitnoding in",
+    "field": "Uitnodigingscode" 
+  },
+  "admin": {
+    "loginBelow": "Voer hieronder je gebruikersnaam en paswoord in",
+    "username": "Gebruikersnaam",
+    "password": "Paswoord"
+  }
+}

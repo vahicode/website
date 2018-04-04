@@ -1,0 +1,28 @@
+{
+  "app": {
+    "title": "EyeFu", 
+    "tagline": "This thing needs a better title"
+  },
+  "mainMenu": {
+    "home": "Home",
+    "about": "About",
+    "rate": "Rate",
+    "admin": "Admin",
+    "login": "Login"
+  },
+  "inviteOnly": {
+    "title": "EyeFu is invite-only",
+    "line1": "EyeFu is not available to the general public, but only through an invite link.",
+    "line2": "If you have an invite, you can",
+    "link": "login here"
+  },
+  "login": {
+    "loginBelow": "Please enter your invite code below",
+    "field": "Invite code" 
+  },
+  "admin": {
+    "loginBelow": "Please enter your username and password",
+    "username": "Username",
+    "password": "Password"
+  }
+}
