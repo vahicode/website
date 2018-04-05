@@ -26,7 +26,18 @@
     "username": "Gebruikersnaam",
     "password": "Paswoord",
     "loginFailed": "Aanmelden mislukt",
-    "loggedIn": "Je bent aangemeld"
+    "loggedIn": "Je bent aangemeld",
+    "accessDenied": "Jammer, maar helaas",
+    "adminOnly": "Deze pagina is alleen toegankelijk voor beheerders",
+    "superadminOnly": "Deze pagina is alleen toegankelijk voor super beheerders",
+    "add": {
+      "admins" : {
+        "username": "Gebruikersnaam beheerder",
+        "password": "Paswoord beheerder",
+        "submit": "Voeg beheerder toe",
+        "randomPassword": "Random paswoord"
+      }
+    }
   },
   "adminMenu": {
     "title": "Beheer",

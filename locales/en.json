@@ -26,7 +26,18 @@
     "username": "Username",
     "password": "Password",
     "loginFailed": "Login failed",
-    "loggedIn": "You are logged in"
+    "loggedIn": "You are logged in",
+    "accessDenied": "Computer says no",
+    "adminOnly": "This page is for administrators only",
+    "superadminOnly": "This page is for super administrators only",
+    "add": {
+      "admins" : {
+        "username": "Admin username",
+        "password": "Admin password",
+        "submit": "Add admin",
+        "randomPassword": "Random password"
+      }
+    }
   },
   "adminMenu": {
     "title": "Administration",
