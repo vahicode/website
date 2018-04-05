@@ -35,7 +35,8 @@
         "username": "Gebruikersnaam beheerder",
         "password": "Paswoord beheerder",
         "submit": "Voeg beheerder toe",
-        "randomPassword": "Random paswoord"
+        "randomPassword": "Random paswoord",
+        "failed": "Toevoegen van beheerder mislukt"
       }
     }
   },

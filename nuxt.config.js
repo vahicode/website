@@ -44,6 +44,9 @@ module.exports = {
       }
     ]
   ],
+  axios: {
+      browserBaseURL: process.env.EYEFU_API 
+  },
   vuetify: {
     materialIcons: true,
     css: false,

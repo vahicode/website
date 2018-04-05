@@ -35,7 +35,8 @@
         "username": "Admin username",
         "password": "Admin password",
         "submit": "Add admin",
-        "randomPassword": "Random password"
+        "randomPassword": "Random password",
+        "failed": "Failed to add administrator"
       }
     }
   },

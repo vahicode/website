@@ -68,7 +68,7 @@ export default {
       })
       .catch((i) => {
         this.loading = false;
-          this.error = true
+        this.error = true
       })
       .then((i) => {
         this.loading = false;

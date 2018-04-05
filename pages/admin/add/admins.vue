@@ -22,7 +22,6 @@
           {{ $t('admin.add.admins.randomPassword') }}
         </v-btn>
       </v-form>
-      <pre>{{ $auth.user }} </pre>
     </div>
     <div v-else>
     <blockquote class="error mt-5 dark">
@@ -35,7 +34,7 @@
       top
       right
       v-model="error"
-      >{{ $t('admin.loginFailed') }}
+      >{{ $t('admin.add.admins.failed') }}
       <v-btn flat color="primary" @click.native="error = false"><v-icon>close</v-icon></v-btn>
     </v-snackbar>
   </section>
@@ -53,33 +52,36 @@ export default {
       error: false
     }
   },
-  ready: () => { 
-    console.log(this.$auth.user)
-  },
-  computed: { 
-    loggedIn () {
-      return this.$auth.loggedIn
-    }
-  },
   methods: {
     submit: function() {
+      const self = this
       this.loading = true;
-      this.$auth.loginWith('admin', {
-        data: {
-          username: this.username,
-          password: this.password
+      const ip = this.$axios.$post('/admin/add/admin', {
+        username: this.username,
+        password: this.password
+      })
+      .then(function (response) {
+        self.loading = false;
+        if(response.result === 'ok') {
+          self.$router.push({
+            path: '/admin/manage/admin/'+response.id
+          })
+        } else {
+          self.error = true
         }
       })
-      .catch((i) => {
-        this.loading = false;
-          this.error = true
-      })
-      .then((i) => {
-        this.loading = false;
-      })
+      .catch(function (error) {
+        self.loading = false;
+        self.error = true
+      });
     },
     randomPassword: function() {
-      console.log('do something')
+      let text = ""
+      var possible = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz123456789"
+      for (var i = 0; i < 12; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length))
+      }
+      this.password = text
     }
   }
 }
