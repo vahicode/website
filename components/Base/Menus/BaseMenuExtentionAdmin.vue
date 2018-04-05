@@ -2,7 +2,7 @@
   <v-list> 
     <v-list-tile to="/admin">
       <v-list-tile-action>
-        <base-logo :size="(24)" color="#663f95" />
+        <v-icon color="accent">verified_user</v-icon>
       </v-list-tile-action>
       <v-list-tile-content>
         <v-list-tile-title>{{ $t('mainMenu.admin') }}</v-list-tile-title>
