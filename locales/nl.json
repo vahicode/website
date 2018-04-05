@@ -8,7 +8,8 @@
     "about": "Over EyeFu",
     "rate": "Score",
     "admin": "Admininstratie",
-    "login": "Aanmelden"
+    "login": "Aanmelden",
+    "logout": "Afmelden"
   },
   "inviteOnly": {
     "title": "EyeFu is alleen toegankelijk via een uitnodiging",
@@ -23,6 +24,8 @@
   "admin": {
     "loginBelow": "Voer hieronder je gebruikersnaam en paswoord in",
     "username": "Gebruikersnaam",
-    "password": "Paswoord"
+    "password": "Paswoord",
+    "loginFailed": "Aanmelden mislukt",
+    "loggedIn": "Je bent aangemeld"
   }
 }

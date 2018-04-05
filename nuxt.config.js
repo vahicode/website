@@ -61,7 +61,36 @@ module.exports = {
       '~/assets/style/eyefu.styl'
   ],
   auth: {
-  
+    strategies: {
+      user: {
+        _scheme: 'local',
+        endpoints: {
+          login: {
+            url: '/login',
+            method: 'post',
+            propertyName: 'token'
+          },
+          logout: {
+            url: '/logout',
+            method: 'post',
+          }
+        }
+      },
+      admin: {
+        _scheme: 'local',
+        endpoints: {
+          login: {
+            url: process.env.EYEFU_API+'/admin/login',
+            method: 'post',
+            propertyName: 'token'
+          },
+          user: {
+            url: process.env.EYEFU_API+'/admin/profile',
+            method: 'get'
+          }
+        }
+      }
+    }
   },
   router: {
     middleware: ['auth']

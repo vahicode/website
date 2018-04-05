@@ -8,7 +8,8 @@
     "about": "About",
     "rate": "Rate",
     "admin": "Admin",
-    "login": "Login"
+    "login": "Login",
+    "logout": "Logout"
   },
   "inviteOnly": {
     "title": "EyeFu is invite-only",
@@ -23,6 +24,8 @@
   "admin": {
     "loginBelow": "Please enter your username and password",
     "username": "Username",
-    "password": "Password"
+    "password": "Password",
+    "loginFailed": "Login failed",
+    "loggedIn": "You are logged in"
   }
 }
