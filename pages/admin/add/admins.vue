@@ -3,6 +3,7 @@
     <h1>{{ $t('mainMenu.admin') }}</h1>
     <div v-if="$auth.loggedIn">
       <p>You are logged in</p>
+      <pre>{{ $auth.user }} </pre>
       <v-btn @click="logout" color="secondary" large>Logout</v-btn>
     </div>
     <div v-else>
@@ -49,7 +50,7 @@ export default {
     }
   },
   ready: () => { 
-    console.log(this.$auth)
+    console.log(this.$auth.user)
   },
   computed: { 
     loggedIn () {

@@ -12,7 +12,7 @@
               <v-flex xl2 lg3 hidden-md-and-down>
                 <aside class="fs-sticky-column">
                   <div class="fs-scroll-column mt-5">
-                    <base-admin-menu-card /> 
+                    <base-admin-menu-card v-if="$auth.user && $auth.user.isAdmin" /> 
                     <base-main-menu-card /> 
                     <div class="fs-toolbar-spacer"></div>
                   </div>

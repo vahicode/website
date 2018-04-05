@@ -10,7 +10,6 @@
                       required
                       ></v-text-field>
       </v-form>
-      <v-progress-circular indeterminate color="primary"></v-progress-circular>
     </div>
   </section>
 </template>
