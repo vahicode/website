@@ -39,7 +39,6 @@
 <script>
 
 export default {
-  auth: false,
   data () {
     return {
       username: '',
@@ -49,8 +48,8 @@ export default {
       error: false
     }
   },
-  mounted: () => { 
-  //  console.log($auth.user)
+  ready: () => { 
+    console.log(this.$auth)
   },
   computed: { 
     loggedIn () {

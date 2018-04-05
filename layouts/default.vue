@@ -12,6 +12,7 @@
               <v-flex xl2 lg3 hidden-md-and-down>
                 <aside class="fs-sticky-column">
                   <div class="fs-scroll-column mt-5">
+                    <base-admin-menu-card /> 
                     <base-main-menu-card /> 
                     <div class="fs-toolbar-spacer"></div>
                   </div>
@@ -40,6 +41,7 @@
 <script>
 import TheRightDrawer from '~/components/SingleInstance/TheRightDrawer' 
 import TheLeftDrawer from '~/components/SingleInstance/TheLeftDrawer' 
+import BaseAdminMenuCard from '~/components/Base/Menus/BaseAdminMenuCard' 
 import BaseMainMenuCard from '~/components/Base/Menus/BaseMainMenuCard' 
 import BaseSecondaryMenuCard from '~/components/Base/Menus/BaseSecondaryMenuCard' 
 import FsMainToolbar from '~/components/Fs/Toolbars/FsMainToolbar' 
@@ -51,6 +53,7 @@ export default {
   components: { 
     TheRightDrawer,
     TheLeftDrawer,
+    BaseAdminMenuCard,
     BaseMainMenuCard,
     BaseSecondaryMenuCard,
     FsMainToolbar,

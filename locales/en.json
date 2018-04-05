@@ -27,5 +27,14 @@
     "password": "Password",
     "loginFailed": "Login failed",
     "loggedIn": "You are logged in"
+  },
+  "adminMenu": {
+    "title": "Administration",
+    "addAdmins": "Add admins",
+    "addUsers": "Add users",
+    "addImages": "Add images",
+    "manageAdmins": "Manage admins",
+    "manageUsers": "Manage users",
+    "manageImages": "Manage images"
   }
 }

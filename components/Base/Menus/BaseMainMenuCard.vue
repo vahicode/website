@@ -10,20 +10,16 @@
    <base-menu-extention-login />
    <v-divider></v-divider>
    <fs-main-menu />
-   <v-divider></v-divider>
-   <base-menu-extention-admin />
 
  </v-card>
 </template>
 
 <script>
   import FsMainMenu from '~/components/Fs/Menus/FsMainMenu'
-  import BaseMenuExtentionAdmin from '~/components/Base/Menus/BaseMenuExtentionAdmin'
   import BaseMenuExtentionLogin from '~/components/Base/Menus/BaseMenuExtentionLogin'
   export default {
     components: {
       FsMainMenu,
-      BaseMenuExtentionAdmin,
       BaseMenuExtentionLogin
     },
     name: 'BaseMainMenuCard'

@@ -7,7 +7,14 @@
     temporary
   >
     <div class="align-drawer-bottom">
-      <FsMainMenu />
+      <div v-if="$auth.loggedIn">
+      <p class="px-2">{{ $t('adminMenu.title') }}</p>
+        <fs-admin-add-menu />
+        <fs-admin-manage-menu />
+      </div>
+      <p class="px-2 mt-3">{{ $t('app.title') }}</p>
+      <base-menu-extention-login />
+      <fs-main-menu />
       <div class="fs-toolbar-spacer"></div>
     </div>
   </v-navigation-drawer>
@@ -15,9 +22,15 @@
 
 <script>
   import FsMainMenu from '~/components/Fs/Menus/FsMainMenu'
+  import BaseMenuExtentionLogin from '~/components/Base/Menus/BaseMenuExtentionLogin'
+  import FsAdminAddMenu from '~/components/Fs/Menus/FsAdminAddMenu'
+  import FsAdminManageMenu from '~/components/Fs/Menus/FsAdminManageMenu'
   export default {
     components: {
-      FsMainMenu
+      FsMainMenu,
+      BaseMenuExtentionLogin,
+      FsAdminAddMenu,
+      FsAdminManageMenu
     },
     name: 'TheLeftDrawer',
     computed: { 

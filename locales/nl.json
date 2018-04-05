@@ -27,5 +27,14 @@
     "password": "Paswoord",
     "loginFailed": "Aanmelden mislukt",
     "loggedIn": "Je bent aangemeld"
+  },
+  "adminMenu": {
+    "title": "Beheer",
+    "addAdmins": "Voeg beheerders toe",
+    "addUsers": "Voeg gebruikers toe",
+    "addImages": "Voeg foto's toe",
+    "manageAdmins": "Beheer beheerders",
+    "manageUsers": "Beheer gebruikers",
+    "manageImages": "Beheer foto's"
   }
 }
