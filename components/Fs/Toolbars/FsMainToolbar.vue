@@ -9,7 +9,7 @@
       </v-btn>
       <div class="hidden-md-and-down ml-3">&nbsp;</div>
       <nuxt-link to="/">
-        <v-btn dark flat>{{ $t('app.title') }}</v-btn>
+        <v-btn dark flat>{{ $t('eyefu') }}</v-btn>
       </nuxt-link>
       <v-menu nudge-right>
         <v-toolbar-title slot="activator">
@@ -34,9 +34,6 @@
       </v-menu>
       <v-spacer class="text-xs-center">
       </v-spacer>
-      <v-btn icon @click.stop="toggleDrawer('right')" class="hidden-xl-only mr-4">
-        <v-icon x-large>chevron_left</v-icon>
-      </v-btn>
   </v-toolbar>
 </template>
 

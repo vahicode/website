@@ -2,7 +2,7 @@
   <v-card class="mb-4">
    <v-card-title primary-title>
      <div>
-       <div class="display-1">{{ $t('adminMenu.title') }}</div>
+       <div class="display-1">{{ $t('Administration') }}</div>
      </div>
    </v-card-title>
    <v-divider></v-divider>

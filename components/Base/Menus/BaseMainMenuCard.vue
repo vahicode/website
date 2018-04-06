@@ -2,8 +2,8 @@
   <v-card>
    <v-card-title primary-title>
      <div>
-       <div class="display-1">{{ $t('app.title') }}</div>
-       <div class="subheading">{{ $t('app.tagline') }}</div>
+       <div class="display-1">{{ $t('eyefu') }}</div>
+       <div class="subheading">{{ $t('tagline') }}</div>
      </div>
    </v-card-title>
    <v-divider></v-divider>

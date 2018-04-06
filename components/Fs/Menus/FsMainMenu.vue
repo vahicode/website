@@ -11,7 +11,7 @@
         <v-icon color="primary" v-html="item.icon"></v-icon>
       </v-list-tile-action>
       <v-list-tile-content>
-        <v-list-tile-title v-text="$t('mainMenu.'+item.title)"></v-list-tile-title>
+        <v-list-tile-title v-text="$t(item.title)"></v-list-tile-title>
       </v-list-tile-content>
     </v-list-tile>
   </v-list>
@@ -22,7 +22,11 @@
     name: 'FsMainMenu',
     computed: { 
       localePrefix () {
-        return this.$store.state.localePrefix
+        if(this.$i18n.locale === this.$i18n.defaultLocale) {
+          return ''
+        } else {   
+          return '/'+this.$i18n.locale
+        }
       }
     },
     data () {

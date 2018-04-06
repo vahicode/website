@@ -8,11 +8,11 @@
   >
     <div class="align-drawer-bottom">
       <div v-if="$auth.loggedIn">
-      <p class="px-2">{{ $t('adminMenu.title') }}</p>
+      <p class="px-2">{{ $t('Administration') }}</p>
         <fs-admin-add-menu />
         <fs-admin-manage-menu />
       </div>
-      <p class="px-2 mt-3">{{ $t('app.title') }}</p>
+      <p class="px-2 mt-3">{{ $t('eyefu') }}</p>
       <base-menu-extention-login />
       <fs-main-menu />
       <div class="fs-toolbar-spacer"></div>
