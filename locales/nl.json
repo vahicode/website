@@ -38,7 +38,12 @@
         "randomPassword": "Random paswoord",
         "failed": "Toevoegen van beheerder mislukt"
       }
-    }
+    },
+    "manage": {
+      "admins" : {
+        "title": "Beheer beheerders"
+      }
+    } 
   },
   "adminMenu": {
     "title": "Beheer",

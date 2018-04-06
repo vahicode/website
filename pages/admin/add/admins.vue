@@ -56,7 +56,7 @@ export default {
     submit: function() {
       const self = this
       this.loading = true;
-      const ip = this.$axios.$post('/admin/add/admin', {
+      const ip = this.$axios.$post(process.env.api+'/admin/add/admin', {
         username: this.username,
         password: this.password
       })
@@ -64,7 +64,7 @@ export default {
         self.loading = false;
         if(response.result === 'ok') {
           self.$router.push({
-            path: '/admin/manage/admin/'+response.id
+            path: '/admin/show/admin/'+response.id
           })
         } else {
           self.error = true

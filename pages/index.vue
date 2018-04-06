@@ -6,6 +6,9 @@
     <p><nuxt-link to="/admin/show/admin">Show admin page</nuxt-link></p>
     <p><nuxt-link to="/admin/manage/admin/15">Manage admin 15</nuxt-link></p>
     <p><nuxt-link to="/b">/b</nuxt-link></p>
+    <router-link to="/admin/foo/bar/baz/12">/admin</router-link>
+    <router-link to="/foo/23/342">/admin</router-link><br>
+    <router-link to="/admin/show/admin/1">/admin/show/admin/1</router-link>
     <blockquote class="warning mt-5">
       <h3>{{ $t('inviteOnly.title') }}</h3>
       <p>{{ $t('inviteOnly.line1') }}</p>
@@ -26,10 +29,20 @@ export default {
   rendered: function() {
     console.log(this.$router.options.routes);
     this.$router.routes.push({
-        alias: '/b',
-        name: 'custom1',
-        path: '/a',
-        component: resolve(__dirname, 'components/a.vue'),
+        path: '/foo/:n/:b', 
+        component: 'components/Foo.vue', 
+        props: route => ({
+    	  n: Number(route.params.n),
+    	  n: Number(route.params.b)
+        })
+      })
+    this.$router.routes.push({
+        path: '/admin/:path*/:int', 
+        component: 'components/Foo.vue', 
+        props: route => ({
+          n: route.params.path,
+          b: (Number(route.params.int) )? route.params.int : route.params.int+" is not a valid interger parameter"
+        })
       })
   },
 }

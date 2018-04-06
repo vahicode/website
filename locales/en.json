@@ -38,6 +38,11 @@
         "randomPassword": "Random password",
         "failed": "Failed to add administrator"
       }
+    },
+    "manage": {
+      "admins" : {
+        "title": "Manage administrators"
+      }
     }
   },
   "adminMenu": {

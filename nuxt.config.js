@@ -1,3 +1,4 @@
+const Foo = { template: '<div>Admin path = {{n }}, int = {{b}}</div>', props: ['n', 'b'] }
 module.exports = {
   /*
   ** Headers of the page
@@ -45,7 +46,10 @@ module.exports = {
     ]
   ],
   axios: {
-      browserBaseURL: process.env.EYEFU_API 
+      browserBaseURL: process.env.EYEFU_API
+  },
+  env: {
+    api: 'https://joost.demo.freesewing.org' 
   },
   vuetify: {
     materialIcons: true,
@@ -98,11 +102,21 @@ module.exports = {
   router: {
     middleware: ['auth'],
     extendRoutes (routes, resolve) {
+      //routes.push({
+      //  path: '/admin/:path*/:int', 
+      //  component: 'components/Foo.vue', 
+      //  props: route => ({
+      //    n: route.params.path,
+      //    b: (Number(route.params.int) )? route.params.int : route.params.int+" is not a valid interger parameter"
+      //  })
+      //})
       routes.push({
-        name: 'custom',
-        path: '/admin/show/admin',
-        component: resolve(__dirname, 'pages/admin/show/admin.vue'),
-        alias: '/admin/manage/admin/15'
+        path: '/admin/show/admin/:id', 
+        component: 'pages/dynamic/show-admin.vue'
+      })
+      routes.push({
+        path: '/admin/edit/admin/:id', 
+        component: 'pages/dynamic/edit-admin.vue'
       })
     }
   },

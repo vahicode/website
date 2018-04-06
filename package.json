@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "cdev": "HOST=0.0.0.0 PORT=3000 nuxt",
+    "cdev": "HOST=0.0.0.0 PORT=3000 EYEFU_API=https://joost.demo.freesewing.org/ nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
