@@ -96,7 +96,15 @@ module.exports = {
     }
   },
   router: {
-    middleware: ['auth']
+    middleware: ['auth'],
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '/admin/show/admin',
+        component: resolve(__dirname, 'pages/admin/show/admin.vue'),
+        alias: '/admin/manage/admin/15'
+      })
+    }
   },
   /*
   ** Build configuration
