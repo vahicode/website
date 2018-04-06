@@ -1,11 +1,11 @@
 <template>
   <section class="container text-xs-center">
     <div>
-      <h1>{{ $t('mainMenu.login') }}</h1>
-      <h2>{{ $t('login.loginBelow') }}</h2>
+      <h1>{{ $t('login') }}</h1>
+      <h2>{{ $t('enterInviteCode') }}</h2>
       <v-form v-model="valid" @submit="submit">
         <v-text-field class="login" solo
-                      :label="$t('login.field')"
+                      :label="$t('inviteCode')"
                       v-model="inviteCode"
                       required
                       ></v-text-field>

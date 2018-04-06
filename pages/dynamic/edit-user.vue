@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ $t('admin') }} {{ api.username }}</h1>
+    <h1>{{ $t('user') }} {{ api.id }}</h1>
     <div v-if="remove">
     <table class="table">
       <thead class="thead-dark">
@@ -12,27 +12,19 @@
     <tbody>
       <tr>
         <td class="key">{{ $t('id') }}</td>
-        <td class="val">{{ api.adminid }}</td>
-      </tr>
-      <tr>
-        <td class="key">{{ $t('username') }}</td>
-        <td class="val">{{ api.username }}</td>
-      </tr>
-      <tr>
-        <td class="key">{{ $t('role') }}</td>
-        <td class="val">{{ api.role }}</td>
-      </tr>
-      <tr>
-        <td class="key">{{ $t('userId') }}</td>
         <td class="val">{{ api.id }}</td>
       </tr>
       <tr>
-        <td class="key">{{ $t('invite') }}</td>
+        <td class="key">{{ $t('inviteCode') }}</td>
         <td class="val"><pre>{{ api.invite }}</pre></td>
       </tr>
       <tr>
         <td class="key">{{ $t('notes') }}</td>
         <td class="val">{{ api.notes }}</td>
+      </tr>
+      <tr>
+        <td class="key">{{ $t('addedBy') }}</td>
+        <td class="val">{{ api.adminUsername }}</td>
       </tr>
     </tbody>
     </table>
@@ -51,40 +43,27 @@
     </div>
     <div v-else>
     <v-form v-model="valid" @submit="submit">
-      <h6> {{ $t('username') }}</h6>
+      <h6> {{ $t('inviteCode') }}</h6>
         <v-text-field 
-          :label="$t('username')"
-          v-model="api.username"
+          :label="$t('inviteCode')"
+          v-model="api.invite"
           required
+          counter="8"
         ></v-text-field>
-       <h6>{{ $t('role') }}</h6>
-       <v-radio-group v-model="api.role">
-         <v-radio
-           v-for="role in roles"
-           :label="$t(role)"
-           :value="role"
-           :key="role"
-         ></v-radio>
-       </v-radio-group>
-         <div v-if="changePassword">
-       <h6>{{ $t('changePassword') }} 
-         <v-btn @click="changePassword = !changePassword" flat><v-icon color="error">close</v-icon></v-btn></h6>
-       <v-text-field
-         :label="$t('password')"
-         v-model="password"
-       ></v-text-field>
-         </div>
+      <h6> {{ $t('notes') }}</h6>
+        <v-text-field 
+          :label="$t('notes')"
+          v-model="api.notes"
+          textarea
+        ></v-text-field>
       <p class="text-xs-right">
         <v-btn large color="primary" @click="submit">
           <v-progress-circular indeterminate color="#fff" class="mr-3" v-if="loading" :size="20" :width="2"></v-progress-circular>
           <v-icon class="mr-3" v-else>save</v-icon> 
           {{ $t('save') }}
         </v-btn>
-        <v-btn large v-if="!changePassword" @click="changePassword = !changePassword">
-          <v-icon class="mr-3">edit</v-icon> {{ $t('changePassword') }}
-        </v-btn>
-        <v-btn v-else @click="randomPassword" large>
-          {{ $t('randomPassword') }}
+        <v-btn @click="randomInvite" large>
+          {{ $t('randomInvite') }}
         </v-btn>
         <v-btn large @click="remove = !remove" color="error">
           <v-icon class="mr-3">delete</v-icon> {{ $t('delete') }}
@@ -120,7 +99,7 @@ export default  {
     submit: function() {
       const self = this
       this.loading = true;
-      const ip = this.$axios.$post(process.env.api+'/admin/admin/'+this.api.id, {
+      const ip = this.$axios.$post(process.env.api+'/admin/user/'+this.api.id, {
         username: this.api.username,
         role: this.api.role,
         password: this.password
@@ -161,18 +140,18 @@ export default  {
         self.error = true
       });
     },
-    randomPassword: function() {
+    randomInvite: function() {
       let text = ""
-      var possible = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz123456789"
-      for (var i = 0; i < 12; i++) {
+      var possible = "abcdefghkmnpqrstuvwxyz234578"
+      for (var i = 0; i < 8; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length))
       }
-      this.password = text
+      this.api.invite = text
     }
   },
   asyncData: async function ({ app, route }) {
     return { 
-      api: await app.$axios.$get(process.env.api+'/admin/admin/'+route.params.id)
+      api: await app.$axios.$get(process.env.api+'/admin/user/'+route.params.id)
       .then(function (response) {
         if(response.result === 'ok') {
             return response

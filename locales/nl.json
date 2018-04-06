@@ -1,82 +1,59 @@
 {
-  "app": {
-    "title": "EyeFu", 
-    "tagline": "Dit verdient een betere titel"
-  },
-  "mainMenu": {
-    "home": "Start pagina",
-    "about": "Over EyeFu",
-    "rate": "Score",
-    "admin": "Admininstratie",
-    "login": "Aanmelden",
-    "logout": "Afmelden"
-  },
-  "inviteOnly": {
-    "title": "EyeFu is alleen toegankelijk via een uitnodiging",
-    "line1": "EyeFu is niet publiek beschikbaar, maar alleen via een uitnodiging link.",
-    "line2": "Als je een uitnoding hebt kan je je",
-    "link": "hier aanmelden"
-  },
-  "login": { 
-    "loginBelow": "Voer hieronder de code van je uitnoding in",
-    "field": "Uitnodigingscode" 
-  },
-  "admin": {
-    "loginBelow": "Voer hieronder je gebruikersnaam en paswoord in",
-    "username": "Gebruikersnaam",
-    "password": "Paswoord",
-    "loginFailed": "Aanmelden mislukt",
-    "loggedIn": "Je bent aangemeld",
-    "accessDenied": "Jammer, maar helaas",
-    "adminOnly": "Deze pagina is alleen toegankelijk voor beheerders",
-    "superadminOnly": "Deze pagina is alleen toegankelijk voor super beheerders",
-    "roles": {
-     "admin": "Beheerder",
-     "superadmin": "Super beheerder",
-     "disabled": "Inactief"
-    },
-    "add": {
-      "admins" : {
-        "username": "Gebruikersnaam beheerder",
-        "password": "Paswoord beheerder",
-        "submit": "Voeg beheerder toe",
-        "randomPassword": "Random paswoord",
-        "failed": "Toevoegen van beheerder mislukt"
-      }
-    },
-    "manage": {
-      "admins" : {
-        "title": "Beheer beheerders"
-      }
-    }, 
-    "edit": {
-      "admins" : {
-        "title": "Beheerder",
-        "prop": "Eigenschap",
-        "value": "Waarde",
-        "id": "ID",
-        "role": "Rol",
-        "userid": "Gebruikers ID",
-        "notes": "Notities",
-        "editadmin": "Beheerder bewerken",
-        "edituser": "Gelinkte gebruiker bewerken",
-        "changePassword": "Wijzig paswoord",
-        "save": "Opslaan",
-        "cancel": "Cancel",
-        "remove": "Verwijderen",
-        "saveFailed": "Opslaan mislukt :(",
-        "noWayBack": "Dit kan niet ongedaan gemaakt worden",
-        "goneForever": "Deze gegevens zullen worden verwijderd, zonder mogelijkheid om ze te herstellen. Wees voorzichtig."
-      }
-    }
-  },
-  "adminMenu": {
-    "title": "Beheer",
-    "addAdmins": "Voeg beheerders toe",
-    "addUsers": "Voeg gebruikers toe",
-    "addImages": "Voeg foto's toe",
-    "manageAdmins": "Beheer beheerders",
-    "manageUsers": "Beheer gebruikers",
-    "manageImages": "Beheer foto's"
-  }
+  "about": "Over EyeFu",
+  "accessDenied": "Jammer, maar helaas",
+  "addAdmin": "Beheerder toevoegen",
+  "addAdmins": "Beheerders toevoegen",
+  "addedby": "Aangemaakt door",
+  "addImages": "Foto's toevoegen",
+  "addUsers": "Gebruikers toevoegen",
+  "admin": "Beheerder",
+  "Administration": "Beheer",
+  "adminOnly": "Deze pagine is enkel toegangkelijk voor beheerders",
+  "adminPassword": "Paswoord beheerder",
+  "adminUsername": "Gebruikersnaam beheerder",
+  "cancel": "Annuleren",
+  "changePassword": "Paswoord wijzigen",
+  "delete": "Verwijderen",
+  "deleteForeverBeCareful": "Deze gegevens zullen verwijderd worden, zonder mogelijkheid om ze te herstellen. Wees voorzichtig.",
+  "disabled": "Gedesactiveerd",
+  "editAdmin": "Beheerder bewerken",
+  "editLinkedUser": "Gelinkte gebuiker bewerken",
+  "editUser": "Gebruiker bewerken",
+  "enterInviteCode": "Gelieve je uitnodigingscode in te voeren",
+  "enterUsernamePassword": "Gelieve je gebruikersnaam en paswoord in te voeren",
+  "eyefu": "EyeFu", 
+  "failedToAddAdmin": "Toevoegen beheerder mislukt",
+  "home": "Home pagina",
+  "id": "ID",
+  "inviteCode": "Uitnodigingscode",
+  "inviteOnlyLine1": "EyeFu is niet publiek toegangkelijke, maar enkel met een uitnodiging.",
+  "inviteOnlyLine2": "Als U een uitnodigingscode heeft kan U",
+  "inviteOnlyTitle": "EyeFu vereist een uitnodiging",
+  "loggedIn": "Je bent aangemeld",
+  "loginFailed": "Aanmelden mislukt",
+  "loginHere": "Meld je hier aan",
+  "login": "Aanmelden",
+  "logout": "Afmelden",
+  "manageAdmins": "Beheer beheerders",
+  "manageImages": "Beheer foto's",
+  "manageUsers": "Beheer gebruikers",
+  "notes": "Notities",
+  "noWayBack": "Dit kan niet ongedaan gemaakt worden",
+  "password": "Paswoord",
+  "pleaseCompleteForm": "Gelieve onderstaande velden in te vullen",
+  "prop": "Eigenschap",
+  "randomInvite": "Random code",
+  "randomPassword": "Random paswoord",
+  "rate": "Beoordeel",
+  "role": "Rol",
+  "saveFailed": "Opslaan mislukt",
+  "save": "Opslaan",
+  "superadminOnly": "Deze pagina is alleen beschikbaar voor super beheerders",
+  "superadmin": "Super beheerder",
+  "tagline": "Dit ding heeft een betere titel nodig",
+  "userId": "Gebuikers ID",
+  "username": "Gebruikersnaam",
+  "user": "Gebruiker",
+  "value": "Waarde"
 }
+

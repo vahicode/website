@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>{{ $t('app.title') }}</h1>
-    <h2>{{ $t('app.tagline') }}</h2>
+    <h1>{{ $t('eyefu') }}</h1>
+    <h2>{{ $t('tagline') }}</h2>
     <p>FIXME: Write home page.</p>
     <p><nuxt-link to="/admin/show/admin">Show admin page</nuxt-link></p>
     <p><nuxt-link to="/admin/manage/admin/15">Manage admin 15</nuxt-link></p>
@@ -10,9 +10,9 @@
     <router-link to="/foo/23/342">/admin</router-link><br>
     <router-link to="/admin/show/admin/1">/admin/show/admin/1</router-link>
     <blockquote class="warning mt-5">
-      <h3>{{ $t('inviteOnly.title') }}</h3>
-      <p>{{ $t('inviteOnly.line1') }}</p>
-      <p>{{ $t('inviteOnly.line2') }} <nuxt-link to="/login">{{ $t('inviteOnly.link') }}</nuxt-link></p>
+      <h3>{{ $t('inviteOnlyTitle') }}</h3>
+      <p>{{ $t('inviteOnlyLine1') }}</p>
+      <p>{{ $t('inviteOnlyLine2') }} <nuxt-link to="/login">{{ $t('loginHere') }}</nuxt-link></p>
     </blockquote>
     <pre v-for="route in $router.options.routes" :key="route.path">
     {{ route }}

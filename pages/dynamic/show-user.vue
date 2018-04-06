@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ $t('admin') }} {{ api.username }}</h1>
+    <h1>{{ $t('user') }} {{ api.id }}</h1>
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -11,18 +11,6 @@
     <tbody>
       <tr>
         <td class="key">{{ $t('id') }}</td>
-        <td class="val">{{ api.adminid }}</td>
-      </tr>
-      <tr>
-        <td class="key">{{ $t('username') }}</td>
-        <td class="val">{{ api.username }}</td>
-      </tr>
-      <tr>
-        <td class="key">{{ $t('role') }}</td>
-        <td class="val">{{ api.role }}</td>
-      </tr>
-      <tr>
-        <td class="key">{{ $t('userId') }}</td>
         <td class="val">{{ api.id }}</td>
       </tr>
       <tr>
@@ -33,14 +21,15 @@
         <td class="key">{{ $t('notes') }}</td>
         <td class="val">{{ api.notes }}</td>
       </tr>
+      <tr>
+        <td class="key">{{ $t('addedby') }}</td>
+        <td class="val">{{ api.adminUsername }}</td>
+      </tr>
     </tbody>
     </table>
     <p class="text-xs-right">
-    <v-btn color="primary" :to="'/admin/edit/admin/'+api.adminid">
-      <v-icon class="mr-3">edit</v-icon> {{ $t('editAdmin') }}
-    </v-btn>
-    <v-btn :to="'/admin/edit/user/'+api.id">
-      <v-icon class="mr-3">edit</v-icon> {{ $t('AdmineditLinkedUser') }}
+    <v-btn color="primary" :to="'/admin/edit/user/'+api.id">
+      <v-icon class="mr-3">edit</v-icon> {{ $t('editUser') }}
     </v-btn>
     </p>
   </div>
@@ -50,7 +39,7 @@
 export default  {
   asyncData: async function ({ app, route }) {
     return { 
-      api: await app.$axios.$get(process.env.api+'/admin/admin/'+route.params.id)
+      api: await app.$axios.$get(process.env.api+'/admin/user/'+route.params.id)
       .then(function (response) {
         if(response.result === 'ok') {
             return response

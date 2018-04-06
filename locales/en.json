@@ -1,82 +1,59 @@
 {
-  "app": {
-    "title": "EyeFu", 
-    "tagline": "This thing needs a better title"
-  },
-  "mainMenu": {
-    "home": "Home",
-    "about": "About",
-    "rate": "Rate",
-    "admin": "Admin",
-    "login": "Login",
-    "logout": "Logout"
-  },
-  "inviteOnly": {
-    "title": "EyeFu is invite-only",
-    "line1": "EyeFu is not available to the general public, but only through an invite link.",
-    "line2": "If you have an invite, you can",
-    "link": "login here"
-  },
-  "login": {
-    "loginBelow": "Please enter your invite code below",
-    "field": "Invite code" 
-  },
-  "admin": {
-    "loginBelow": "Please enter your username and password",
-    "username": "Username",
-    "password": "Password",
-    "loginFailed": "Login failed",
-    "loggedIn": "You are logged in",
-    "accessDenied": "Computer says no",
-    "adminOnly": "This page is for administrators only",
-    "superadminOnly": "This page is for super administrators only",
-    "roles": {
-     "admin": "Admin",
-     "superadmin": "Super admin",
-     "disabled": "Disabled"
-    },
-    "add": {
-      "admins" : {
-        "username": "Admin username",
-        "password": "Admin password",
-        "submit": "Add admin",
-        "randomPassword": "Random password",
-        "failed": "Failed to add administrator"
-      }
-    },
-    "manage": {
-      "admins" : {
-        "title": "Manage administrators"
-      }
-    },
-    "edit": {
-      "admins" : {
-        "title": "Admin",
-        "prop": "Property",
-        "value": "Value",
-        "id": "ID",
-        "role": "Role",
-        "userid": "User ID",
-        "notes": "Notes",
-        "editadmin": "Edit admin",
-        "edituser": "Edit linked user",
-        "changePassword": "Change Password",
-        "save": "Save",
-        "cancel": "Cancel",
-        "remove": "Delete",
-        "saveFailed": "Save failed :(",
-        "noWayBack": "There is no way back from this",
-        "goneForever": "This data will be removed, with no way to revover it. Proceed with caution."
-      }
-    }
-  },
-  "adminMenu": {
-    "title": "Administration",
-    "addAdmins": "Add admins",
-    "addUsers": "Add users",
-    "addImages": "Add images",
-    "manageAdmins": "Manage admins",
-    "manageUsers": "Manage users",
-    "manageImages": "Manage images"
-  }
+  "about": "About",
+  "accessDenied": "Computer says no",
+  "addAdmin": "Add admin",
+  "addAdmins": "Add admins",
+  "addedBy": "Added by",
+  "addImages": "Add images",
+  "addUsers": "Add users",
+  "admin": "Admin",
+  "Administration": "Administration",
+  "adminOnly": "This page is for administrators only",
+  "adminPassword": "Admin password",
+  "adminUsername": "Admin username",
+  "cancel": "Cancel",
+  "changePassword": "Change Password",
+  "delete": "Delete",
+  "deleteForeverBeCareful": "This data will be removed, with no way to revover it. Proceed with caution.",
+  "disabled": "Disabled",
+  "editAdmin": "Edit admin",
+  "editLinkedUser": "Edit linked user",
+  "editUser": "Edit user",
+  "enterInviteCode": "Please enter your invite code below",
+  "enterUsernamePassword": "Please enter your username and password",
+  "eyefu": "EyeFu", 
+  "failedToAddAdmin": "Failed to add administrator",
+  "home": "Home",
+  "id": "ID",
+  "inviteCode": "Invite code",
+  "inviteOnlyLine1": "EyeFu is not available to the general public, but only through an invite link.",
+  "inviteOnlyLine2": "If you have an invite, you can",
+  "inviteOnlyTitle": "EyeFu is invite-only",
+  "loggedIn": "You are logged in",
+  "loginFailed": "Login failed",
+  "loginHere": "login here",
+  "login": "Login",
+  "logout": "Logout",
+  "manageAdmins": "Manage admins",
+  "manageImages": "Manage images",
+  "manageUsers": "Manage users",
+  "notes": "Notes",
+  "noWayBack": "There is no way back from this",
+  "password": "Password",
+  "pleaseCompleteForm": "Please complete the form below",
+  "prop": "Property",
+  "randomInvite": "Random invite",
+  "randomPassword": "Random password",
+  "rate": "Rate",
+  "role": "Role",
+  "saveFailed": "Save failed",
+  "save": "Save",
+  "superadminOnly": "This page is for super administrators only",
+  "superadmin": "Super admin",
+  "tagline": "This thing needs a better title",
+  "userId": "User ID",
+  "username": "Username",
+  "user": "User",
+  "value": "Value"
 }
+

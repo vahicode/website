@@ -1,26 +1,26 @@
 <template>
   <section class="container text-xs-center">
-    <h1>{{ $t('mainMenu.admin') }}</h1>
+    <h1>{{ $t('Administration') }}</h1>
     <div v-if="$auth.loggedIn">
       <p>You are logged in</p>
       <v-btn @click="logout" color="secondary" large>Logout</v-btn>
     </div>
     <div v-else>
-      <h4>{{ $t('admin.loginBelow') }}</h4>
+      <h4>{{ $t('enterUsernamePassword') }}</h4>
       <v-form v-model="valid">
         <v-text-field
-          :label="$t('admin.username')"
+          :label="$t('username')"
           v-model="username"
           required
         ></v-text-field>
         <v-text-field
-          :label="$t('admin.password')"
+          :label="$t('password')"
           v-model="password"
           type="password"
           required
         ></v-text-field>
         <v-btn @click="submit" color="primary" large>
-          {{ $t('mainMenu.login') }}
+          {{ $t('login') }}
           <v-progress-circular indeterminate color="#fff" class="ml-4" v-if="loading" :size="20" :width="2"></v-progress-circular>
         </v-btn>
       </v-form>
@@ -30,7 +30,7 @@
       top
       right
       v-model="error"
-      >{{ $t('admin.loginFailed') }}
+      >{{ $t('loginFailed') }}
       <v-btn flat color="primary" @click.native="error = false"><v-icon>close</v-icon></v-btn>
     </v-snackbar>
   </section>

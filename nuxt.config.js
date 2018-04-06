@@ -102,14 +102,6 @@ module.exports = {
   router: {
     middleware: ['auth'],
     extendRoutes (routes, resolve) {
-      //routes.push({
-      //  path: '/admin/:path*/:int', 
-      //  component: 'components/Foo.vue', 
-      //  props: route => ({
-      //    n: route.params.path,
-      //    b: (Number(route.params.int) )? route.params.int : route.params.int+" is not a valid interger parameter"
-      //  })
-      //})
       routes.push({
         path: '/admin/show/admin/:id', 
         component: 'pages/dynamic/show-admin.vue'
@@ -117,6 +109,14 @@ module.exports = {
       routes.push({
         path: '/admin/edit/admin/:id', 
         component: 'pages/dynamic/edit-admin.vue'
+      })
+      routes.push({
+        path: '/admin/show/user/:id', 
+        component: 'pages/dynamic/show-user.vue'
+      })
+      routes.push({
+        path: '/admin/edit/user/:id', 
+        component: 'pages/dynamic/edit-user.vue'
       })
     }
   },

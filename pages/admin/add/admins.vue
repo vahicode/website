@@ -1,32 +1,32 @@
 <template>
   <section class="container">
-    <h1>{{ $t('adminMenu.addAdmins') }}</h1>
+    <h1>{{ $t('addAdmin') }}</h1>
     <div v-if="$auth.user.isSuperadmin">
-     <h4>{{ $t('admin.loginBelow') }}</h4>
+     <h4>{{ $t('pleaseCompleteForm') }}</h4>
       <v-form v-model="valid">
         <v-text-field
-          :label="$t('admin.add.admins.username')"
+          :label="$t('adminUsername')"
           v-model="username"
           required
         ></v-text-field>
         <v-text-field
-          :label="$t('admin.add.admins.password')"
+          :label="$t('adminPassword')"
           v-model="password"
           required
         ></v-text-field>
         <v-btn @click="submit" color="primary" large>
-          {{ $t('admin.add.admins.submit') }}
+          {{ $t('addAdmin') }}
           <v-progress-circular indeterminate color="#fff" class="ml-4" v-if="loading" :size="20" :width="2"></v-progress-circular>
         </v-btn>
         <v-btn @click="randomPassword" large>
-          {{ $t('admin.add.admins.randomPassword') }}
+          {{ $t('randomPassword') }}
         </v-btn>
       </v-form>
     </div>
     <div v-else>
     <blockquote class="error mt-5 dark">
-      <h3 class="white-text">{{ $t('admin.accessDenied') }}</h3>
-      <p class="white-text">{{ $t('admin.superadminOnly') }}</p>
+      <h3 class="white-text">{{ $t('accessDenied') }}</h3>
+      <p class="white-text">{{ $t('superadminOnly') }}</p>
     </blockquote>
     </div>
     <v-snackbar
@@ -34,7 +34,7 @@
       top
       right
       v-model="error"
-      >{{ $t('admin.add.admins.failed') }}
+      >{{ $t('failedToAddAdmin') }}
       <v-btn flat color="primary" @click.native="error = false"><v-icon>close</v-icon></v-btn>
     </v-snackbar>
   </section>
