@@ -56,7 +56,7 @@ export default {
     submit: function() {
       const self = this
       this.loading = true;
-      const ip = this.$axios.$post(process.env.api+'/admin/add/admin', {
+      const ip = this.$axios.$post(process.env.api+'/admin/admin', {
         username: this.username,
         password: this.password
       })

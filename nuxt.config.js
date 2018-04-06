@@ -46,10 +46,10 @@ module.exports = {
     ]
   ],
   axios: {
-      browserBaseURL: process.env.EYEFU_API
+      browserBaseURL: 'https://back.eyefu.be'
   },
   env: {
-    api: 'https://joost.demo.freesewing.org' 
+      api: 'https://back.eyefu.be:443' 
   },
   vuetify: {
     materialIcons: true,

@@ -8,7 +8,7 @@
          </v-toolbar>
     <v-list two-line>
       <template v-for="(admin, index) in Object.values(api.admins)">
-        <v-list-tile :key="index">
+        <v-list-tile :key="'tile-'+index">
           <v-list-tile-avatar>
             <v-icon color="accent" v-if="admin.role == 'superadmin'">account_box</v-icon>
             <v-icon color="info" v-else-if="admin.role == 'admin'">account_box</v-icon>
@@ -29,7 +29,7 @@
             </v-btn>
           </v-list-tile-action>
         </v-list-tile>
-          <v-divider :key="index" v-if="index != api.count - 1"></v-divider>
+          <v-divider :key="'divider-'+index" v-if="index != api.count - 1"></v-divider>
       </template>
     </v-list>
     </v-card>
@@ -50,7 +50,7 @@ export default {
   },
   asyncData: async function ({ app, route }) {
     return { 
-      api: await app.$axios.$get(process.env.api+'/admin/list/admins')
+      api: await app.$axios.$get(process.env.api+'/admin/admins')
       .then(function (response) {
         if(response.result === 'ok') {
             return response

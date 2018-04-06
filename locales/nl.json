@@ -30,6 +30,11 @@
     "accessDenied": "Jammer, maar helaas",
     "adminOnly": "Deze pagina is alleen toegankelijk voor beheerders",
     "superadminOnly": "Deze pagina is alleen toegankelijk voor super beheerders",
+    "roles": {
+     "admin": "Beheerder",
+     "superadmin": "Super beheerder",
+     "disabled": "Inactief"
+    },
     "add": {
       "admins" : {
         "username": "Gebruikersnaam beheerder",
@@ -43,7 +48,27 @@
       "admins" : {
         "title": "Beheer beheerders"
       }
-    } 
+    }, 
+    "edit": {
+      "admins" : {
+        "title": "Beheerder",
+        "prop": "Eigenschap",
+        "value": "Waarde",
+        "id": "ID",
+        "role": "Rol",
+        "userid": "Gebruikers ID",
+        "notes": "Notities",
+        "editadmin": "Beheerder bewerken",
+        "edituser": "Gelinkte gebruiker bewerken",
+        "changePassword": "Wijzig paswoord",
+        "save": "Opslaan",
+        "cancel": "Cancel",
+        "remove": "Verwijderen",
+        "saveFailed": "Opslaan mislukt :(",
+        "noWayBack": "Dit kan niet ongedaan gemaakt worden",
+        "goneForever": "Deze gegevens zullen worden verwijderd, zonder mogelijkheid om ze te herstellen. Wees voorzichtig."
+      }
+    }
   },
   "adminMenu": {
     "title": "Beheer",

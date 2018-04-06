@@ -30,6 +30,11 @@
     "accessDenied": "Computer says no",
     "adminOnly": "This page is for administrators only",
     "superadminOnly": "This page is for super administrators only",
+    "roles": {
+     "admin": "Admin",
+     "superadmin": "Super admin",
+     "disabled": "Disabled"
+    },
     "add": {
       "admins" : {
         "username": "Admin username",
@@ -42,6 +47,26 @@
     "manage": {
       "admins" : {
         "title": "Manage administrators"
+      }
+    },
+    "edit": {
+      "admins" : {
+        "title": "Admin",
+        "prop": "Property",
+        "value": "Value",
+        "id": "ID",
+        "role": "Role",
+        "userid": "User ID",
+        "notes": "Notes",
+        "editadmin": "Edit admin",
+        "edituser": "Edit linked user",
+        "changePassword": "Change Password",
+        "save": "Save",
+        "cancel": "Cancel",
+        "remove": "Delete",
+        "saveFailed": "Save failed :(",
+        "noWayBack": "There is no way back from this",
+        "goneForever": "This data will be removed, with no way to revover it. Proceed with caution."
       }
     }
   },
