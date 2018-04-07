@@ -23,7 +23,7 @@
         items: [
           { color: 'primary', icon: 'account_box', title: 'manageAdmins', to: '/admin/manage/admins', sudo: true},
           { color: 'primary', icon: 'account_circle', title: 'manageUsers', to: '/admin/manage/users' },
-          { color: 'primary', icon: 'camera_roll', title: 'manageImages', to: '/admin/manage/images' },
+          { color: 'primary', icon: 'remove_red_eye', title: 'manageEyes', to: '/admin/manage/eyes' },
         ],
       }
     },

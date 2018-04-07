@@ -23,7 +23,8 @@
         items: [
           { color: 'primary', icon: 'add_box', title: 'addAdmins', to: '/admin/add/admins', sudo: true },
           { color: 'primary', icon: 'add_circle', title: 'addUsers', to: '/admin/add/users' },
-          { color: 'primary', icon: 'add_a_photo', title: 'addImages', to: '/admin/add/images' },
+          { color: 'primary', icon: 'remove_red_eye', title: 'addEyes', to: '/admin/add/eyes' },
+          { color: 'primary', icon: 'add_a_photo', title: 'uploadImages', to: '/admin/uploader' },
         ],
       }
     },
