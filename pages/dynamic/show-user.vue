@@ -22,8 +22,8 @@
         <td class="val">{{ api.notes }}</td>
       </tr>
       <tr>
-        <td class="key">{{ $t('addedby') }}</td>
-        <td class="val">{{ api.adminUsername }}</td>
+        <td class="key">{{ $t('addedBy') }}</td>
+        <td class="val"><nuxt-link :to="'/admin/show/admin/'+api.admin">{{ api.adminUsername }}</nuxt-link></td>
       </tr>
     </tbody>
     </table>

@@ -32,7 +32,7 @@
       <h3>{{ $t('noWayBack') }}</h3>
       <p>{{ $t('deleteForeverBeCareful') }}</p>
       <p class="text-xs-right">
-        <v-btn large @click="deleteAdmin" color="error">
+        <v-btn large @click="deleteUser" color="error">
           <v-icon class="mr-3">delete</v-icon> {{ $t('delete') }}
         </v-btn>
         <v-btn large @click="remove = !remove">
@@ -100,15 +100,14 @@ export default  {
       const self = this
       this.loading = true;
       const ip = this.$axios.$post(process.env.api+'/admin/user/'+this.api.id, {
-        username: this.api.username,
-        role: this.api.role,
-        password: this.password
+        invite: this.api.invite,
+        notes: this.api.notes
       })
       .then(function (response) {
         self.loading = false;
         if(response.result === 'ok') {
           self.$router.push({
-            path: '/admin/show/admin/'+self.api.id
+            path: '/admin/show/user/'+self.api.id
           })
         } else {
           self.error = true
@@ -120,15 +119,15 @@ export default  {
         self.error = true
       });
     },
-    deleteAdmin: function() {
+    deleteUser: function() {
       const self = this
       this.loading = true;
-      const ip = this.$axios.$delete(process.env.api+'/admin/admin/'+this.api.id)
+      const ip = this.$axios.$delete(process.env.api+'/admin/user/'+this.api.id)
       .then(function (response) {
         self.loading = false;
         if(response.result === 'ok') {
           self.$router.push({
-            path: '/admin/manage/admins'
+            path: '/admin/manage/users'
           })
         } else {
           self.error = true
