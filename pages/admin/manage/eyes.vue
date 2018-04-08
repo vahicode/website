@@ -13,8 +13,8 @@
 		        </v-card-media>
             <v-card-text>
               <ul class="meta">
-                <li>Pictures: {{ (pictureCount(eye.id)) }}</li>
-                <li>Notes: {{ eye.notes }}</li>
+                <li>{{ $t('pictures') }}: {{ (pictureCount(eye.id)) }}</li>
+                <li>{{ $t('notes') }}: {{ eye.notes }}</li>
               </ul>
             </v-card-text>
           </v-card>

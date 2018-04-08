@@ -118,6 +118,14 @@ module.exports = {
         path: '/admin/edit/user/:id', 
         component: 'pages/dynamic/edit-user.vue'
       })
+      routes.push({
+        path: '/admin/show/eye/:id', 
+        component: 'pages/dynamic/show-eye.vue'
+      })
+      routes.push({
+        path: '/admin/edit/eye/:id', 
+        component: 'pages/dynamic/edit-eye.vue'
+      })
     }
   },
   /*
