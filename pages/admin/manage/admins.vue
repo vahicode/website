@@ -17,8 +17,7 @@
           <v-list-tile-content>
               <v-list-tile-title><nuxt-link :to="'/admin/show/admin/'+admin.id">{{ admin.username}}</nuxt-link></v-list-tile-title>
               <v-list-tile-sub-title>
-                  Role: {{ admin.role }} | 
-                  Invite: {{ admin.invite }}
+                  Role: {{ admin.role }} 
               </v-list-tile-sub-title>
           </v-list-tile-content>
           <v-list-tile-action>
