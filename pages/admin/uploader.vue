@@ -2,50 +2,47 @@
   <section class="container">
     <h1>{{ $t('uploadImages') }}</h1>
     <div class="dropzone">
-    <h2>{{ $t('dropFilesToUpload') }}</h2>
-    <div class="upload">
-      <ul v-if="files.length" class="chiplist mt-5 mb-5">
-        <li v-for="(file, index) in files" :key="file.id+index">
-          <v-chip>
-          <span>{{file.name}}</span> -
-          <span>{{file.size | formatSize}}</span> -
-          <span v-if="file.error">{{file.error}}</span>
-          <span v-else-if="file.success">success</span>
-          <span v-else-if="file.active">active</span>
-          <span v-else-if="file.active">active</span>
-          <span v-else></span>
-          </v-chip>
-        </li>
-      </ul>
-
-      <div v-show="$refs.upload && $refs.upload.dropActive" class="drop-active">
-        <h3>{{ $t('dropFilesToUpload') }}</h3>
-      </div>
-
-      <div>
-        <v-btn large @click="trigger">
-          <v-icon class="mr-3">folder_open</v-icon>
-          {{ $t('selectFiles') }}
-        </v-btn>
-        <file-upload
-          :post-action="api+'/admin/upload'"
-          :multiple="true"
-          :drop="true"
-          :drop-directory="true"
-          v-model="files"
-          ref="upload">
-        </file-upload>
-        <v-btn large color="primary" v-if="!$refs.upload || !$refs.upload.active" @click.prevent="$refs.upload.active = true">
-          <v-icon class="mr-3">cloud_upload</v-icon>
-          {{ $t('startUpload') }}
-        </v-btn>
-        <v-btn v-else @click.prevent="$refs.upload.active = false">
-          <v-icon>cancel</v-icon>
-          {{ $t('stopUpload') }}
-        </v-btn>
+      <h2>{{ $t('dropFilesToUpload') }}</h2>
+      <div class="upload">
+        <ul v-if="files.length" class="chiplist mt-5 mb-5">
+          <li v-for="(file, index) in files" :key="file.id+index">
+            <v-chip>
+              <v-avatar v-if="file.error" class="error"><v-icon dark>error_outline</v-icon></v-avatar>
+              <v-avatar v-else-if="file.success" class="success"><v-icon dark>check</v-icon></v-avatar>
+              <v-avatar v-else-if="file.active" class="info"><v-icon dark>cloud_upload</v-icon></v-avatar>
+              <v-avatar v-else class="primary"><v-icon dark>remove_red_eye</v-icon></v-avatar>
+              {{file.name}} 
+            </v-chip>
+          </li>
+        </ul>
+        <div v-show="$refs.upload && $refs.upload.dropActive" class="drop-active">
+          <h3>{{ $t('dropFilesToUpload') }}</h3>
+        </div>
+        <div>
+          <v-btn large @click="trigger">
+            <v-icon class="mr-3">folder_open</v-icon>
+            {{ $t('selectFiles') }}
+          </v-btn>
+          <file-upload
+            :post-action="api+'/admin/pictures'"
+            :multiple="true"
+            :drop="true"
+            :drop-directory="true"
+            v-model="files"
+            :headers="getHeader()"
+            ref="upload">
+          </file-upload>
+          <v-btn large color="primary" v-if="!$refs.upload || !$refs.upload.active" @click.prevent="$refs.upload.active = true">
+            <v-icon class="mr-3">cloud_upload</v-icon>
+            {{ $t('startUpload') }}
+          </v-btn>
+          <v-btn large v-else @click.prevent="$refs.upload.active = false">
+            <v-icon class="mr-3">cancel</v-icon>
+            {{ $t('stopUpload') }}
+          </v-btn>
+        </div>
       </div>
     </div>
-</div>
   </section>
 </template>
 
@@ -62,6 +59,9 @@ export default {
     }
   },
   methods: {
+    getHeader: () => {
+      return {authorization: window.localStorage.getItem('auth._token.admin')}
+    },
     trigger: function() {
       document.getElementById("file").click()
     },
@@ -88,36 +88,6 @@ inputFilter: function (newFile, oldFile, prevent) {
         newFile.blob = URL.createObjectURL(newFile.file)
       }
     },
-    submit: function() {
-      //const self = this
-      //this.loading = true;
-      //const ip = this.$axios.$post(process.env.api+'/admin/admin', {
-      //  username: this.username,
-      //  password: this.password
-      //})
-      //.then(function (response) {
-      //  self.loading = false;
-      //  if(response.result === 'ok') {
-      //    self.$router.push({
-      //      path: '/admin/show/admin/'+response.id
-      //    })
-      //  } else {
-      //    self.error = true
-      //  }
-      //})
-      //.catch(function (error) {
-      //  self.loading = false;
-      //  self.error = true
-      //});
-    },
-    randomPassword: function() {
-      let text = ""
-      var possible = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz123456789"
-      for (var i = 0; i < 12; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length))
-      }
-      this.password = text
-    }
   }
 }
 </script>
