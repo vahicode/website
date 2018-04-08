@@ -126,6 +126,10 @@ module.exports = {
         path: '/admin/edit/eye/:id', 
         component: 'pages/dynamic/edit-eye.vue'
       })
+      routes.push({
+        path: '/admin/edit/picture/:id', 
+        component: 'pages/dynamic/edit-picture.vue'
+      })
     }
   },
   /*
