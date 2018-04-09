@@ -18,7 +18,7 @@
                   </div>
                 </aside>
               </v-flex>
-              <v-flex xl9 lg10 offset-xl1 offset-lg1 xs12>
+              <v-flex xl9 lg9 offset-xl1 xs12>
                 <nuxt />
               </v-flex>
             </v-layout>
