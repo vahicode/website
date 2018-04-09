@@ -2,16 +2,32 @@
   <div>
     <h1>{{ $t('eye') }} {{ api.id }}</h1>
     <h2> {{ $t('placeGrid') }}</h2>
+    <pre v-if="clientX">
+
+    {{ 'x : '+clientX }}
+    {{ 'y : '+clientY }}
+    </pre>
+    <div v-else>
+      waiting for grid
+      <v-btn @click="dump">test</v-btn>
+    </div>
     <h6> {{ $t('scale') }}</h6>
-     <v-slider max="1" persistent-hint hint="Slide to adjust grid size" v-model="api.scale" step="0"></v-slider>
+     <v-slider max="1" persistent-hint hint="Slide to adjust grid size" v-model="scale" step="0"></v-slider>
     <div class="grid-wrapper mt-5">
-      <img class="stack" :src="prefix+'/i/'+api.hash+'.jpg'"/>
-       <vue-draggable-resizable :resizable="false" v-on:dragstop="dragStop">
+      <img class="ack" :src="prefix+'/i/'+api.hash+'.jpg'" ref="picture" />
+       <vue-draggable-resizable 
+         v-if="clientX"
+         v-on:dragstop="dragStop"
+         :resizable="false" 
+         ref="grid"
+         :x="clientX"
+         :y="clientY"
+         >
       <svg 
         class="stack"
         xmlns="http://www.w3.org/2000/svg" 
-        :width="1200*api.scale" 
-        :height="1200*api.scale" 
+        :width="clientWidth*scale" 
+        :height="clientWidth*scale" 
         viewBox="0 0 1200 1200">
         <path d="m 600,0 0,200 A 400,400 0 0 1 882.66,317.334 L 1024.264,175.736 A 600,600 0 0 0 600,0 Z"></path>
         <path d="M 1024.264,175.7363 882.666,317.334 A 400,400 0 0 1 1000,600 l 200,0 A 600,600 0 0 0 1024.264,175.736 Z"></path>
@@ -30,6 +46,9 @@
        </vue-draggable-resizable>
 
   </div>
+    <v-btn large color="primary" @click="savePosition">Save position</v-btn>
+    <!--<v-btn large :to="'/admin/show/eye/'+api.eye"><v-icon>cancel</v-icon>{{$('cancel')}}</v-btn>-->
+
   </div>
 </template>
 
@@ -42,26 +61,111 @@ export default  {
   },
   data () {
     return {
-      valid: false,
-      roles: ['disabled','admin','superadmin'],
-      changePassword: false,
-      password: '',
-      loading: false,
-      error: false,
-      remove: false
+      x: 0.25,
+      y: 0.15,
+      scale: 0.5,
+      clientX: 0,
+      clientY: 0
     }
   },
   computed: { 
     prefix () {
       return process.env.api
     },
+    initX: {
+      get: function () {
+        return 100
+      },
+      set: function(val) {
+        this.clientX = val
+      }
+    },
+    initY: {
+      get: function () {
+        return 100
+      },
+      set: function(val) {
+        this.clientY = val
+      }
+    },
+    initWidth: {
+      get: function () {
+        return 100
+      },
+      set: function(val) {
+        this.clientWidth = val
+      }
+    },
+    initHeight: {
+      get: function () {
+        return 100
+      },
+      set: function(val) {
+        this.clientHeight = val
+      }
+    },
+    //clientScale () {
+      //return this.$refs.picture.clientWidth/this.api.width
+   // }
+  },
+  mounted: function() {
+    this.clientScale = this.$refs.picture.clientWidth/this.api.width
+    this.clientWidth = this.$refs.picture.clientWidth
+    this.clientHeight = this.$refs.picture.clientHeight
+    if(this.api.scale === 0) this.scale = 0.5
+    else this.scale = this.api.scale
+    if(this.api.x === 0) this.initX = 25
+    else this.initX = this.api.x * this.clientWidth
+    if(this.api.y === 0) this.initY = 25
+    else this.initY = this.api.y * this.clientHeight
+    this.initWidth = this.$refs.picture.clientWidth
+    this.initHeight = this.$refs.picture.clientHeight
   },
   methods: {
+    dump: function() {
+      console.log(this.$refs.picture) 
+      this.clientScale = this.$refs.picture.clientWidth/this.api.width
+      this.clientWidth = this.$refs.picture.clientWidth
+      this.clientHeight = this.$refs.picture.clientHeight
+      if(this.api.scale === 0) this.scale = 0.5
+      else this.scale = this.api.scale
+      if(this.api.x === 0) this.clientX = 25
+      else this.clientX = this.api.x * this.clientWidth
+      if(this.api.y === 0) this.clientY = 25
+      else this.clientY = this.api.y * this.clientHeight
+      //this.initWidth = this.$refs.picture.clientWidth
+      //this.initHeight = this.$refs.picture.clientHeight
+      console.log(this.api.x)
+      console.log(this.clientX)
+    },
     dragStop: function(x, y) {
-      console.log('drag stopped')
-      console.log('X is '+x)
-      console.log('Y is '+y)
-    }
+      this.x = x/this.clientWidth
+      this.y = y/this.clientHeight
+    },
+    savePosition: function() {
+      const self = this
+      this.loading = true;
+      const ip = this.$axios.$post(process.env.api+'/admin/picture/'+this.api.id, {
+        x: this.x,
+        y: this.y,
+        scale: this.scale
+      })
+      .then(function (response) {
+        self.loading = false;
+        if(response.result === 'ok') {
+          self.$router.push({
+            path: '/admin/show/eye/'+self.api.eye
+          })
+        } else {
+          self.error = true
+        }
+      })
+      .catch(function (error) {
+        console.log(error)
+        self.loading = false;
+        self.error = true
+      });
+    },
   },
   asyncData: async function ({ app, route }) {
       const api = await app.$axios.$get(process.env.api+'/admin/picture/'+route.params.id)
