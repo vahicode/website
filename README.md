@@ -1,13 +1,13 @@
-# cells
+# VaHI
 
-> Nuxt.js project
+> This things needs a tagline
 
 
 ## TODO
 
 Move zones to individual db columns, handle setting/loading of zones in pictures
 
-Also make sure to set the `EYEFU_API` environment variable, or this won't load
+Also make sure to set the `VAHI_API` environment variable, or this won't load
 
 
 ## Build Setup
