@@ -3,15 +3,11 @@ export default async function ({ app, store }) {
     if(app.$vahi.getToken()) {
       app.$vahi.auth()
       .then((res) => {
-          console.log(res)
+          resolve(true)
       })
       .catch((res) => {
         console.log('could not load account')
-        console.log(res)
       })
-    } else {
-      store.dispatch('ejectAccount', {})
     }
-
   }
 }

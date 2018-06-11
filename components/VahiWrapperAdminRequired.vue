@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     authCompleted () {
-      if(typeof this.$store.state.admin !== 'undefined') {
+      if(this.$store.state.admin.isFresh) {
         this.runCallback()
         return this.$store.state.user.isFresh
       } else {
@@ -50,6 +50,7 @@ export default {
   },
   methods: {
     runCallback: function() {
+      console.log(this.callback)
       if(typeof this.callback !== 'undefined' && !this.callbackRan) {
         this.callback()
         this.callbackRan = true

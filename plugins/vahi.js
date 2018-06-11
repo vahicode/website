@@ -8,8 +8,8 @@ export default ({ app, store, route }, inject) => {
   const storage = new Storage()
   const ax = {
     data: axios.create({
-        baseURL: process.env.VAHI_API || 'https://api.vahi.eu',
-      timeout: 15000
+      baseURL: process.env.VAHI_API || 'https://api.vahi.eu',
+      timeout: 1500
     })
   }
 
@@ -84,6 +84,16 @@ export default ({ app, store, route }, inject) => {
               console.log('Authentication failed | plugin')
               resolve(false)
             })
+        })
+      },
+
+      adminLoadUsers() {
+        return new Promise(function(resolve, reject) {
+          ax.data.get('/admin/users', { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
         })
       },
 

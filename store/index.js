@@ -16,12 +16,12 @@ export const state = () => ({
   },
   user: {
     loggedIn: false,
-    isFresh: false,
+    isFresh: true,
     id: 0
   },
   admin: {
     loggedIn: false,
-    isFresh: false,
+    isFresh: true,
     isSuperAdmin: false,
     admin: 0
   },
