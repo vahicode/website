@@ -2,6 +2,14 @@
 
 > Nuxt.js project
 
+
+## TODO
+
+Move zones to individual db columns, handle setting/loading of zones in pictures
+
+Also make sure to set the `EYEFU_API` environment variable, or this won't load
+
+
 ## Build Setup
 
 ``` bash
