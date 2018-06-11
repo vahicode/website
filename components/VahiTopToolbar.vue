@@ -8,8 +8,14 @@
               <big>VaHI</big>
           </v-btn>
           <v-btn :to="$vahi.path('/invite')" flat class="vahi-ucase vahi-m0" active-class="default-class vahi-active-btn">
-            <v-icon color="success" class="mr-2 vahi-locase">vpn_key</v-icon>
-            {{ $t('login') }}
+            <template v-if="$store.state.user.loggedIn">
+              <v-icon color="error" class="mr-2 vahi-locase">power_settings_new</v-icon>
+              {{ $t('logout') }}
+            </template>
+            <template v-else>
+              <v-icon color="success" class="mr-2 vahi-locase">vpn_key</v-icon>
+              {{ $t('login') }}
+            </template>
           </v-btn>
           <v-spacer></v-spacer>
           <vahi-admin-dropdown-menu />

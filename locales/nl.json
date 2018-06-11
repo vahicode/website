@@ -17,6 +17,7 @@
   "amountOfUsers": "Aantal gebruikers",
   "cancel": "Annuleren",
   "changePassword": "Paswoord wijzigen",
+  "contactUs": "Contacteer ons",
   "delete": "Verwijderen",
   "deleteForeverBeCareful": "Deze gegevens zullen verwijderd worden, zonder mogelijkheid om ze te herstellen. Wees voorzichtig.",
   "dropFilesToUpload": "Sleep afbeeldingen hiernaartoe om ze te uploaden",
@@ -32,6 +33,7 @@
   "failedToAddUsers": "Toevoegen gebruikers mislukt",
   "home": "Home pagina",
   "id": "ID",
+  "invalidInviteCode": "Ongeldige uitnodigingscode",
   "inviteCode": "Uitnodigingscode",
   "inviteOnlyLine1": "VaHI is niet publiek toegangkelijke, maar enkel met een uitnodiging.",
   "inviteOnlyLine2": "Als U een uitnodigingscode heeft kan U",
@@ -63,6 +65,7 @@
   "scale": "Schaal",
   "selectFiles": "Selecteer afbeeldingen",
   "selectZonesToRate": "Selecteer de zones die in deze foto moeten gescoord worden",
+  "sourceCode": "Broncode",
   "startUpload": "Upload starten",
   "stopUpload": "Upload stoppen",
   "superadminOnly": "Deze pagina is alleen beschikbaar voor super beheerders",
@@ -73,6 +76,10 @@
   "userId": "Gebuikers ID",
   "username": "Gebruikersnaam",
   "user": "Gebruiker",
-  "value": "Waarde"
+  "value": "Waarde",
+  "youAreCurrentlyLoggedIn": "Je bent momenteel aangemeld",
+  "youAreCurrentlyLoggedIn-msg": "Klik de knop hieronder om je af te melden. Om je weer aan te melden heb je je uitnodigingscode nodig.",
+  "youNeedAnActiveInviteToParticipate": "Je hebt een actieve uitnodigingscode nodig om deel te nemen",
+  "yourInviteIsInactive": "Je uitnodiging is inactief"
 }
 

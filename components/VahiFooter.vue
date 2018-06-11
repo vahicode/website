@@ -1,13 +1,13 @@
 <template>
   <footer>
     <v-footer height="auto" class="primary">
-      <v-layout row wrap justify-center class="mt-3 mb-5">
-        <v-flex xs12 py-3 text-xs-center class="mb-4">
-          <nuxt-link :to="$vahi.path('/')"><vahi-logo :size="(60)" :grida="0" bg="#FFFFFF" /></nuxt-link>
-            <p class="mt-5 mb-5">
+      <v-layout row wrap justify-center class="mb-4">
+        <v-flex xs12 py-3 text-xs-center>
+          <nuxt-link :to="$vahi.path('/')"><vahi-logo :size="(60)" :grida="0" bg="#FFFFFF" :bga="(0.8)" /></nuxt-link>
+            <p class="mt-3 mb-4">
               <nuxt-link :to="$vahi.path('/contact')" class="vahi-white">{{ $t('contactUs') }}</nuxt-link>
               |
-              <nuxt-link :to="$vahi.path('/help')" class="vahi-white">{{ $t('source') }}</nuxt-link> 
+              <a href="https://github.com/vahicode" target="_BLANK" class="vahi-white">{{ $t('sourceCode') }}</a> 
             </p>
             <p v-html="$t('txt-footer')"></p>
         </v-flex>
@@ -34,11 +34,11 @@ footer {
 ul, p{
   font-size: 16px;
   line-height: 1.4;
-  color: #fff6;
+  color: #fff9;
   padding: 0 8px;
 }
 a {
-  color: #fff9;
+  color: #fff;
   text-decoration: none;
 }
 a:hover {
@@ -53,5 +53,4 @@ ul.right {
   text-align: right;
 
 }
-
 </style>

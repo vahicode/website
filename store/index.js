@@ -17,6 +17,7 @@ export const state = () => ({
   user: {
     loggedIn: false,
     isFresh: false,
+    id: 0
   },
   admin: {
     loggedIn: false,
@@ -60,7 +61,7 @@ export const mutations = {
     state.admin = payload
   },
   setUser(state, payload) {
-    state.admin = payload
+    state.user = payload
   },
   setAccount(state, payload) {
     state.account = payload
@@ -78,6 +79,12 @@ export const actions = {
     payload.isFresh = true
     commit('setUser', payload)
   },
-  ejectAccount( { commit }) {
+  userLogout( { commit }) {
+    let payload = {}
+    payload.loggedIn = false
+    payload.isFresh = false
+    payload.id = 0
+    console.log(payload)
+    commit('setUser', payload)
   },
 }

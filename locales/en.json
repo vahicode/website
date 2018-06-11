@@ -17,6 +17,7 @@
   "amountOfUsers": "Amount of users",
   "cancel": "Cancel",
   "changePassword": "Change Password",
+  "contactUs": "Contact us",
   "delete": "Delete",
   "deleteForeverBeCareful": "This data will be removed, with no way to revover it. Proceed with caution.",
   "disabled": "Disabled",
@@ -45,6 +46,7 @@
   "manageEyes": "Manage eyes",
   "manageImages": "Manage images",
   "manageUsers": "Manage users",
+  "invalidInviteCode": "Invalid invite code",
   "notes": "Notes",
   "noWayBack": "There is no way back from this",
   "or": "of",
@@ -63,6 +65,7 @@
   "scale": "Scale",
   "selectFiles": "Select files",
   "selectZonesToRate": "Select the zones to be ratred in this picture",
+  "sourceCode": "Source code",
   "startUpload": "Start upload",
   "stopUpload": "Stop upload",
   "superadminOnly": "This page is for super administrators only",
@@ -73,6 +76,10 @@
   "userId": "User ID",
   "username": "Username",
   "user": "User",
-  "value": "Value"
+  "value": "Value",
+  "youAreCurrentlyLoggedIn": "You are currently logged in",
+  "youAreCurrentlyLoggedIn-msg": "Click below to log out. To log in again, you'll need your invite code.",
+  "youNeedAnActiveInviteToParticipate": "You need an active invite to participate",
+  "yourInviteIsInactive": "Your invite is inactive"
 }
 

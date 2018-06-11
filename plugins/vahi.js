@@ -69,6 +69,7 @@ export default ({ app, store, route }, inject) => {
           ax.data.post('/login', {invite})
             .then((res) => {
               setToken(res.data.token)
+              store.dispatch('userLogin', {id: res.data.id})
               resolve(res.data)
             })
           .catch((error) => { reject(error.response.data) })
@@ -80,6 +81,10 @@ export default ({ app, store, route }, inject) => {
       },
 
       // Sync methods
+      logout() {
+        setToken('')
+        store.dispatch('userLogout')
+      },
 
       pathLocale(path) {
         return pathLocaleMethod(path)
@@ -87,11 +92,6 @@ export default ({ app, store, route }, inject) => {
 
       getToken() {
         return token()
-      },
-
-      logout() {
-        setToken('')
-        store.dispatch('ejectAccount')
       },
 
       path(path) {
