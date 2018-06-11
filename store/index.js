@@ -13,7 +13,17 @@ export const state = () => ({
       rightDrawer: '',
     },
     data: { } 
-  }
+  },
+  user: {
+    loggedIn: false,
+    isFresh: false,
+  },
+  admin: {
+    loggedIn: false,
+    isFresh: false,
+    isSuperAdmin: false,
+  },
+
 })
 
 export const mutations = {
@@ -45,5 +55,29 @@ export const mutations = {
   setComponentData(state, payload) {
     state.components.data[payload.source] = {}
     state.components.data[payload.source] = payload.data
+  },
+  setAdmin(state, payload) {
+    state.admin = payload
+  },
+  setUser(state, payload) {
+    state.admin = payload
+  },
+  setAccount(state, payload) {
+    state.account = payload
   }
+}
+
+export const actions = {
+  adminLogin( { commit }, payload) {
+    payload.loggedIn = true
+    payload.isFresh = true
+    commit('setAdmin', payload)
+  },
+  userLogin( { commit }, payload) {
+    payload.loggedIn = true
+    payload.isFresh = true
+    commit('setUser', payload)
+  },
+  ejectAccount( { commit }) {
+  },
 }

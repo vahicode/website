@@ -27,7 +27,7 @@
             :post-action="api+'/admin/pictures'"
             :multiple="true"
             :drop="true"
-            :drop-directory="true"
+            :drop-directory="false"
             v-model="files"
             :headers="getHeader()"
             ref="upload">

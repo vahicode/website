@@ -15,7 +15,6 @@
          :y="clientY"
          >
       <svg 
-        class="stack"
         xmlns="http://www.w3.org/2000/svg" 
         :width="clientWidth*scale" 
         :height="clientWidth*scale" 
@@ -148,13 +147,8 @@ export default  {
     this.scale = this.api.scale
     this.initX = this.api.x * this.clientWidth
     this.initY = this.api.y * this.clientHeight
-    this.initWidth = this.$refs.picture.clientWidth
-    this.initHeight = this.$refs.picture.clientHeight
   },
   methods: {
-    toggleZone: function(zone) {
-      this.zones[zone] = !this.zones[zone]
-    },
     dragStop: function(x, y) {
       this.x = x/this.clientWidth
       this.y = y/this.clientHeight

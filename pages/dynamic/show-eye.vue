@@ -10,7 +10,7 @@
         :key="picture.hash">
           <v-card :to="'/admin/edit/picture/'+picture.id">
             <v-card-media :src="pictureSrc(picture.hash)" height="300px" class="text-xs-center">
-              <v-icon class="imgicon" v-if="(picture.scale==0)" color="error">open_with</v-icon>
+              <v-icon class="imgicon" v-if="(picture.scale==0.5 && picture.x==0.25 && picture.y==0.15)" color="error">open_with</v-icon>
               <v-icon class="imgicon" v-else color="success">open_with</v-icon>
 		        </v-card-media>
           </v-card>

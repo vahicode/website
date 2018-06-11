@@ -1,14 +1,13 @@
-const Foo = { template: '<div>Admin path = {{n }}, int = {{b}}</div>', props: ['n', 'b'] }
 module.exports = {
   /*
   ** Headers of the page
   */
   head: {
-    title: 'EyeFu',
+    title: 'VaHI',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'EyeFu' }
+      { hid: 'description', name: 'description', content: 'VaHI' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -19,8 +18,6 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/auth',
     '@nuxtjs/vuetify',
     [
       'nuxt-i18n', {
@@ -45,17 +42,14 @@ module.exports = {
       }
     ]
   ],
-  axios: {
-      browserBaseURL: 'https://back.eyefu.be'
-  },
-  env: {
-      api: 'https://back.eyefu.be:443' 
-  },
+  plugins: [
+    '~/plugins/vahi'
+  ],
   vuetify: {
     materialIcons: true,
     css: false,
     theme: {
-      // This are the EyeFu colors
+      // This are the VaHI colors
       primary: '#6E90A6', 
       secondary: '#CD003A',
       warning: '#FFAB00',
@@ -65,42 +59,10 @@ module.exports = {
     }
   },
   css: [
-      '~/assets/style/eyefu.styl'
+      '~/assets/style/vahi.styl'
   ],
-  auth: {
-    strategies: {
-      user: {
-        _scheme: 'local',
-        endpoints: {
-          login: {
-            url: '/login',
-            method: 'post',
-            propertyName: 'token'
-          },
-          logout: {
-            url: '/logout',
-            method: 'post',
-          }
-        }
-      },
-      admin: {
-        _scheme: 'local',
-        endpoints: {
-          login: {
-            url: process.env.EYEFU_API+'/admin/login',
-            method: 'post',
-            propertyName: 'token'
-          },
-          user: {
-            url: process.env.EYEFU_API+'/admin/profile',
-            method: 'get'
-          }
-        }
-      }
-    }
-  },
   router: {
-    middleware: ['auth'],
+    middleware: [],
     extendRoutes (routes, resolve) {
       routes.push({
         path: '/admin/show/admin/:id', 

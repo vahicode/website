@@ -1,10 +1,8 @@
 <template>
   <v-app>
-    <vahi-top-toolbar color="white" light />
+    <vahi-top-toolbar color="transparent" dark />
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-content>
     <vahi-footer />
   </v-app>
@@ -15,7 +13,7 @@ import VahiTopToolbar from '~/components/VahiTopToolbar'
 import VahiFooter from '~/components/VahiFooter' 
 export default {
   components: { 
-    VahiTopToolbar,
+    VahiTopToolbar, 
     VahiFooter
   }
 }

@@ -1,11 +1,7 @@
 <template>
   <section class="container text-xs-center">
     <h1>{{ $t('Administration') }}</h1>
-    <div v-if="$auth.loggedIn">
-      <p>You are logged in</p>
-      <v-btn @click="logout" color="secondary" large>Logout</v-btn>
-    </div>
-    <div v-else>
+    <div v-if="!$store.state.admin.loggedIn">
       <h4>{{ $t('enterUsernamePassword') }}</h4>
       <v-form v-model="valid">
         <v-text-field
@@ -25,6 +21,9 @@
         </v-btn>
       </v-form>
     </div>
+    <div v-else>
+      logged in as admin
+    </div>
     <v-snackbar
       :timeout="(4000)"
       top
@@ -40,6 +39,7 @@
 
 export default {
   auth: false,
+  layout: 'admin',
   data () {
     return {
       username: '',
@@ -49,34 +49,25 @@ export default {
       error: false
     }
   },
-  mounted: () => { 
-  //  console.log($auth.user)
-  },
-  computed: { 
-    loggedIn () {
-      return this.$auth.loggedIn
-    }
-  },
   methods: {
     submit: function() {
       this.loading = true;
-      this.$auth.loginWith('admin', {
-        data: {
-          username: this.username,
-          password: this.password
-        }
+      this.$vahi.adminLogin({
+        username: this.username,
+        password: this.password
       })
-      .catch((i) => {
-        this.loading = false;
+      .then((result) => {
+        this.loading = false
+      })
+      .catch((error) => {
+        console.log('error failed')
+        this.loading = false
         this.error = true
-      })
-      .then((i) => {
-        this.loading = false;
       })
     },
     logout: function() {
-      this.$auth.logout()
-      this.$auth.reset()
+      //this.$auth.logout()
+      //this.$auth.reset()
     }
   }
 }
