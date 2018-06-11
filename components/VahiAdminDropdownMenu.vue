@@ -28,6 +28,7 @@
         <v-list-tile-action><v-icon>remove_red_eye</v-icon></v-list-tile-action>
         <v-list-tile-content>{{ $t('manageEyes') }}</v-list-tile-content>
       </v-list-tile>
+      <div v-if="$store.state.admin.isSuperAdmin">
       <v-divider></v-divider>
       <v-list-tile :to="$vahi.path('/admin/add/admins')">
         <v-list-tile-action><v-icon>add_box</v-icon></v-list-tile-action>
@@ -36,6 +37,12 @@
       <v-list-tile :to="$vahi.path('/admin/manage/admins')">
         <v-list-tile-action><v-icon>account_box</v-icon></v-list-tile-action>
         <v-list-tile-content>{{ $t('manageAdmins') }}</v-list-tile-content>
+      </v-list-tile>
+      <v-divider></v-divider>
+      </div>
+      <v-list-tile :to="$vahi.path('/admin')">
+        <v-list-tile-action><v-icon>power_settings_new</v-icon></v-list-tile-action>
+        <v-list-tile-content>{{ $t('logout') }}</v-list-tile-content>
       </v-list-tile>
     </v-list>
   </v-menu>

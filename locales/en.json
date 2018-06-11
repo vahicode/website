@@ -17,6 +17,7 @@
   "amountOfUsers": "Amount of users",
   "cancel": "Cancel",
   "changePassword": "Change Password",
+  "clickBelowToLogo#t": "Click below to log out.",
   "contactUs": "Contact us",
   "delete": "Delete",
   "deleteForeverBeCareful": "This data will be removed, with no way to revover it. Proceed with caution.",
@@ -78,7 +79,8 @@
   "user": "User",
   "value": "Value",
   "youAreCurrentlyLoggedIn": "You are currently logged in",
-  "youAreCurrentlyLoggedIn-msg": "Click below to log out. To log in again, you'll need your invite code.",
+  "youAreCurrentlyLoggedInAsAdmin": "You are currently logged in as an administrator",
+  "toLoginAgainYouWillNeedYourInviteCode": "To log in again, you'll need your invite code.",
   "youNeedAnActiveInviteToParticipate": "You need an active invite to participate",
   "yourInviteIsInactive": "Your invite is inactive"
 }

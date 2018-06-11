@@ -20,7 +20,7 @@
         <v-flex sm12 xl3 offset-xl1 lg4 offset-lg1 md4 offset-sm0 offset-md1>
           <h4 class="mt-5">{{ $t('inviteOnlyTitle') }}</h4>
           <p>{{ $t('inviteOnlyLine1') }}</p>
-          <p>{{ $t('inviteOnlyLine2') }} <nuxt-link to="/login">{{ $t('loginHere') }}</nuxt-link></p>
+          <p>{{ $t('inviteOnlyLine2') }} <nuxt-link to="/invite">{{ $t('loginHere') }}</nuxt-link></p>
         </v-flex>
       </v-layout>
     </v-container>

@@ -4,7 +4,7 @@
       <h1>VaHI</h1>
       <div v-if="$store.state.user.loggedIn" class="vahi-m600">
         <h2>{{ $t('youAreCurrentlyLoggedIn') }}</h2>
-        <p>{{ $t('youAreCurrentlyLoggedIn-msg') }}</p>
+        <p>{{ $t('clickBelowToLogout') }} {{ $t('toLoginAgainYouWillNeedYourInviteCode') }}</p>
         <v-btn color="primary" large @click="logout" :disabled="(loading) ? true : false">
           <v-progress-circular indeterminate color="#fff" class="mr-3" v-if="loading" :size="20" :width="2"></v-progress-circular>
           <v-icon class="mr-3" v-else>power_settings_new</v-icon>
@@ -30,6 +30,7 @@
             v-model="inviteCode"
             required
             autofocus
+            @keyup.enter="login"
             ></v-text-field>
             <v-btn color="primary" large @click="login" :disabled="(loading) ? true : false">
               <v-progress-circular indeterminate color="#fff" class="mr-3" v-if="loading" :size="20" :width="2"></v-progress-circular>

@@ -18,7 +18,7 @@
             </template>
           </v-btn>
           <v-spacer></v-spacer>
-          <vahi-admin-dropdown-menu />
+          <vahi-admin-dropdown-menu v-if="$store.state.admin.loggedIn"/>
           <vahi-language-dropdown-menu />
         </v-toolbar>
       </v-flex>

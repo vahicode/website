@@ -1,9 +1,10 @@
 export default async function ({ app, store }) {
-  if(!store.state.user.loggedIn) {
+  if(!store.state.user.loggedIn && !store.state.admin.loggedIn) {
     if(app.$vahi.getToken()) {
-      console.log('running auth check')
       app.$vahi.auth()
-      .then((res) => {console.log('account loaded')})
+      .then((res) => {
+          console.log(res)
+      })
       .catch((res) => {
         console.log('could not load account')
         console.log(res)

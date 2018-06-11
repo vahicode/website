@@ -13,22 +13,6 @@ export default ({ app, store, route }, inject) => {
     })
   }
 
-  const authMethod = () => {
-    return new Promise(function(resolve, reject) {
-      ax.data.get('/account', { headers: {'Authorization': 'Bearer '+storage.get('token')} })
-        .then((res) => {
-          if(typeof res.data === 'object') {
-            resolve(true)
-          }
-        })
-        .catch((res) => {
-          store.dispatch('ejectAccount', {})
-          console.log('Authentication failed | plugin')
-          resolve(false)
-        })
-    })
-  }
-
   const setToken = (token) => {
     return storage.set('token', token)
   }
@@ -54,7 +38,10 @@ export default ({ app, store, route }, inject) => {
             .then((res) => {
               if(res.data.result === 'ok') {
                 setToken(res.data.token)
-                store.dispatch('adminLogin', res.data)
+                store.dispatch('adminLogin', {
+                  id: res.data.admin,
+                  isSuperAdmin: res.data.superadmin
+                })
                 resolve(res.data)
               } else {
                 reject(res.data)
@@ -77,13 +64,38 @@ export default ({ app, store, route }, inject) => {
       },
 
       auth() {
-        return authMethod()
+        return new Promise(function(resolve, reject) {
+          ax.data.get('/account', { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              if(typeof res.data === 'object' && res.data.result === 'ok') {
+                if(res.data.isAdmin) {
+                    store.dispatch('adminLogin', {
+                      id: res.data.admin,
+                      isSuperAdmin: res.data.superadmin
+                    })
+                } else {
+                    store.dispatch('userLogin', {id: res.data.id})
+                }
+                resolve(true)
+              }
+            })
+            .catch((res) => {
+              store.dispatch('ejectAccount', {})
+              console.log('Authentication failed | plugin')
+              resolve(false)
+            })
+        })
       },
 
       // Sync methods
       logout() {
         setToken('')
         store.dispatch('userLogout')
+      },
+
+      adminLogout() {
+        setToken('')
+        store.dispatch('adminLogout')
       },
 
       pathLocale(path) {

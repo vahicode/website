@@ -17,6 +17,7 @@
   "amountOfUsers": "Aantal gebruikers",
   "cancel": "Annuleren",
   "changePassword": "Paswoord wijzigen",
+  "clickBelowToLogout": "Klik op de knop hieronder om je af te melden.",
   "contactUs": "Contacteer ons",
   "delete": "Verwijderen",
   "deleteForeverBeCareful": "Deze gegevens zullen verwijderd worden, zonder mogelijkheid om ze te herstellen. Wees voorzichtig.",
@@ -78,7 +79,8 @@
   "user": "Gebruiker",
   "value": "Waarde",
   "youAreCurrentlyLoggedIn": "Je bent momenteel aangemeld",
-  "youAreCurrentlyLoggedIn-msg": "Klik de knop hieronder om je af te melden. Om je weer aan te melden heb je je uitnodigingscode nodig.",
+  "youAreCurrentlyLoggedInAsAdmin": "Je bent momenteel aangemeld als beheerder",
+  "toLoginAgainYouWillNeedYourInviteCode": "Om je weer aan te melden heb je je uitnodigingscode nodig.",
   "youNeedAnActiveInviteToParticipate": "Je hebt een actieve uitnodigingscode nodig om deel te nemen",
   "yourInviteIsInactive": "Je uitnodiging is inactief"
 }

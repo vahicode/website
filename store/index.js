@@ -23,6 +23,7 @@ export const state = () => ({
     loggedIn: false,
     isFresh: false,
     isSuperAdmin: false,
+    admin: 0
   },
 
 })
@@ -74,6 +75,13 @@ export const actions = {
     payload.isFresh = true
     commit('setAdmin', payload)
   },
+  adminLogout( { commit }) {
+    let payload = {}
+    payload.loggedIn = false
+    payload.isFresh = false
+    payload.isSuperAdmin = 0
+    commit('setAdmin', payload)
+  },
   userLogin( { commit }, payload) {
     payload.loggedIn = true
     payload.isFresh = true
@@ -84,7 +92,6 @@ export const actions = {
     payload.loggedIn = false
     payload.isFresh = false
     payload.id = 0
-    console.log(payload)
     commit('setUser', payload)
   },
 }

@@ -62,7 +62,7 @@ module.exports = {
       '~/assets/style/vahi.styl'
   ],
   router: {
-    middleware: [],
+    middleware: ['auth'],
     extendRoutes (routes, resolve) {
       routes.push({
         path: '/admin/show/admin/:id', 
