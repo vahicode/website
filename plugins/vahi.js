@@ -117,6 +117,56 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      adminLoadOrphanPictures() {
+        return new Promise(function(resolve, reject) {
+          ax.data.get('/admin/pictures/orphans', { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminBundlePictures(payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/eyes/bundle', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminAddUsers(payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/users', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminAddEyes(payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/eyes', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminAddAdmin(payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/admin', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
       // Sync methods
       logout() {
         setToken('')
@@ -126,6 +176,12 @@ export default ({ app, store, route }, inject) => {
       adminLogout() {
         setToken('')
         store.dispatch('adminLogout')
+      },
+
+      camelCase(input) {
+        return input.replace(/_([a-z])/g, function (m, w) {
+          return w.toUpperCase();
+        });
       },
 
       pathLocale(path) {

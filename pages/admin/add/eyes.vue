@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <vahi-wrapper-admin-required>
     <h1>{{ $t('addEyes') }}</h1>
     <p>
       <v-btn large color="primary" @click="processAll">
@@ -16,15 +16,15 @@
         {{ $t('addEyeWithSelectedPictures') }}
       </v-btn>
     </p>
-    <v-container fluid grid-list-lg v-if="$auth.user.isAdmin">
+    <v-container fluid grid-list-lg>
       <v-layout row wrap>
         <v-flex 
           class="xs6 xl4"
-        v-for="picture in api.pictures"
+        v-for="picture in pictures"
         :key="picture.hash"
         > <nuxt-link to='#' class="nodeco" :class="{ 'selected': picture.selected}" @click.native="togglePicture(picture.id)" :ref="'picture-'+picture.id">
           <v-card>
-            <v-card-media :src="pictureSrc(picture.hash)" height="300px" class="text-xs-center">
+            <v-card-media :src="$vahi.eyeSrc(picture.hash)" height="300px" class="text-xs-center">
               <v-icon class="imgicon" color="success">check_circle</v-icon>
 		      	</v-card-media>
             <v-card-text>
@@ -41,27 +41,23 @@
         </v-flex>
       </v-layout>
     </v-container>
-  </section>
+  </vahi-wrapper-admin-required>
 </template>
 
 <script>
-
+import VahiWrapperAdminRequired from '~/components/VahiWrapperAdminRequired'
 export default {
+  components: {
+    VahiWrapperAdminRequired,
+  },
   asyncData: async function ({ app, route }) {
     return { 
-      api: await app.$axios.$get(process.env.api+'/admin/pictures/orphans')
-      .then(function (response) {
-        if(response.result === 'ok') {
-            Object.keys(response.pictures).forEach(function (key) {
-              response.pictures[key].selected = false
-            })
-            return response
-        } else {
-          self.error = true
-        }
+      pictures: await app.$vahi.adminLoadOrphanPictures()
+      .then(function (res) {
+        return res.pictures 
       })
       .catch(function (error) {
-        self.error = true
+        app.error = true
       })
     }
   },
@@ -72,27 +68,24 @@ export default {
     }
   },
   methods: {
-    pictureSrc: function(hash) {
-      return process.env.api+'/i/'+hash+'.jpg'
-    },
     togglePicture: function(id) {
-      this.api.pictures[id].selected = !this.api.pictures[id].selected
-      if(this.api.pictures[id].selected === true) { this.selected++ }
+      this.pictures[id].selected = !this.pictures[id].selected
+      if(this.pictures[id].selected === true) { this.selected++ }
       else {this.selected--}
     },
     bundleSelected: function() {
       const self = this
       self.loading = true;
       const toBundle = []
-      Object.keys(this.api.pictures).forEach(function (key) {
-        if(self.api.pictures[key].selected === true) toBundle.push(key)
+      Object.keys(this.pictures).forEach(function (key) {
+        if(self.pictures[key].selected === true) toBundle.push(key)
       })
-      const result = this.$axios.$post(process.env.api+'/admin/eyes/bundle', {pictures: toBundle})
+      this.$vahi.adminBundlePictures({pictures: toBundle})
       .then(function (response) {
         self.loading = false;
         if(response.result === 'ok') {
           self.$router.push({
-            path: '/admin/manage/eyes'
+            path: '/admin/eyes'
           })
         } else {
           self.error = true
@@ -108,15 +101,15 @@ export default {
       const self = this
       self.loading = true;
       const toEye = []
-      Object.keys(this.api.pictures).forEach(function (key) {
+      Object.keys(this.pictures).forEach(function (key) {
         toEye.push(key)
       })
-      const result = this.$axios.$post(process.env.api+'/admin/eyes', {pictures: toEye})
+      this.$vahi.adminAddEyes({pictures: toEye})
       .then(function (response) {
         self.loading = false;
         if(response.result === 'ok') {
           self.$router.push({
-            path: '/admin/manage/eyes'
+            path: '/admin/eyes'
           })
         } else {
           self.error = true

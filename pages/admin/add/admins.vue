@@ -1,8 +1,12 @@
 <template>
-  <section class="container">
-    <h1>{{ $t('addAdmin') }}</h1>
-    <div v-if="$auth.user.isSuperadmin">
+  <vahi-wrapper-admin-required super>
+    <h1 class="text-xs-center">{{ $t('addAdmin') }}</h1>
+    {{ reason }}
+    <div class="vahi-m600">
      <h4>{{ $t('pleaseCompleteForm') }}</h4>
+     <v-alert v-if="error" color="error" value="1" icon="warning">
+         {{ $t($vahi.camelCase(reason)) }}
+     </v-alert>
       <v-form v-model="valid">
         <v-text-field
           :label="$t('adminUsername')"
@@ -23,56 +27,48 @@
         </v-btn>
       </v-form>
     </div>
-    <div v-else>
-    <blockquote class="error mt-5 dark">
-      <h3 class="white-text">{{ $t('accessDenied') }}</h3>
-      <p class="white-text">{{ $t('superadminOnly') }}</p>
-    </blockquote>
-    </div>
-    <v-snackbar
-      :timeout="(4000)"
-      top
-      right
-      v-model="error"
-      >{{ $t('failedToAddAdmin') }}
-      <v-btn flat color="primary" @click.native="error = false"><v-icon>close</v-icon></v-btn>
-    </v-snackbar>
-  </section>
+  </vahi-wrapper-admin-required>
 </template>
 
 <script>
-
+import VahiWrapperAdminRequired from '~/components/VahiWrapperAdminRequired'
 export default {
+  components: {
+    VahiWrapperAdminRequired,
+  },
   data () {
     return {
       username: '',
       password: '',
       valid: false,
       loading: false,
-      error: false
+      error: false,
+      reason: ''
     }
   },
   methods: {
     submit: function() {
       const self = this
       this.loading = true;
-      const ip = this.$axios.$post(process.env.api+'/admin/admin', {
+      self.$vahi.adminAddAdmin({
         username: this.username,
         password: this.password
       })
-      .then(function (response) {
+      .then(function (res) {
         self.loading = false;
-        if(response.result === 'ok') {
+        if(res.result === 'ok') {
           self.$router.push({
-            path: '/admin/show/admin/'+response.id
+            path: '/admin/admins'
           })
         } else {
           self.error = true
+          self.reason = res.reason
         }
       })
       .catch(function (error) {
         self.loading = false;
         self.error = true
+        self.reason = error.response.data.reason
       });
     },
     randomPassword: function() {

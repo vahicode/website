@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <vahi-wrapper-admin-required>
     <h1>{{ $t('uploadImages') }}</h1>
     <div class="dropzone">
       <h2>{{ $t('dropFilesToUpload') }}</h2>
@@ -29,7 +29,7 @@
             :drop="true"
             :drop-directory="false"
             v-model="files"
-            :headers="getHeader()"
+            :headers="{authorization: 'Bearer '+$vahi.getToken()}"
             ref="upload">
           </file-upload>
           <v-btn large color="primary" v-if="!$refs.upload || !$refs.upload.active" @click.prevent="$refs.upload.active = true">
@@ -43,24 +43,27 @@
         </div>
       </div>
     </div>
-  </section>
+  </vahi-wrapper-admin-required>
 </template>
 
 <script>
 import VueUploadComponent from 'vue-upload-component'
+import VahiWrapperAdminRequired from '~/components/VahiWrapperAdminRequired'
 export default {
   components: {
-     FileUpload: VueUploadComponent
+     FileUpload: VueUploadComponent,
+     VahiWrapperAdminRequired
    },
   data () {
     return {
       files: [],
-      api: process.env.api
+      api: process.env.VAHI_API || 'https://api.vahi.eu'
+
     }
   },
   methods: {
     getHeader: () => {
-      return {authorization: window.localStorage.getItem('auth._token.admin')}
+    return {authorization: 'Bearer: '+this.$vahi.getToke()}
     },
     trigger: function() {
       document.getElementById("file").click()
