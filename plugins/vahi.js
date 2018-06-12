@@ -97,6 +97,26 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      adminLoadAdmins() {
+        return new Promise(function(resolve, reject) {
+          ax.data.get('/admin/admins', { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminLoadEyes() {
+        return new Promise(function(resolve, reject) {
+          ax.data.get('/admin/eyes', { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
       // Sync methods
       logout() {
         setToken('')
@@ -126,6 +146,19 @@ export default ({ app, store, route }, inject) => {
         if (input.length === 0) return input
           return input[0].toUpperCase() + input.slice(1)
       },
+
+      eyeSrc(hash) {
+        let site = process.env.VAHI_API || 'https://api.vahi.eu'
+        return site+'/i/'+hash+'.jpg'
+      },
+
+      eyeIsCalibrated(eye) {
+        for(let i in eye.pictures) {
+          let pic = eye.pictures[i]
+          if(pic.scale === '0.5' && pic.x === '0.25' && pic.y === '0.15') return false
+        }
+        return true
+      }
 
     }
 

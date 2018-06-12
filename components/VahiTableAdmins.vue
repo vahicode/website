@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="users"
+    :items="admins"
     :pagination.sync="pagination"
     select-all
     must-sort
@@ -14,19 +14,19 @@
     <template slot="items" slot-scope="props">
       <td><v-checkbox primary hide-details v-model="props.selected"></v-checkbox></td>
       <td>
-        <nuxt-link :to="$vahi.path('/admin/users/'+props.item.id)">
+        <nuxt-link :to="$vahi.path('/admin/admins/'+props.item.id)">
           {{ props.item.id }}
         </nuxt-link>
       </td>
       <td>
-        <nuxt-link :to="$vahi.path('/admin/users/'+props.item.id)">
-          <big><pre>{{ props.item.invite }}</pre></big>
+        <nuxt-link :to="$vahi.path('/admin/admins/'+props.item.handle)">
+          <b>{{ props.item.username }}</b>
         </nuxt-link>
       </td>
-      <td>{{ props.item.notes }}</td>
+      <td :class="(props.item.role === 'superadmin') ? 'warning' : ''" >{{ props.item.role }}</td>
       <td>
         <v-icon v-if="props.item.active === '1'" color="success">check_circle</v-icon>
-        <v-icon v-else color="warning">panorama_fish_eye</v-icon>
+        <v-icon v-else>pause_circle_outline</v-icon>
       </td>
       <td>{{ props.item.login }}</td>
     </template>
@@ -44,9 +44,9 @@
 <script>
 
 export default {
-  name: 'VahiTableUsers',
+  name: 'VahiTableEyes',
   props: {
-    users: {
+    admins: {
       type: Array,
       required: true
     }
@@ -55,9 +55,8 @@ export default {
     return {
       headers: [
         { text: ' #', value: 'id', align: 'center' },
-        { text: ' '+this.$t('inviteCode'), value: 'invite' },
-        { text: ' '+this.$t('notes'), value: 'notes' },
-        { text: ' '+this.$t('active'), value: 'active' },
+        { text: ' '+this.$t('username'), value: 'username' },
+        { text: ' '+this.$t('role'), value: 'role' },
         { text: ' '+this.$t('lastLogin'), value: 'login' },
       ],
       selected: [],

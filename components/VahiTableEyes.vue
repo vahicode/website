@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="users"
+    :items="eyes"
     :pagination.sync="pagination"
     select-all
     must-sort
@@ -14,18 +14,18 @@
     <template slot="items" slot-scope="props">
       <td><v-checkbox primary hide-details v-model="props.selected"></v-checkbox></td>
       <td>
-        <nuxt-link :to="$vahi.path('/admin/users/'+props.item.id)">
+        <nuxt-link :to="$vahi.path('/admin/eyes/'+props.item.id)">
           {{ props.item.id }}
         </nuxt-link>
       </td>
       <td>
-        <nuxt-link :to="$vahi.path('/admin/users/'+props.item.id)">
-          <big><pre>{{ props.item.invite }}</pre></big>
+        <nuxt-link v-for="pic in props.item.pictures" :key="pic.id" :to="'/admin/pictures/'+pic.hash">
+          <img :src="$vahi.eyeSrc(pic.hash)" class="elevation-3"/>
         </nuxt-link>
       </td>
       <td>{{ props.item.notes }}</td>
       <td>
-        <v-icon v-if="props.item.active === '1'" color="success">check_circle</v-icon>
+        <v-icon v-if="$vahi.eyeIsCalibrated(props.item)" color="success">check_circle</v-icon>
         <v-icon v-else color="warning">panorama_fish_eye</v-icon>
       </td>
       <td>{{ props.item.login }}</td>
@@ -44,9 +44,9 @@
 <script>
 
 export default {
-  name: 'VahiTableUsers',
+  name: 'VahiTableEyes',
   props: {
-    users: {
+    eyes: {
       type: Array,
       required: true
     }
@@ -55,10 +55,9 @@ export default {
     return {
       headers: [
         { text: ' #', value: 'id', align: 'center' },
-        { text: ' '+this.$t('inviteCode'), value: 'invite' },
+        { text: ' '+this.$t('pictures'), value: 'picture' },
         { text: ' '+this.$t('notes'), value: 'notes' },
-        { text: ' '+this.$t('active'), value: 'active' },
-        { text: ' '+this.$t('lastLogin'), value: 'login' },
+        { text: ' '+this.$t('calibrated'), value: 'calibrated' },
       ],
       selected: [],
       pagination: {
@@ -74,3 +73,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+img {
+  max-height: 100px;
+  float: left;
+  padding: 4px;
+  margin: 4px;
+}
+</style>
