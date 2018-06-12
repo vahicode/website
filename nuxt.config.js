@@ -35,8 +35,8 @@ module.exports = {
         vueI18n: {
           fallbackLocale: 'en',
           messages: {
-            'en': require('./locales/en.json'),
-            'nl': require('./locales/nl.json'),
+            'en': require('./locales/dist/en.json'),
+            'nl': require('./locales/dist/nl.json'),
           }
         }
       }
