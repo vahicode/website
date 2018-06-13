@@ -1,6 +1,7 @@
 <template>
   <vahi-wrapper-admin-required>
-    <h1>{{ $t('uploadPictures') }}</h1>
+    <vahi-breadcrumbs :crumbs="crumbs">{{ $t('addPictures') }}</vahi-breadcrumbs>
+    <h1 class="text-xs-center">{{ $t('addPictures') }}</h1>
     <div class="dropzone">
       <h2>{{ $t('dropFilesToUpload') }}</h2>
       <div class="upload">
@@ -49,16 +50,18 @@
 <script>
 import VueUploadComponent from 'vue-upload-component'
 import VahiWrapperAdminRequired from '~/components/VahiWrapperAdminRequired'
+import VahiBreadcrumbs from '~/components/VahiBreadcrumbs'
 export default {
   components: {
      FileUpload: VueUploadComponent,
-     VahiWrapperAdminRequired
+     VahiWrapperAdminRequired,
+     VahiBreadcrumbs
    },
   data () {
     return {
       files: [],
-      api: process.env.VAHI_API || 'https://api.vahi.eu'
-
+      api: process.env.VAHI_API || 'https://api.vahi.eu',
+      crumbs: [{to: this.$vahi.path('/admin'), 'title': this.$t('administration')}]
     }
   },
   methods: {

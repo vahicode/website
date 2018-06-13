@@ -2,7 +2,7 @@
   <v-menu nudge-right>
     <v-toolbar-title slot="activator" class="ml-0">
       <v-btn flat class="fs-ucase fs-m0">
-        {{ $t('admin') }}
+        {{ $t('administration') }}
         <v-icon style="text-transform: initial!important">arrow_drop_down</v-icon>
       </v-btn>
     </v-toolbar-title>
@@ -24,9 +24,9 @@
         <v-list-tile-action><v-icon>remove_red_eye</v-icon></v-list-tile-action>
         <v-list-tile-content>{{ $t('addEyes') }}</v-list-tile-content>
       </v-list-tile>
-      <v-list-tile :to="$vahi.path('/admin/uploader')">
+      <v-list-tile :to="$vahi.path('/admin/add/pictures')">
         <v-list-tile-action><v-icon>add_a_photo</v-icon></v-list-tile-action>
-        <v-list-tile-content>{{ $t('uploadPictures') }}</v-list-tile-content>
+        <v-list-tile-content>{{ $t('addPictures') }}</v-list-tile-content>
       </v-list-tile>
       <div v-if="$store.state.admin.isSuperAdmin">
       <v-divider></v-divider>
@@ -36,7 +36,7 @@
       </v-list-tile>
       <v-list-tile :to="$vahi.path('/admin/admins')">
         <v-list-tile-action><v-icon>account_box</v-icon></v-list-tile-action>
-        <v-list-tile-content>{{ $t('manageAdmins') }}</v-list-tile-content>
+        <v-list-tile-content>{{ $t('admins') }}</v-list-tile-content>
       </v-list-tile>
       <v-divider></v-divider>
       </div>

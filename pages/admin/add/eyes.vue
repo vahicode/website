@@ -1,5 +1,6 @@
 <template>
   <vahi-wrapper-admin-required>
+    <vahi-breadcrumbs :crumbs="crumbs">{{ $t('addEyes') }}</vahi-breadcrumbs>
     <h1>{{ $t('addEyes') }}</h1>
     <p>
       <v-btn large color="primary" @click="processAll">
@@ -46,9 +47,11 @@
 
 <script>
 import VahiWrapperAdminRequired from '~/components/VahiWrapperAdminRequired'
+import VahiBreadcrumbs from '~/components/VahiBreadcrumbs'
 export default {
   components: {
     VahiWrapperAdminRequired,
+    VahiBreadcrumbs
   },
   asyncData: async function ({ app, route }) {
     return { 
@@ -64,7 +67,8 @@ export default {
   data () {
     return {
       loading: false,
-      selected: 0
+      selected: 0,
+      crumbs: [{to: this.$vahi.path('/admin'), 'title': this.$t('administration')}]
     }
   },
   methods: {

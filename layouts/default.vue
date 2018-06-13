@@ -3,7 +3,11 @@
     <vahi-top-toolbar color="white" light />
     <v-content>
       <v-container>
-        <nuxt />
+        <v-layout>
+          <v-flex xl10 offset-xl1 lg12 md12 sm12 xs12>
+            <nuxt />
+          </v-flex>
+        </v-layout>
       </v-container>
     </v-content>
     <vahi-footer />

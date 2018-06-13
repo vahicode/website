@@ -1,5 +1,6 @@
 <template>
-  <section class="container text-xs-center">
+  <section class="text-xs-center">
+    <vahi-breadcrumbs>{{ $t('administration') }}</vahi-breadcrumbs>
     <h1>{{ $t('Administration') }}</h1>
     <div v-if="!$store.state.admin.loggedIn" class="vahi-m600">
       <h4>{{ $t('enterUsernamePassword') }}</h4>
@@ -44,8 +45,9 @@
 </template>
 
 <script>
-
+import VahiBreadcrumbs from '~/components/VahiBreadcrumbs'
 export default {
+  components: {VahiBreadcrumbs},
   auth: false,
   layout: 'admin',
   data () {

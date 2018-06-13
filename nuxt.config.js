@@ -66,31 +66,27 @@ module.exports = {
     extendRoutes (routes, resolve) {
       routes.push({
         path: '/admin/show/admin/:id', 
-        component: 'pages/dynamic/show-admin.vue'
+        component: 'pages/admin/dynamic/show-admin.vue'
       })
       routes.push({
         path: '/admin/edit/admin/:id', 
-        component: 'pages/dynamic/edit-admin.vue'
-      })
-      routes.push({
-        path: '/admin/show/user/:id', 
-        component: 'pages/dynamic/show-user.vue'
+        component: 'pages/admin/dynamic/edit-admin.vue'
       })
       routes.push({
         path: '/admin/edit/user/:id', 
-        component: 'pages/dynamic/edit-user.vue'
+        component: 'pages/admin/dynamic/edit-user.vue'
       })
       routes.push({
         path: '/admin/show/eye/:id', 
-        component: 'pages/dynamic/show-eye.vue'
+        component: 'pages/admin/dynamic/show-eye.vue'
       })
       routes.push({
         path: '/admin/edit/eye/:id', 
-        component: 'pages/dynamic/edit-eye.vue'
+        component: 'pages/admin/dynamic/edit-eye.vue'
       })
       routes.push({
         path: '/admin/edit/picture/:id', 
-        component: 'pages/dynamic/edit-picture.vue'
+        component: 'pages/admin/dynamic/edit-picture.vue'
       })
     }
   },

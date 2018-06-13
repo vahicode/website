@@ -1,5 +1,6 @@
 <template>
   <vahi-wrapper-admin-required>
+    <vahi-breadcrumbs :crumbs="crumbs">{{ $t('addUsers') }}</vahi-breadcrumbs>
     <h1 class="text-xs-center">{{ $t('addUsers') }}</h1>
     <div class="vahi-m600">
     <h4>{{ $t('pleaseCompleteForm') }}</h4>
@@ -36,9 +37,11 @@
 
 <script>
 import VahiWrapperAdminRequired from '~/components/VahiWrapperAdminRequired'
+import VahiBreadcrumbs from '~/components/VahiBreadcrumbs'
 export default {
   components: {
     VahiWrapperAdminRequired,
+    VahiBreadcrumbs
   },
   data () {
     return {
@@ -46,7 +49,8 @@ export default {
       notes: '',
       valid: false,
       loading: false,
-      error: false
+      error: false,
+      crumbs: [{to: this.$vahi.path('/admin'), 'title': this.$t('administration')}]
     }
   },
   methods: {

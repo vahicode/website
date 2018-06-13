@@ -14,12 +14,12 @@
     <template slot="items" slot-scope="props">
       <td><v-checkbox primary hide-details v-model="props.selected"></v-checkbox></td>
       <td>
-        <nuxt-link :to="$vahi.path('/admin/users/'+props.item.id)">
+        <nuxt-link :to="$vahi.path('/admin/edit/user/'+props.item.id)">
           {{ props.item.id }}
         </nuxt-link>
       </td>
       <td>
-        <nuxt-link :to="$vahi.path('/admin/users/'+props.item.id)">
+        <nuxt-link :to="$vahi.path('/admin/edit/user/'+props.item.id)">
           <big><pre>{{ props.item.invite }}</pre></big>
         </nuxt-link>
       </td>
@@ -29,6 +29,7 @@
         <v-icon v-else color="warning">panorama_fish_eye</v-icon>
       </td>
       <td>{{ props.item.login }}</td>
+      <td><nuxt-link :to="'/admin/show/admin/'+props.item.admin">{{ props.item.adminname }}</nuxt-link></td>
     </template>
     <template slot="pageText" slot-scope="props">
       {{ $t('rowsFromToOfTotal', {from: props.pageStart, to: props.pageStop, total: props.itemsLength}) }}
@@ -59,6 +60,7 @@ export default {
         { text: ' '+this.$t('notes'), value: 'notes' },
         { text: ' '+this.$t('active'), value: 'active' },
         { text: ' '+this.$t('lastLogin'), value: 'login' },
+        { text: ' '+this.$t('addedBy'), value: 'adminname' },
       ],
       selected: [],
       pagination: {

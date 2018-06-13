@@ -1,6 +1,6 @@
 <template>
-  <section class="container text-xs-center">
-    <div>
+  <section class="text-xs-center">
+    <vahi-breadcrumbs>{{ $t('login') }}</vahi-breadcrumbs>
       <h1>VaHI</h1>
       <div v-if="$store.state.user.loggedIn" class="vahi-m600">
         <h2>{{ $t('youAreCurrentlyLoggedIn') }}</h2>
@@ -12,7 +12,7 @@
         </v-btn>
       </div>
       <div v-else>
-        <h2>{{ $t('enterInviteCode') }}</h2>
+        <h2 class="text-xs-center">{{ $t('enterInviteCode') }}</h2>
         <blockquote v-if="error" class="vahi-bq warning vahi-m600 text-xs-left mb-3">
           <div v-if="reason === 'invite_inactive'">
             <h4>{{ $t('yourInviteIsInactive') }}</h4>
@@ -39,13 +39,13 @@
             </v-btn>
         </v-form>
       </div>
-    </div>
   </section>
 </template>
 
 <script>
-
+import VahiBreadcrumbs from '~/components/VahiBreadcrumbs'
 export default {
+  components: {VahiBreadcrumbs},
   data () {
     return {
       inviteCode: '',
