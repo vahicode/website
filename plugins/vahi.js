@@ -197,6 +197,47 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      adminBulkActivateUsers(users, value=true) {
+        return new Promise(function(resolve, reject) {
+          const promises = []
+          for( let i in users) {
+            let user = users[i]
+            promises.push(
+              ax.data.put(
+                '/admin/user/'+user.id,
+                { active: value},
+                { headers: {'Authorization': 'Bearer '+storage.get('token')} }
+              )
+            )
+          }
+          Promise.all(promises)
+            .then(() => {
+              resolve(true)
+            })
+          .catch(() => { reject(false) })
+        })
+      },
+
+      adminBulkRemoveUsers(users, value=true) {
+        return new Promise(function(resolve, reject) {
+          const promises = []
+          for( let i in users) {
+            let user = users[i]
+            promises.push(
+              ax.data.delete(
+                '/admin/user/'+user.id,
+                { headers: {'Authorization': 'Bearer '+storage.get('token')} }
+              )
+            )
+          }
+          Promise.all(promises)
+            .then(() => {
+              resolve(true)
+            })
+          .catch(() => { reject(false) })
+        })
+      },
+
       // Sync methods
       logout() {
         setToken('')

@@ -1,6 +1,7 @@
 Administration: Beheer
 about: Over EyeFu
 accessDenied: Jammer maar helaas
+activate: Activeren
 active: Actief
 addAdmin: Beheerder toevoegen
 addAdmins: Beheerders toevoegen
@@ -24,6 +25,7 @@ changePassword: Paswoord wijzigen
 changesSaved: Wijzigingen opgeslagen
 clickBelowToLogout: Klik op de knop hieronder om je af te melden
 contactUs: Contacteer ons
+deactivate: Deactiveren
 delete: Verwijderen
 deleteForeverBeCareful: Deze gegevens zullen verwijderd worden zonder mogelijkheid om ze te herstellen. Wees voorzichtig.
 disabled: Gedesactiveerd

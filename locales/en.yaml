@@ -1,6 +1,7 @@
 Administration: Administration
 about: About
 accessDenied: Computer says no
+activate: Activate
 active: Active
 addAdmin: Add admin
 addAdmins: Add admins
@@ -24,6 +25,7 @@ changePassword: Change Password
 changesSaved: Changes saved
 clickBelowToLogout: Click below to log out.
 contactUs: Contact us
+deactivate: Deactivate
 delete: Delete
 deleteForeverBeCareful: This data will be removed with no way to revover it. Proceed with caution.
 disabled: Disabled
