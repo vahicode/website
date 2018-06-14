@@ -2,7 +2,7 @@
   <section>
     <v-data-table
       :headers="headers"
-      :items="eyes"
+      :items="pictures"
       :pagination.sync="pagination"
       select-all
       must-sort
@@ -15,21 +15,30 @@
       <template slot="items" slot-scope="props">
         <td><v-checkbox primary hide-details v-model="props.selected"></v-checkbox></td>
         <td>
-          <nuxt-link :to="$vahi.path('/admin/edit/eye/'+props.item.id)">
+          <nuxt-link :to="$vahi.path('/admin/edit/picture/'+props.item.id)">
             {{ props.item.id }}
           </nuxt-link>
         </td>
         <td>
-          <nuxt-link v-for="pic in props.item.pictures" :key="pic.id" :to="'/admin/edit/picture/'+pic.hash">
-            <img :src="$vahi.eyeSrc(pic.hash)" class="elevation-3"/>
+          <nuxt-link :to="$vahi.path('/admin/edit/eye/'+props.item.eye)">
+            {{ props.item.eye }}
           </nuxt-link>
         </td>
-        <td>{{ props.item.notes }}</td>
         <td>
-          <v-icon v-if="$vahi.eyeIsCalibrated(props.item)" color="success">check_circle</v-icon>
+          <nuxt-link :to="'/admin/edit/picture/'+props.item.hash">
+            <img :src="$vahi.eyeSrc(props.item.hash)" class="elevation-3"/>
+          </nuxt-link>
+        </td>
+        <td v-for="n in 13" class="zone" :key="'zone'+n" :class="(props.item['zone'+n] === '1') ? 'active' : 'inactive'"></td>
+        <td>
+          <v-icon v-if="$vahi.pictureIsCalibrated(props.item)" color="success">check_circle</v-icon>
           <v-icon v-else color="warning">panorama_fish_eye</v-icon>
         </td>
-        <td>{{ props.item.login }}</td>
+        <td>
+          <nuxt-link :to="$vahi.path('/admin/edit/admin/'+props.item.admin)">
+            {{ props.item.adminname }}
+          </nuxt-link>
+        </td>
       </template>
       <template slot="pageText" slot-scope="props">
         {{ $t('rowsFromToOfTotal', {from: props.pageStart, to: props.pageStop, total: props.itemsLength}) }}
@@ -64,9 +73,9 @@
 <script>
 
 export default {
-  name: 'VahiTableEyes',
+  name: 'VahiTablePictures',
   props: {
-    eyes: {
+    pictures: {
       type: Array,
       required: true
     }
@@ -75,9 +84,23 @@ export default {
     return {
       headers: [
         { text: ' #', value: 'id', align: 'center' },
-        { text: ' '+this.$t('pictures'), value: 'picture' },
-        { text: ' '+this.$t('notes'), value: 'notes' },
+        { text: ' '+this.$t('eye'), value: 'eye', align: 'center' },
+        { text: ' '+this.$t('picture'), value: 'hash', sortable: false },
+        { text:  1, value:  'zone1', sortable: false, class: 'zone', align: 'center'},
+        { text:  2, value:  'zone2', sortable: false, class: 'zone', align: 'center'},
+        { text:  3, value:  'zone3', sortable: false, class: 'zone', align: 'center'},
+        { text:  4, value:  'zone4', sortable: false, class: 'zone', align: 'center'},
+        { text:  5, value:  'zone5', sortable: false, class: 'zone', align: 'center'},
+        { text:  6, value:  'zone6', sortable: false, class: 'zone', align: 'center'},
+        { text:  7, value:  'zone7', sortable: false, class: 'zone', align: 'center'},
+        { text:  8, value:  'zone8', sortable: false, class: 'zone', align: 'center'},
+        { text:  9, value:  'zone9', sortable: false, class: 'zone', align: 'center'},
+        { text: 10, value: 'zone10', sortable: false, class: 'zone', align: 'center'},
+        { text: 11, value: 'zone11', sortable: false, class: 'zone', align: 'center'},
+        { text: 12, value: 'zone12', sortable: false, class: 'zone', align: 'center'},
+        { text: 13, value: 'zone13', sortable: false, class: 'zone', align: 'center'},
         { text: ' '+this.$t('calibrated'), value: 'calibrated' },
+        { text: ' '+this.$t('addedBy'), value: 'adminname' },
       ],
       selected: [],
       pagination: {
@@ -94,11 +117,19 @@ export default {
 }
 </script>
 
-<style scoped>
-img {
+<style>
+table.table img {
   max-height: 100px;
   float: left;
   padding: 4px;
   margin: 4px;
+}
+table.table thead th.zone:not(:nth-child(1)) {
+  padding: 0 2px!important;
+}
+td.zone.active {
+  background: #4caf5044 ;
+}
+td.zone.inactive {
 }
 </style>

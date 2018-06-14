@@ -24,6 +24,7 @@ calibrated: Calibrated
 cancel: Cancel
 changePassword: Change Password
 changesSaved: Changes saved
+clearAll: Clear all
 clickBelowToLogout: Click below to log out.
 contactUs: Contact us
 deactivate: Deactivate
@@ -60,6 +61,7 @@ noWayBack: There is no way back from this
 notes: Notes
 or: or
 password: Password
+picture: Picture
 pictures: Pictures
 placeGrid: Position the grid
 pleaseCompleteForm: Please complete the form below
@@ -74,6 +76,7 @@ save: Save
 saveFailed: Save failed
 savePicture: Save picture
 scale: Scale
+selectAll: Select all
 selectFiles: Select files
 selectZonesToRate: Select the zones to be ratred in this picture
 sourceCode: Source code

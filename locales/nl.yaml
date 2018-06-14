@@ -24,6 +24,7 @@ calibrated: Gekalibreerd
 cancel: Annuleren
 changePassword: Paswoord wijzigen
 changesSaved: Wijzigingen opgeslagen
+clearAll: Selecteer niets
 clickBelowToLogout: Klik op de knop hieronder om je af te melden
 contactUs: Contacteer ons
 deactivate: Deactiveren
@@ -60,6 +61,7 @@ noWayBack: Dit kan niet ongedaan gemaakt worden
 notes: Notities
 or: of
 password: Paswoord
+picture: Foto
 pictures: Foto's
 placeGrid: Positioneer het raster
 pleaseCompleteForm: Gelieve onderstaande velden in te vullen
@@ -74,6 +76,7 @@ save: Opslaan
 saveFailed: Opslaan mislukt
 savePicture: Foto opslaan
 scale: Schaal
+selectAll: Selecteer alles
 selectFiles: Selecteer afbeeldingen
 selectZonesToRate: Selecteer de zones die in deze foto moeten gescoord worden
 sourceCode: Broncode

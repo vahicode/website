@@ -97,6 +97,16 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      adminLoadPictures() {
+        return new Promise(function(resolve, reject) {
+          ax.data.get('/admin/pictures', { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
       adminLoadAdmins() {
         return new Promise(function(resolve, reject) {
           ax.data.get('/admin/admins', { headers: {'Authorization': 'Bearer '+storage.get('token')} })
@@ -147,6 +157,16 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      adminLoadPicture(id) {
+        return new Promise(function(resolve, reject) {
+          ax.data.get('/admin/picture/'+id, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
       adminUpdateUser(id, payload) {
         return new Promise(function(resolve, reject) {
           ax.data.put('/admin/user/'+id, payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
@@ -160,6 +180,16 @@ export default ({ app, store, route }, inject) => {
       adminUpdateEye(id, payload) {
         return new Promise(function(resolve, reject) {
           ax.data.put('/admin/eye/'+id, payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminUpdatePicture(hash, payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.put('/admin/picture/'+hash, payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
             .then((res) => {
               resolve(res.data)
             })
@@ -297,6 +327,11 @@ export default ({ app, store, route }, inject) => {
       eyeSrc(hash) {
         let site = process.env.VAHI_API || 'https://api.vahi.eu'
         return site+'/i/'+hash+'.jpg'
+      },
+
+      pictureIsCalibrated(pic) {
+        if(pic.scale === '0.5' && pic.x === '0.25' && pic.y === '0.15') return false
+        return true
       },
 
       eyeIsCalibrated(eye) {

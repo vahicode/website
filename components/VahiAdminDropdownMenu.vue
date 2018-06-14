@@ -11,6 +11,10 @@
         <v-list-tile-action><v-icon>account_circle</v-icon></v-list-tile-action>
         <v-list-tile-content>{{ $t('users') }}</v-list-tile-content>
       </v-list-tile>
+      <v-list-tile :to="$vahi.path('/admin/pictures')">
+        <v-list-tile-action><v-icon>photo_camera</v-icon></v-list-tile-action>
+        <v-list-tile-content>{{ $t('pictures') }}</v-list-tile-content>
+      </v-list-tile>
       <v-list-tile :to="$vahi.path('/admin/eyes')">
         <v-list-tile-action><v-icon>remove_red_eye</v-icon></v-list-tile-action>
         <v-list-tile-content>{{ $t('eyes') }}</v-list-tile-content>

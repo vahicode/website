@@ -65,20 +65,12 @@ module.exports = {
     middleware: ['auth'],
     extendRoutes (routes, resolve) {
       routes.push({
-        path: '/admin/show/admin/:id', 
-        component: 'pages/admin/dynamic/show-admin.vue'
-      })
-      routes.push({
         path: '/admin/edit/admin/:id', 
         component: 'pages/admin/dynamic/edit-admin.vue'
       })
       routes.push({
         path: '/admin/edit/user/:id', 
         component: 'pages/admin/dynamic/edit-user.vue'
-      })
-      routes.push({
-        path: '/admin/show/eye/:id', 
-        component: 'pages/admin/dynamic/show-eye.vue'
       })
       routes.push({
         path: '/admin/edit/eye/:id', 
