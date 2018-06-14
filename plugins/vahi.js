@@ -137,9 +137,29 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      adminLoadEye(id) {
+        return new Promise(function(resolve, reject) {
+          ax.data.get('/admin/eye/'+id, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
       adminUpdateUser(id, payload) {
         return new Promise(function(resolve, reject) {
           ax.data.put('/admin/user/'+id, payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminUpdateEye(id, payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.put('/admin/eye/'+id, payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
             .then((res) => {
               resolve(res.data)
             })

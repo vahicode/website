@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <h1>{{ $t('user') }} {{ api.id }}</h1>
+  <section>
+    <vahi-breadcrumbs :crumbs="crumbs">{{ $t('eye') }} {{ $route.params.id }}</vahi-breadcrumbs>
+    <pre>{{ eye }} </pre>
+    <vahi-wrapper-admin-required class="vahi-m600" v-if="eye">
+    <h1>{{ $t('eye') }} {{ eye.id }}</h1>
     <v-form v-model="valid" @submit="submit">
       <h6> {{ $t('notes') }}</h6>
         <v-text-field 
           :label="$t('notes')"
-          v-model="api.notes"
+          v-model="eye.notes"
           textarea
         ></v-text-field>
       <p class="text-xs-right">
@@ -14,7 +17,7 @@
           <v-icon class="mr-3" v-else>save</v-icon> 
           {{ $t('save') }}
         </v-btn>
-        <v-btn large :to="'/admin/show/eye/'+api.id">
+        <v-btn large :to="'/admin/show/eye/'+eye.id">
           <v-icon class="mr-3">undo</v-icon> 
           {{ $t('cancel') }}
         </v-btn>
@@ -28,11 +31,18 @@
       >{{ $t('saveFailed') }}
       <v-btn flat color="primary" @click.native="error = false"><v-icon>close</v-icon></v-btn>
     </v-snackbar>
-  </div>
+    </vahi-wrapper-admin-required>
+  </section>
 </template>
 
 <script>
+import VahiBreadcrumbs from '~/components/VahiBreadcrumbs'
+import VahiWrapperAdminRequired from '~/components/VahiWrapperAdminRequired'
 export default  {
+  components: {
+    VahiBreadcrumbs,
+    VahiWrapperAdminRequired
+  },
   data () {
     return {
       valid: false,
@@ -41,21 +51,26 @@ export default  {
       password: '',
       loading: false,
       error: false,
-      remove: false
+      remove: false,
+      crumbs: [
+        { to: this.$vahi.path('/admin'), 'title': this.$t('administration') },
+        { to: this.$vahi.path('/admin/eyes'), 'title': this.$t('eyes') },
+      ]
     }
   },
   methods: {
     submit: function() {
       const self = this
       this.loading = true;
-      const ip = this.$axios.$post(process.env.api+'/admin/eye/'+this.api.id, {
-        notes: this.api.notes
+      this.$vahi.adminUpdateEye(this.$route.params.id, {
+        notes: this.eye.notes
       })
       .then(function (response) {
         self.loading = false;
         if(response.result === 'ok') {
+          self.success = true
           self.$router.push({
-            path: '/admin/show/eye/'+self.api.id
+            path: '/admin/eyes'
           })
         } else {
           self.error = true
@@ -70,16 +85,16 @@ export default  {
   },
   asyncData: async function ({ app, route }) {
     return { 
-      api: await app.$axios.$get(process.env.api+'/admin/eye/'+route.params.id)
+      eye: await app.$vahi.adminLoadEye(route.params.id)
       .then(function (response) {
         if(response.result === 'ok') {
             return response
         } else {
-          self.error = true
+          app.error = true
         }
       })
       .catch(function (error) {
-        self.error = true
+        app.error = true
       })
     }
   }

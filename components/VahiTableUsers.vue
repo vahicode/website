@@ -49,12 +49,12 @@
       </v-btn>
       <v-btn color="success" :disabled="loading && !activating" @click="bulkActivate(true)">
         <v-badge left color="accent" value="1"><span slot="badge" v-if="!loading || activating">{{ selected.length }}</span>
-          <v-icon class="mr-3">delete</v-icon>{{ $t('activate') }}
+          <v-icon class="mr-3">play_circle_outline</v-icon>{{ $t('activate') }}
         </v-badge>
       </v-btn>
       <v-btn color="warning" :disabled="loading && !deactivating" @click="bulkActivate(false)">
         <v-badge left color="accent" value="1"><span slot="badge" v-if="!loading || deactivating">{{ selected.length }}</span>
-          <v-icon class="mr-3">delete</v-icon>{{ $t('deactivate') }}
+          <v-icon class="mr-3">pause_circle_outline</v-icon>{{ $t('deactivate') }}
         </v-badge>
       </v-btn>
     </div>

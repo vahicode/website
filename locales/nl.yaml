@@ -20,6 +20,7 @@ administration: Beheer
 admins: Beheerders
 all: Alles
 amountOfUsers: Aantal gebruikers
+calibrated: Gekalibreerd
 cancel: Annuleren
 changePassword: Paswoord wijzigen
 changesSaved: Wijzigingen opgeslagen
@@ -67,6 +68,7 @@ randomInvite: Random code
 randomPassword: Random paswoord
 rate: Beoordeel
 role: Rol
+rowsFromToOfTotal: 'Rijen {from} tot {to} van {total}'
 rowsPerPage: Rijen per pagina
 save: Opslaan
 saveFailed: Opslaan mislukt

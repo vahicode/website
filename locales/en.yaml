@@ -20,6 +20,7 @@ administration: Administration
 admins: Administrators
 all: All
 amountOfUsers: Amount of users
+calibrated: Calibrated
 cancel: Cancel
 changePassword: Change Password
 changesSaved: Changes saved
@@ -67,6 +68,7 @@ randomInvite: Random invite
 randomPassword: Random password
 rate: Rate
 role: Role
+rowsFromToOfTotal: 'Rows {from} to {to} of {total}'
 rowsPerPage: Rows per page
 save: Save
 saveFailed: Save failed
