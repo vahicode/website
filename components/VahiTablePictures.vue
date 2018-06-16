@@ -15,7 +15,7 @@
       <template slot="items" slot-scope="props">
         <td><v-checkbox primary hide-details v-model="props.selected"></v-checkbox></td>
         <td>
-          <nuxt-link :to="$vahi.path('/admin/edit/picture/'+props.item.id)">
+          <nuxt-link :to="$vahi.path('/admin/edit/picture/'+props.item.hash)">
             {{ props.item.id }}
           </nuxt-link>
         </td>

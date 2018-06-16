@@ -1,6 +1,6 @@
 <template>
   <div>
-    <blockquote v-if="!$store.state.user.loggedIn" class="vahi-bq skully">
+    <blockquote v-if="!$store.state.user.loggedIn">
       <div v-if="!$store.state.user.isFresh">
         <h3>{{ $t('justAMoment') }}</h3>
         <p>{{ $t('weAreLoadingDataFromTheBackend') }}</p>
@@ -12,13 +12,9 @@
         {{ $t('thisPageIsOnlyAvailableToVahiUsers') }}
         </p>
         <div class="mt-5">
-          <v-btn :to="$fs.path('/login')" large color="success" class="mb-3">
+          <v-btn :to="$vahi.path('/invite')" large color="primary" class="mb-3">
             <v-icon class="mr-3">vpn_key</v-icon>
-            {{ $t('logIn') }}
-          </v-btn>
-          <v-btn large class="mb-3" :to="$fs.path('/signup')" color="accent">
-            <v-icon class="mr-3">person_add</v-icon>
-            {{ $t('signUp') }}
+            {{ $t('login') }}
           </v-btn>
         </div>
       </div>
@@ -45,7 +41,7 @@ export default {
   },
   computed: {
     authCompleted () {
-      if(typeof this.$store.state.user.account.id !== 'undefined') {
+      if(typeof this.$store.state.user.id !== 'undefined') {
         this.runCallback()
         return this.$store.state.user.isFresh
       } else {
@@ -65,6 +61,9 @@ export default {
         this.callbackRan = true
       }
     }
+  },
+  beforeCreate: function () {
+    this.$vahi.auth()
   }
 }
 </script>

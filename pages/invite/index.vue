@@ -61,7 +61,7 @@ export default {
       this.$vahi.login(this.inviteCode)
       .then((result) => {
         this.loading = false
-        //this.$router.push(this.$vahi.path('/account'))
+        this.$router.push(this.$vahi.path('/rate'))
       })
       .catch((result) => {
         this.loading = false

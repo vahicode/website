@@ -1,10 +1,15 @@
 <template>
   <section>
     <vahi-breadcrumbs :crumbs="crumbs">{{ $t('eye') }} {{ $route.params.id }}</vahi-breadcrumbs>
-    <pre>{{ eye }} </pre>
     <vahi-wrapper-admin-required class="vahi-m600" v-if="eye">
     <h1>{{ $t('eye') }} {{ eye.id }}</h1>
     <v-form v-model="valid" @submit="submit">
+      <h6> {{ $t('active') }}</h6>
+      <v-switch
+        :label="(eye.active) ? $t('active') : $t('inactive')"
+        v-model="eye.active"
+        color="success"
+      ></v-switch>
       <h6> {{ $t('notes') }}</h6>
         <v-text-field 
           :label="$t('notes')"
@@ -17,8 +22,8 @@
           <v-icon class="mr-3" v-else>save</v-icon> 
           {{ $t('save') }}
         </v-btn>
-        <v-btn large :to="'/admin/show/eye/'+eye.id">
-          <v-icon class="mr-3">undo</v-icon> 
+        <v-btn large to="/admin/eyes">
+          <v-icon class="mr-3">cancel</v-icon> 
           {{ $t('cancel') }}
         </v-btn>
       </p>
@@ -63,7 +68,8 @@ export default  {
       const self = this
       this.loading = true;
       this.$vahi.adminUpdateEye(this.$route.params.id, {
-        notes: this.eye.notes
+        notes: this.eye.notes,
+        active: this.eye.active
       })
       .then(function (response) {
         self.loading = false;

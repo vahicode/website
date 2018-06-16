@@ -22,30 +22,27 @@
         :width="clientWidth*scale" 
         :height="clientWidth*scale" 
         viewBox="0 0 1200 1200">
-        <path :class="(parseInt(picture.zones[1])) ? 'selected' : ''" d="m 600,0 0,200 A 400,400 0 0 1 882.66,317.334 L 1024.264,175.736 A 600,600 0 0 0 600,0 Z"></path>
-        <path :class="(parseInt(picture.zones[2])) ? 'selected' : ''" d="M 1024.264,175.7363 882.666,317.334 A 400,400 0 0 1 1000,600 l 200,0 A 600,600 0 0 0 1024.264,175.736 Z"></path>
-        <path :class="(parseInt(picture.zones[3])) ? 'selected' : ''" d="m 1000,600 a 400,400 0 0 1 -117.334,282.668 L 1024.264,1024.266 A 600,600 0 0 0 1200,600 l -200,0 z"></path>
-        <path :class="(parseInt(picture.zones[4])) ? 'selected' : ''" d="M 882.666,882.668 A 400,400 0 0 1 600,1000 L 600,1200 a 600,600 0 0 0 424.264,-175.734 L 882.666,882.668 Z"></path>
-        <path :class="(parseInt(picture.zones[5])) ? 'selected' : ''" d="M 317.33398,882.66797 175.73633,1024.2657 A 600,600 0 0 0 600,1200 l 0,-200.00003 a 400,400 0 0 1 -282.66602,-117.332 z"></path>
-        <path :class="(parseInt(picture.zones[6])) ? 'selected' : ''" d="M 0,600 A 600,600 0 0 0 175.736,1024.266 L 317.334,882.668 A 400,400 0 0 1 200,600 l -200,0 z"></path>
-        <path :class="(parseInt(picture.zones[7])) ? 'selected' : ''" d="M 175.736,175.736 A 600,600 0 0 0 0,600 L 200,600 A 400,400 0 0 1 317.334,317.334 L 175.736,175.736 Z"></path>
-        <path :class="(parseInt(picture.zones[8])) ? 'selected' : ''" d="M 600,0 A 600,600 0 0 0 175.736,175.736 L 317.334,317.334 A 400,400 0 0 1 600,200 L 600,0 Z"></path>
-        <path :class="(parseInt(picture.zones[9])) ? 'selected' : ''" d="m 458.579,458.58 a 200,200 0 0 1 282.843,0 L 882.843,317.158 a 400,400 0 0 0 -565.685,0 l 141.421,141.421 z"></path>
-        <path :class="(parseInt(picture.zones[10])) ? 'selected' : ''"  d="m 741.421,458.58 a 200,200 0 0 1 0,282.843 l 141.421,141.421 a 400,400 0 0 0 0,-565.685 L 741.421,458.58 Z"></path>
-        <path :class="(parseInt(picture.zones[11])) ? 'selected' : ''" d="m 741.422,741.422 a 200,200 0 0 1 -282.843,0 l -141.421,141.421 a 400,400 0 0 0 565.685,0 L 741.422,741.422 Z"></path>
-        <path :class="(parseInt(picture.zones[12])) ? 'selected' : ''" d="m 458.579,741.422 a 200,200 0 0 1 0,-282.843 L 317.157,317.158 a 400,400 0 0 0 0,565.685 l 141.421,-141.421 z"></path>
-        <circle class=" i" :class="(parseInt(picture.zones[13])) ? 'selected' : ''" cx="600" cy="600" r="200"></circle>
-        <circle class=" o" cx="600" cy="600" r="500"></circle>
-        <circle class=" e" cx="600" cy="600" r="400"></circle>
-        <circle class=" e" cx="600" cy="600" r="600"></circle>
+        <path :class="zoneClass(1)" d="m 600,0 0,200 A 400,400 0 0 1 882.66,317.334 L 1024.264,175.736 A 600,600 0 0 0 600,0 Z"></path>
+        <path :class="zoneClass(2)" d="M 1024.264,175.7363 882.666,317.334 A 400,400 0 0 1 1000,600 l 200,0 A 600,600 0 0 0 1024.264,175.736 Z"></path>
+        <path :class="zoneClass(3)" d="m 1000,600 a 400,400 0 0 1 -117.334,282.668 L 1024.264,1024.266 A 600,600 0 0 0 1200,600 l -200,0 z"></path>
+        <path :class="zoneClass(4)" d="M 882.666,882.668 A 400,400 0 0 1 600,1000 L 600,1200 a 600,600 0 0 0 424.264,-175.734 L 882.666,882.668 Z"></path>
+        <path :class="zoneClass(5)" d="M 317.33398,882.66797 175.73633,1024.2657 A 600,600 0 0 0 600,1200 l 0,-200.00003 a 400,400 0 0 1 -282.66602,-117.332 z"></path>
+        <path :class="zoneClass(6)" d="M 0,600 A 600,600 0 0 0 175.736,1024.266 L 317.334,882.668 A 400,400 0 0 1 200,600 l -200,0 z"></path>
+        <path :class="zoneClass(7)" d="M 175.736,175.736 A 600,600 0 0 0 0,600 L 200,600 A 400,400 0 0 1 317.334,317.334 L 175.736,175.736 Z"></path>
+        <path :class="zoneClass(8)" d="M 600,0 A 600,600 0 0 0 175.736,175.736 L 317.334,317.334 A 400,400 0 0 1 600,200 L 600,0 Z"></path>
+        <path :class="zoneClass(9)" d="m 458.579,458.58 a 200,200 0 0 1 282.843,0 L 882.843,317.158 a 400,400 0 0 0 -565.685,0 l 141.421,141.421 z"></path>
+        <path :class="zoneClass(10)"  d="m 741.421,458.58 a 200,200 0 0 1 0,282.843 l 141.421,141.421 a 400,400 0 0 0 0,-565.685 L 741.421,458.58 Z"></path>
+        <path :class="zoneClass(11)" d="m 741.422,741.422 a 200,200 0 0 1 -282.843,0 l -141.421,141.421 a 400,400 0 0 0 565.685,0 L 741.422,741.422 Z"></path>
+        <path :class="zoneClass(12)" d="m 458.579,741.422 a 200,200 0 0 1 0,-282.843 L 317.157,317.158 a 400,400 0 0 0 0,565.685 l 141.421,-141.421 z"></path>
+        <circle class=" i" :class="zoneClass(13)" cx="600" cy="600" r="200"></circle>
       </svg>            
        </vue-draggable-resizable>
       </no-ssr>
 
   </div>
-  <div v-if="picture.sameEyeOtherPics === false">
-    <v-btn large color="primary" @click="savePosition">{{$t('savePicture')}} --</v-btn>
-    <v-btn large :to="'/admin/show/eye/'+picture.eye"><v-icon class="mr-3">undo</v-icon>{{$t('cancel')}}</v-btn>
+  <div v-if="picture.sameEyeOtherPics === false" class="mt-3">
+    <v-btn large color="primary" @click="savePicture(true)">{{$t('savePicture')}}</v-btn>
+    <v-btn large to="/admin/pictures"><v-icon class="mr-3">cancel</v-icon>{{$t('cancel')}}</v-btn>
   </div>
   <div v-else>
     <h4> {{ $t('selectZonesToRate') }}</h4>
@@ -56,23 +53,23 @@
          class="picker"
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 1200 1200">
-				<path class="p" @click="toggleZone(1)" :class="(parseInt(picture.zones[1])) ? 'selected' : ''" d="m 600,0 0,200 A 400,400 0 0 1 882.66,317.334 L 1024.264,175.736 A 600,600 0 0 0 600,0 Z"></path>
-        <path class="p" @click="toggleZone(2)" :class="(parseInt(picture.zones[2])) ? 'selected' : ''" d="M 1024.264,175.7363 882.666,317.334 A 400,400 0 0 1 1000,600 l 200,0 A 600,600 0 0 0 1024.264,175.736 Z"></path>
-        <path class="p" @click="toggleZone(3)" :class="(parseInt(picture.zones[3])) ? 'selected' : ''" d="m 1000,600 a 400,400 0 0 1 -117.334,282.668 L 1024.264,1024.266 A 600,600 0 0 0 1200,600 l -200,0 z"></path>
-        <path class="p" @click="toggleZone(4)" :class="(parseInt(picture.zones[4])) ? 'selected' : ''" d="M 882.666,882.668 A 400,400 0 0 1 600,1000 L 600,1200 a 600,600 0 0 0 424.264,-175.734 L 882.666,882.668 Z"></path>
-        <path class="p" @click="toggleZone(5)" :class="(parseInt(picture.zones[5])) ? 'selected' : ''" d="M 317.33398,882.66797 175.73633,1024.2657 A 600,600 0 0 0 600,1200 l 0,-200.00003 a 400,400 0 0 1 -282.66602,-117.332 z"></path>
-        <path class="p" @click="toggleZone(6)" :class="(parseInt(picture.zones[6])) ? 'selected' : ''" d="M 0,600 A 600,600 0 0 0 175.736,1024.266 L 317.334,882.668 A 400,400 0 0 1 200,600 l -200,0 z"></path>
-        <path class="p" @click="toggleZone(7)" :class="(parseInt(picture.zones[7])) ? 'selected' : ''" d="M 175.736,175.736 A 600,600 0 0 0 0,600 L 200,600 A 400,400 0 0 1 317.334,317.334 L 175.736,175.736 Z"></path>
-        <path class="p" @click="toggleZone(8)" :class="(parseInt(picture.zones[8])) ? 'selected' : ''" d="M 600,0 A 600,600 0 0 0 175.736,175.736 L 317.334,317.334 A 400,400 0 0 1 600,200 L 600,0 Z"></path>
-        <path class="p" @click="toggleZone(9)" :class="(parseInt(picture.zones[9])) ? 'selected' : ''" d="m 458.579,458.58 a 200,200 0 0 1 282.843,0 L 882.843,317.158 a 400,400 0 0 0 -565.685,0 l 141.421,141.421 z"></path>
-        <path class="p" @click="toggleZone(10)" :class="(parseInt(picture.zones[10])) ? 'selected' : ''" d="m 741.421,458.58 a 200,200 0 0 1 0,282.843 l 141.421,141.421 a 400,400 0 0 0 0,-565.685 L 741.421,458.58 Z"></path>
-        <path class="p" @click="toggleZone(11)"  :class="(parseInt(picture.zones[11])) ? 'selected' : ''" d="m 741.422,741.422 a 200,200 0 0 1 -282.843,0 l -141.421,141.421 a 400,400 0 0 0 565.685,0 L 741.422,741.422 Z"></path>
-        <path class="p" @click="toggleZone(12)"  :class="(parseInt(picture.zones[12])) ? 'selected' : ''" d="m 458.579,741.422 a 200,200 0 0 1 0,-282.843 L 317.157,317.158 a 400,400 0 0 0 0,565.685 l 141.421,-141.421 z"></path>
-				<circle class="p" @click="toggleZone(13)" :class="(parseInt(picture.zones[13])) ? 'selected' : ''" cx="600" cy="600" r="200"></circle>
+				<path class="p" @click="toggleZone(1)" :class="zoneClass(1)" d="m 600,0 0,200 A 400,400 0 0 1 882.66,317.334 L 1024.264,175.736 A 600,600 0 0 0 600,0 Z"></path>
+        <path class="p" @click="toggleZone(2)" :class="zoneClass(2)" d="M 1024.264,175.7363 882.666,317.334 A 400,400 0 0 1 1000,600 l 200,0 A 600,600 0 0 0 1024.264,175.736 Z"></path>
+        <path class="p" @click="toggleZone(3)" :class="zoneClass(3)" d="m 1000,600 a 400,400 0 0 1 -117.334,282.668 L 1024.264,1024.266 A 600,600 0 0 0 1200,600 l -200,0 z"></path>
+        <path class="p" @click="toggleZone(4)" :class="zoneClass(4)" d="M 882.666,882.668 A 400,400 0 0 1 600,1000 L 600,1200 a 600,600 0 0 0 424.264,-175.734 L 882.666,882.668 Z"></path>
+        <path class="p" @click="toggleZone(5)" :class="zoneClass(5)" d="M 317.33398,882.66797 175.73633,1024.2657 A 600,600 0 0 0 600,1200 l 0,-200.00003 a 400,400 0 0 1 -282.66602,-117.332 z"></path>
+        <path class="p" @click="toggleZone(6)" :class="zoneClass(6)" d="M 0,600 A 600,600 0 0 0 175.736,1024.266 L 317.334,882.668 A 400,400 0 0 1 200,600 l -200,0 z"></path>
+        <path class="p" @click="toggleZone(7)" :class="zoneClass(7)" d="M 175.736,175.736 A 600,600 0 0 0 0,600 L 200,600 A 400,400 0 0 1 317.334,317.334 L 175.736,175.736 Z"></path>
+        <path class="p" @click="toggleZone(8)" :class="zoneClass(8)" d="M 600,0 A 600,600 0 0 0 175.736,175.736 L 317.334,317.334 A 400,400 0 0 1 600,200 L 600,0 Z"></path>
+        <path class="p" @click="toggleZone(9)" :class="zoneClass(9)" d="m 458.579,458.58 a 200,200 0 0 1 282.843,0 L 882.843,317.158 a 400,400 0 0 0 -565.685,0 l 141.421,141.421 z"></path>
+        <path class="p" @click="toggleZone(10)" :class="zoneClass(10)" d="m 741.421,458.58 a 200,200 0 0 1 0,282.843 l 141.421,141.421 a 400,400 0 0 0 0,-565.685 L 741.421,458.58 Z"></path>
+        <path class="p" @click="toggleZone(11)"  :class="zoneClass(11)" d="m 741.422,741.422 a 200,200 0 0 1 -282.843,0 l -141.421,141.421 a 400,400 0 0 0 565.685,0 L 741.422,741.422 Z"></path>
+        <path class="p" @click="toggleZone(12)"  :class="zoneClass(12)" d="m 458.579,741.422 a 200,200 0 0 1 0,-282.843 L 317.157,317.158 a 400,400 0 0 0 0,565.685 l 141.421,-141.421 z"></path>
+				<circle class="p" @click="toggleZone(13)" :class="zoneClass(13)" cx="600" cy="600" r="200"></circle>
       </svg>                                     
     </div>                                       
-    <v-btn large color="primary" @click="saveZonesAndPosition">{{$t('savePicture')}} ++</v-btn>
-    <v-btn large to="/admin/eyes"><v-icon class="mr-3">cancel</v-icon>{{$t('cancel')}}</v-btn>
+    <v-btn large color="primary" @click="savePicture(false)">{{$t('savePicture')}} ++</v-btn>
+    <v-btn large to="/admin/pictures"><v-icon class="mr-3">cancel</v-icon>{{$t('cancel')}}</v-btn>
   </div>                                         
     </vahi-wrapper-admin-required>
   </section>
@@ -95,21 +92,6 @@ export default  {
       scale: 0.5,
       clientX: 0,
       clientY: 0,
-      zones: {
-        1: false,
-        2: false,
-        3: false,
-        4: false,
-        5: false,
-        6: false,
-        7: false,
-        8: false,
-        9: false,
-        10: false,
-        11: false,
-        12: false,
-        13: false
-      },
       crumbs: [
         { to: this.$vahi.path('/admin'), 'title': this.$t('administration') },
         { to: this.$vahi.path('/admin/pictures'), 'title': this.$t('pictures') },
@@ -159,6 +141,10 @@ export default  {
     this.initY = this.picture.y * this.clientHeight
   },
   methods: {
+    zoneClass: function(zone) {
+      if(this.nogo[zone]) return 'nogo'
+      else return (parseInt(this.picture.zones[zone])) ? 'selected' : ''
+    },
     selectAllZones: function() {
       for (let i in this.picture.zones) {
         this.picture.zones[i] = '1'
@@ -178,13 +164,14 @@ export default  {
       this.x = x/this.clientWidth
       this.y = y/this.clientHeight
     },
-    saveZonesAndPosition: function() {
+    savePicture: function(allZones=false) {
+      if(allZones) this.selectAllZones()
       const self = this
       this.loading = true;
       this.$vahi.adminUpdatePicture(this.picture.hash, {
-        x: this.picture.x,
-        y: this.picture.y,
-        scale: this.picture.scale,
+        x: this.x,
+        y: this.y,
+        scale: this.scale,
         zones: this.picture.zones
       })
       .then(function (response) {
@@ -205,10 +192,33 @@ export default  {
     },
   },
   asyncData: async function ({ app, route }) {
-    return { 
+    let nogo = {
+      1: 0, 
+      2: 0, 
+      3: 0, 
+      4: 0, 
+      5: 0, 
+      6: 0, 
+      7: 0, 
+      8: 0, 
+      9: 0, 
+      10: 0,
+      11: 0,
+      12: 0,
+      13: 0
+    }
+    return {  
       picture: await app.$vahi.adminLoadPicture(route.params.id)
       .then(function (response) {
         if(response.result === 'ok') {
+            if(typeof response.sameEyeOtherPics === 'object') {
+              for(let i in response.sameEyeOtherPics) {
+                let zones = response.sameEyeOtherPics[i].zones
+                for (let z = 1; z < 14; z++) {
+                  if(zones[z] === '1') nogo[z]++;
+                }
+              }
+            }
             return response
         } else {
           app.error = true
@@ -216,8 +226,9 @@ export default  {
       })
       .catch(function (error) {
         app.error = true
-      })
-    }
+      }),
+      nogo: nogo
+    } 
   }
 }
 </script>
@@ -236,6 +247,10 @@ path.selected, circle.selected {
   fill: green!important;
   fill-opacity: 0.4;
 }
+path.nogo, circle.nogo {
+  fill: none!important;
+  stroke: none!important
+}
   div.grid-wrapper {
     position: relative;
   }
@@ -245,22 +260,23 @@ path.selected, circle.selected {
     left: 0;
   }
   path, circle {
-    stroke: none;
+    stroke: #000;
+    stroke-width: 5px;
     fill: none;
   }
-  circle.i {
+  ircle.i {
     fill: #000000;
     fill-opacity: 0.2;
     stroke: #000;
     stroke-width: 10;
   }
-  circle.o {
+  ircle.o {
     fill: none;
     stroke: #000;
     stroke-opacity: 0.2;
     stroke-width: 200;
   }
-  circle.e {
+  ircle.e {
     fill: none;
     stroke: #000;
     stroke-width: 10;

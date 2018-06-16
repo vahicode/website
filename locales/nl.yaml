@@ -86,6 +86,7 @@ stopUpload: Upload stoppen
 superadmin: Super beheerder
 superadminOnly: Deze pagina is alleen beschikbaar voor super beheerders
 tagline: Dit ding heeft een tagline nodig
+thisPageRequiresAuthentication: Deze pagina vereist authenticatie
 toLoginAgainYouWillNeedYourInviteCode: Om je weer aan te melden heb je je uitnodigingscode nodig.
 txt-footer: VaHI is een yada yada door such and such met de this van FIXME
 user: Gebruiker
@@ -96,5 +97,6 @@ value: Waarde
 youAreCurrentlyLoggedIn: Je bent momenteel aangemeld
 youAreCurrentlyLoggedInAsAdmin: Je bent momenteel aangemeld als beheerder
 youAreNotAnAdmin: Je bent geen beheerder
+youAreNotLoggedIn: Je bent niet aangemeld
 youNeedAnActiveInviteToParticipate: Je hebt een actieve uitnodigingscode nodig om deel te nemen
 yourInviteIsInactive: Je uitnodiging is inactief
