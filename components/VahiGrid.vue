@@ -1,5 +1,6 @@
 <template>
     <svg 
+      :style="'top: '+y+'px; left: '+x+'px;'"
       id="eye"
       xmlns="http://www.w3.org/2000/svg" 
       xmlns:svg="http://www.w3.org/2000/svg" 
@@ -8,11 +9,11 @@
       viewBox="0 0 1200 1200" 
       :class="flash">
         <template v-for="(d, index) in paths">
-            <path :key="'path-'+index" :d="d" @click="emitToggle(index)" :class="computedclasses[index]" />
+            <path v-if="zones[index]" :key="'path-'+index" :d="d" @click="emitToggle(index)" :class="computedclasses[index]" />
         </template> 
-        <circle @click="emitToggle(13)" cx="600" cy="600" r="200" :class="computedclasses[13]" />
+        <circle v-if="zones[13]" @click="emitToggle(13)" cx="600" cy="600" r="200" :class="computedclasses[13]" />
         <template v-for="(t, index) in text">
-            <text :key="'text-'+index" :x="t.x" :y="t.y" @click="emitToggle(index)">
+            <text v-if="zones[index]" :key="'text-'+index" :x="t.x" :y="t.y" @click="emitToggle(index)">
                 {{ computedrating[index] }}
             </text>
         </template> 
@@ -27,7 +28,19 @@ export default {
         type: Number,
         required: true
       },
+      x: {
+        type: Number,
+        required: true
+      },
+      y: {
+        type: Number,
+        required: true
+      },
       rating: {
+        type: Object,
+        required: true
+      },
+      zones: {
         type: Object,
         required: true
       },
@@ -132,6 +145,7 @@ export default {
     text:hover {
         cursor: pointer;
     }
+    #eye {position: absolute;}
     #eye text { fill-opacity: 0; }
     #eye path, #eye circle { fill-opacity: 0; }
     #legend path, #legend circle { fill-opacity: 1; stroke-width: 0;}

@@ -9,7 +9,7 @@ export default ({ app, store, route }, inject) => {
   const ax = {
     data: axios.create({
       baseURL: process.env.VAHI_API || 'https://api.vahi.eu',
-      timeout: 1500
+      timeout: 5000
     })
   }
 
