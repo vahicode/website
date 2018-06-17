@@ -42,9 +42,11 @@ eye: Oog
 eyes: Ogen
 failedToAddAdmin: Toevoegen beheerder mislukt
 failedToAddUsers: Toevoegen gebruikers mislukt
+haze: Waas
 home: Home pagina
 id: ID DONE
 inactive: Inactief
+integrity: Integriteit
 invalidInviteCode: Ongeldige uitnodigingscode
 inviteCode: Uitnodigingscode
 inviteOnlyLine1: VaHI is niet publiek toegangkelijke maar enkel met een uitnodiging.
@@ -60,6 +62,7 @@ noUsersFound: Geen gebruikers gevonden
 noWayBack: Dit kan niet ongedaan gemaakt worden
 notes: Notities
 or: of
+overall: Algemeen
 password: Paswoord
 picture: Foto
 pictures: Foto's
@@ -69,12 +72,16 @@ prop: Eigenschap
 randomInvite: Random code
 randomPassword: Random paswoord
 rate: Beoordeel
+rateHaze: Waas scoren
+rateIntegrity: Integriteit scoren
+rateVascularity: Vasculariteit scoren
 role: Rol
 rowsFromToOfTotal: 'Rijen {from} tot {to} van {total}'
 rowsPerPage: Rijen per pagina
 save: Opslaan
 saveFailed: Opslaan mislukt
 savePicture: Foto opslaan
+saveRating: Scores opslaan
 scale: Schaal
 selectAll: Selecteer alles
 selectFiles: Selecteer afbeeldingen
@@ -86,6 +93,7 @@ stopUpload: Upload stoppen
 superadmin: Super beheerder
 superadminOnly: Deze pagina is alleen beschikbaar voor super beheerders
 tagline: Dit ding heeft een tagline nodig
+thisEye: Dit oog
 thisPageRequiresAuthentication: Deze pagina vereist authenticatie
 toLoginAgainYouWillNeedYourInviteCode: Om je weer aan te melden heb je je uitnodigingscode nodig.
 txt-footer: VaHI is een yada yada door such and such met de this van FIXME
@@ -94,6 +102,7 @@ userId: Gebuikers ID
 username: Gebruikersnaam
 users: Gebruikers
 value: Waarde
+vascularity: Vasculariteit
 youAreCurrentlyLoggedIn: Je bent momenteel aangemeld
 youAreCurrentlyLoggedInAsAdmin: Je bent momenteel aangemeld als beheerder
 youAreNotAnAdmin: Je bent geen beheerder

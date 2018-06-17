@@ -1,44 +1,146 @@
 <template>
   <vahi-wrapper-login-required :callback="nextRating">
     <vahi-breadcrumbs>{{ $t('rateEyes') }}</vahi-breadcrumbs>
-    <h1 class="text-xs-center">{{ $t('pleaseRateThisImage') }}</h1>
-    <!-- width of this div is know even when pictures hasn't been loaded yet, so let's use that -->
-    <div ref="box">
-    <div v-for="(picture, index) in eye" :key="'picture-'+index" class="grid-wrapper mt-5">
-      <img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>
-      <vahi-grid 
-        v-if="eyeLoaded"
-        :width="$refs.box.clientWidth*picture.scale" 
-        :x="$refs.box.clientWidth*picture.x" 
-        :y="$refs.box.clientWidth*(picture.height/picture.width)*picture.y" 
-        :rating="rating" 
-        :zones="zones(picture)" 
-        v-on:toggle="updateZone"/>
-    </div>
-    </div>
-    </vahi-wrapper-login-required>
+    <h1 class="text-xs-center">
+          <span v-if="step === 1">{{ $t('rateVascularity') }}</span>
+          <span v-if="step === 2">{{ $t('rateHaze') }}</span>
+          <span v-if="step === 3">{{ $t('rateIntegrity') }}</span>
+    </h1>
+    <p class="text-xs-center mt-3">
+      <v-btn color="primary" flat outline @click="back()" v-if="step>1">
+        <v-icon class="mr-3">arrow_back</v-icon>
+        <span v-if="step === 2">{{ $t('rateVascularity') }}</span>
+        <span v-if="step === 3">{{ $t('rateHaze') }}</span>
+      </v-btn>
+      <v-btn color="primary" @click="save()">
+        <span v-if="step === 1">{{ $t('rateHaze') }}</span>
+        <span v-if="step === 2">{{ $t('rateIntegrity') }}</span>
+        <v-icon class="ml-3" v-if="step<3">arrow_forward</v-icon>
+        <v-icon class="mr-3" v-else>save</v-icon>
+        <span v-if="step === 3">{{ $t('saveRating') }}</span>
+      </v-btn>
+    </p>
+    <vahi-rating-progress :step="step" :total="eye.total" :done="eye.done" v-if="eye" />
+    <v-stepper v-model="step">
+      <v-stepper-header>
+        <v-stepper-step :complete="step>1" step="1" color="secondary">{{ $t('vascularity') }}</v-stepper-step>
+        <v-divider></v-divider>
+        <v-stepper-step :complete="step>2" step="2">{{ $t('haze') }}</v-stepper-step>
+        <v-divider></v-divider>
+        <v-stepper-step step="3">{{ $t('integrity') }}</v-stepper-step>
+      </v-stepper-header>
+      <v-stepper-items>
+        <v-stepper-content :step="step">
+          <!-- width of this div is know even when pictures hasn't been loaded yet, so let's use that -->
+          <div ref="box" class="mb-3">
+            <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="grid-wrapper mt-5">
+              <img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>
+              <vahi-grid 
+                v-if="eyeLoaded"
+                :width="$refs.box.clientWidth*picture.scale" 
+                :x="$refs.box.clientWidth*picture.x" 
+                :y="$refs.box.clientWidth*(picture.height/picture.width)*picture.y" 
+                :rating="rating" 
+                :zones="zones(picture)" 
+                v-on:toggle="updateZone"/>
+            </div>
+          </div>
+        </v-stepper-content>
+      </v-stepper-items>
+    </v-stepper>
+  </vahi-wrapper-login-required>
 </template>
 
 <script>
 import VahiWrapperLoginRequired from '~/components/VahiWrapperLoginRequired'
 import VahiBreadcrumbs from '~/components/VahiBreadcrumbs'
 import VahiGrid from '~/components/VahiGrid'
+import VahiRatingProgress from '~/components/VahiRatingProgress'
 export default {
   components: {
     VahiWrapperLoginRequired,
     VahiBreadcrumbs,
-    VahiGrid
+    VahiGrid,
+    VahiRatingProgress
   },
   data: function() {
-    let baseRating = { 1: 0, 2: 1, 3: 2, 4: 3, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 }
     return {
       eye: false,
       eyeLoaded: false,
-      rating: baseRating,
-      baseRating: baseRating,
+      rating:  { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 },
+      step: 1,
+      vrating: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 },
+      hrating: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 },
+      irating: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 },
     }
   },
   methods: {
+    resetRating: function() {
+      for(let i=1; i<14; i++) {
+        this.rating[i] = 0
+        this.vrating[i] = 0
+        this.hrating[i] = 0
+        this.irating[i] = 0
+      }
+    },
+    loadRating: function(rating) {
+      for(let i=1; i<14; i++) {
+        this.rating[i] = rating[i]
+      }
+    },
+    copyRating: function(rating) {
+      return JSON.parse(JSON.stringify(rating))
+    },
+    back: function() {
+      switch(this.step) {
+        case 2:
+          this.hrating = this.copyRating(this.rating)
+          this.loadRating(this.vrating)
+          this.step = 1
+        break
+        case 3:
+          this.irating = this.copyRating(this.rating)
+          this.loadRating(this.hrating)
+          this.step = 2
+        break
+      }
+    },
+    save: function() {
+      switch(this.step) {
+        case 1:
+          this.vrating = this.copyRating(this.rating)
+          this.loadRating(this.hrating)
+          this.step = 2
+          break
+        case 2:
+          this.hrating = this.copyRating(this.rating)
+          this.loadRating(this.irating)
+          this.step = 3
+          break
+        case 3:
+          this.irating = this.copyRating(this.rating)
+          this.resetRating()
+          this.step = 1
+          this.$vahi.addRating({
+            v: this.vrating,
+            h: this.hrating,
+            i: this.irating,
+            eye: this.eye.id
+          })
+          .then((res) => {
+            if(res.result === 'ok') {
+              this.eyeLoaded = false
+              this.nextRating()
+            } else {
+              this.error = true
+            }
+          })
+      .catch((error) => {
+        console.log(error)
+      })
+          break
+      }
+    },
     zones: function(pic) {
       let zones = {}
       for(let i=1; i<14; i++) {
@@ -71,7 +173,9 @@ export default {
 <style>
   div.grid-wrapper {
     position: relative;
-    max-width: 1200px;
     margin: auto
+  }
+  div.grid-wrapper img {
+    width: 100%;
   }
 </style>

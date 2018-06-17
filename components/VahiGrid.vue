@@ -9,12 +9,12 @@
       viewBox="0 0 1200 1200" 
       :class="flash">
         <template v-for="(d, index) in paths">
-            <path v-if="zones[index]" :key="'path-'+index" :d="d" @click="emitToggle(index)" :class="computedclasses[index]" />
+            <path v-if="zones[index]" :key="'path-'+index" :d="d" @click="emitToggle(index)" :class="'rated-'+rating[index]" />
         </template> 
-        <circle v-if="zones[13]" @click="emitToggle(13)" cx="600" cy="600" r="200" :class="computedclasses[13]" />
+        <circle v-if="zones[13]" @click="emitToggle(13)" cx="600" cy="600" r="200" :class="'rated-'+rating[13]" />
         <template v-for="(t, index) in text">
             <text v-if="zones[index]" :key="'text-'+index" :x="t.x" :y="t.y" @click="emitToggle(index)">
-                {{ computedrating[index] }}
+                {{ rating[index] }}
             </text>
         </template> 
     </svg>
@@ -54,16 +54,6 @@ export default {
                 self.flash = '';
             }, 500);
         },
-    },
-    computed: {
-        computedrating: function() {
-            return this.rating; 
-        },
-        computedclasses: function() {
-            let classes = {}; 
-            Object.entries(this.rating).forEach( ([key, value]) => classes[key] = 'rated-'+value);
-            return classes; 
-        }
     },
     data() {
         return {

@@ -42,9 +42,11 @@ eye: Eye
 eyes: Eyes
 failedToAddAdmin: Failed to add administrator
 failedToAddUsers: Failed to add users
+haze: Haze
 home: Home
 id: ID
 inactive: Inactive
+integrity: Integrity
 invalidInviteCode: Invalid invite code
 inviteCode: Invite code
 inviteOnlyLine1: VaHI is not available to the general public but only through an invite link.
@@ -60,6 +62,7 @@ noUsersFound: No users found
 noWayBack: There is no way back from this
 notes: Notes
 or: or
+overall: Overall
 password: Password
 picture: Picture
 pictures: Pictures
@@ -69,12 +72,16 @@ prop: Property
 randomInvite: Random invite
 randomPassword: Random password
 rate: Rate
+rateHaze: Rate haze
+rateIntegrity: Rate integrity
+rateVascularity: Rate vascularity
 role: Role
 rowsFromToOfTotal: 'Rows {from} to {to} of {total}'
 rowsPerPage: Rows per page
 save: Save
 saveFailed: Save failed
 savePicture: Save picture
+saveRating: Save ratings
 scale: Scale
 selectAll: Select all
 selectFiles: Select files
@@ -86,6 +93,7 @@ stopUpload: Stop upload
 superadmin: Super admin
 superadminOnly: This page is for super administrators only
 tagline: This thing needs a tagline
+thisEye: This eye
 thisPageRequiresAuthentication: This page requires authentication
 toLoginAgainYouWillNeedYourInviteCode: To log in again you'll need your invite code.
 txt-footer: VaHI is a yada yada by such and such with the this of that FIXME
@@ -94,6 +102,7 @@ userId: User ID
 username: Username
 users: Users
 value: Value
+vascularity: Vascularity
 youAreCurrentlyLoggedIn: You are currently logged in
 youAreCurrentlyLoggedInAsAdmin: You are currently logged in as an administrator
 youAreNotAnAdmin: You are not an administrator

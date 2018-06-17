@@ -298,6 +298,16 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      addRating(payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/rating', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
       // Sync methods
       logout() {
         setToken('')
