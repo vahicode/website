@@ -21,33 +21,20 @@
       </v-btn>
     </p>
     <vahi-rating-progress :step="step" :total="eye.total" :done="eye.done" v-if="eye" />
-    <v-stepper v-model="step">
-      <v-stepper-header>
-        <v-stepper-step :complete="step>1" step="1" color="secondary">{{ $t('vascularity') }}</v-stepper-step>
-        <v-divider></v-divider>
-        <v-stepper-step :complete="step>2" step="2">{{ $t('haze') }}</v-stepper-step>
-        <v-divider></v-divider>
-        <v-stepper-step step="3">{{ $t('integrity') }}</v-stepper-step>
-      </v-stepper-header>
-      <v-stepper-items>
-        <v-stepper-content :step="step">
-          <!-- width of this div is know even when pictures hasn't been loaded yet, so let's use that -->
-          <div ref="box" class="mb-3">
-            <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="grid-wrapper mt-5">
-              <img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>
-              <vahi-grid 
-                v-if="eyeLoaded"
-                :width="$refs.box.clientWidth*picture.scale" 
-                :x="$refs.box.clientWidth*picture.x" 
-                :y="$refs.box.clientWidth*(picture.height/picture.width)*picture.y" 
-                :rating="rating" 
-                :zones="zones(picture)" 
-                v-on:toggle="updateZone"/>
-            </div>
-          </div>
-        </v-stepper-content>
-      </v-stepper-items>
-    </v-stepper>
+    <!-- width of this div is know even when pictures hasn't been loaded yet, so let's use that -->
+    <div ref="box" class="mb-3">
+      <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="grid-wrapper mt-5">
+        <img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>
+        <vahi-grid 
+          v-if="eyeLoaded"
+          :width="$refs.box.clientWidth*picture.scale" 
+          :x="$refs.box.clientWidth*picture.x" 
+          :y="$refs.box.clientWidth*(picture.height/picture.width)*picture.y" 
+          :rating="rating" 
+          :zones="zones(picture)" 
+          v-on:toggle="updateZone"/>
+      </div>
+    </div>
   </vahi-wrapper-login-required>
 </template>
 

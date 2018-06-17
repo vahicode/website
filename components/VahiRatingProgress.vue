@@ -7,7 +7,7 @@
       </v-flex>
       <v-flex md6 class="px-1">
         <span class="body-1">{{ $t('overall') }}: {{done}}/{{total}}</span>
-    <v-progress-linear :value="(done === 0) ? '0' : total/done" class="mt-0"></v-progress-linear>
+    <v-progress-linear :value="(done === 0) ? '0' : (done/total)*100" class="mt-0"></v-progress-linear>
       </v-flex>
     </v-layout>
   </section>
