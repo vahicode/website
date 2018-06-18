@@ -1,40 +1,46 @@
 <template>
   <vahi-wrapper-login-required :callback="nextRating">
     <vahi-breadcrumbs>{{ $t('rateEyes') }}</vahi-breadcrumbs>
-    <h1 class="text-xs-center">
-          <span v-if="step === 1">{{ $t('rateVascularity') }}</span>
-          <span v-if="step === 2">{{ $t('rateHaze') }}</span>
-          <span v-if="step === 3">{{ $t('rateIntegrity') }}</span>
-    </h1>
-    <p class="text-xs-center mt-3">
-      <v-btn color="primary" flat outline @click="back()" v-if="step>1">
-        <v-icon class="mr-3">arrow_back</v-icon>
-        <span v-if="step === 2">{{ $t('rateVascularity') }}</span>
-        <span v-if="step === 3">{{ $t('rateHaze') }}</span>
-      </v-btn>
-      <v-btn color="primary" @click="save()">
-        <span v-if="step === 1">{{ $t('rateHaze') }}</span>
-        <span v-if="step === 2">{{ $t('rateIntegrity') }}</span>
-        <v-icon class="ml-3" v-if="step<3">arrow_forward</v-icon>
-        <v-icon class="mr-3" v-else>save</v-icon>
-        <span v-if="step === 3">{{ $t('saveRating') }}</span>
-      </v-btn>
-    </p>
-    <vahi-rating-progress :step="step" :total="eye.total" :done="eye.done" v-if="eye" />
-    <!-- width of this div is know even when pictures hasn't been loaded yet, so let's use that -->
-    <div ref="box" class="mb-3">
-      <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="grid-wrapper mt-5">
-        <img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>
-        <vahi-grid 
-          v-if="eyeLoaded"
-          :width="$refs.box.clientWidth*picture.scale" 
-          :x="$refs.box.clientWidth*picture.x" 
-          :y="$refs.box.clientWidth*(picture.height/picture.width)*picture.y" 
-          :rating="rating" 
-          :zones="zones(picture)" 
-          v-on:toggle="updateZone"/>
+    <blockquote v-if="allDone" class="success thanks"> 
+      <h3 class="text-xs-left">{{ $t('thankYou') }}</h3>
+      <p class="text-xs-left">{{ $t('thankYou-msg') }}</p>
+    </blockquote>
+    <section v-else>
+      <h1 class="text-xs-center">
+            <span v-if="step === 1">{{ $t('rateVascularity') }}</span>
+            <span v-if="step === 2">{{ $t('rateHaze') }}</span>
+            <span v-if="step === 3">{{ $t('rateIntegrity') }}</span>
+      </h1>
+      <p class="text-xs-center mt-3">
+        <v-btn color="primary" flat outline @click="back()" v-if="step>1">
+          <v-icon class="mr-3">arrow_back</v-icon>
+          <span v-if="step === 2">{{ $t('rateVascularity') }}</span>
+          <span v-if="step === 3">{{ $t('rateHaze') }}</span>
+        </v-btn>
+        <v-btn color="primary" @click="save()">
+          <span v-if="step === 1">{{ $t('rateHaze') }}</span>
+          <span v-if="step === 2">{{ $t('rateIntegrity') }}</span>
+          <v-icon class="ml-3" v-if="step<3">arrow_forward</v-icon>
+          <v-icon class="mr-3" v-else>save</v-icon>
+          <span v-if="step === 3">{{ $t('saveRating') }}</span>
+        </v-btn>
+      </p>
+      <vahi-rating-progress :step="step" :total="eye.total" :done="eye.done" v-if="eye" />
+      <!-- width of this div is know even when pictures hasn't been loaded yet, so let's use that -->
+      <div ref="box" class="mb-3">
+        <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="grid-wrapper mt-5">
+          <img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>
+          <vahi-grid 
+            v-if="eyeLoaded"
+            :width="$refs.box.clientWidth*picture.scale" 
+            :x="$refs.box.clientWidth*picture.x" 
+            :y="$refs.box.clientWidth*(picture.height/picture.width)*picture.y" 
+            :rating="rating" 
+            :zones="zones(picture)" 
+            v-on:toggle="updateZone"/>
+        </div>
       </div>
-    </div>
+      </section>
   </vahi-wrapper-login-required>
 </template>
 
@@ -59,6 +65,7 @@ export default {
       vrating: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 },
       hrating: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 },
       irating: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 },
+      allDone: false
     }
   },
   methods: {
@@ -145,6 +152,8 @@ export default {
         if(res.result === 'ok') {
           this.eye = res.eye
           this.eyeLoaded = true
+        } else if (res.result === 'done') {
+          this.allDone = true
         } else {
           this.error = true
         }

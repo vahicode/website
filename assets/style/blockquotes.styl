@@ -29,35 +29,15 @@ blockquote
     float: right
     margin-top: -10px
     color: #455A64
-
-  &.quote 
-    max-width: 50%
-    float: right
-    font-style: italic
-    @media screen and (max-width: 767px)
-      max-width: 100%
-      float: none
-      clear: both
-    &.full
-      max-width: 100%
-      float: none
-      clear: both
-    &:before
-      content: "format_quote"
-
-  &.comment 
-    &:before
-      content: "mode_comment"
-      color: $info
-
   &.warning 
     &:before
       content: "announcement"
-  
-  &.tip 
+       
+  &.thanks 
+    color: #fff
     &:before
-      content: "link"
-      color: $info
+      content: "favorite"
+      color: #fff
 
   &.error 
     color: #fff

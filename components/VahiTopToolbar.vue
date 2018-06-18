@@ -7,15 +7,32 @@
             <vahi-logo :size="(32)" :grida="(0)" :bg="(dark) ? '#FFFFFF' : '#000000'" class="mr-2" />
               <big>VaHI</big>
           </v-btn>
-          <v-btn :to="$vahi.path('/invite')" flat class="vahi-ucase vahi-m0" active-class="default-class vahi-active-btn">
-            <template v-if="$store.state.user.loggedIn">
-              <v-icon color="error" class="mr-2 vahi-locase">power_settings_new</v-icon>
+          <v-btn 
+            :to="$vahi.path('/invite')" 
+            flat
+            class="vahi-ucase vahi-m0" 
+            active-class="default-class vahi-active-btn"
+            v-if="$store.state.user.loggedIn && $route.path.substr(-5) === '/rate'">
+              <v-icon class="mr-2 vahi-locase">power_settings_new</v-icon>
               {{ $t('logout') }}
-            </template>
-            <template v-else>
+          </v-btn>
+          <v-btn 
+            :to="$vahi.path('/rate')" 
+            flat
+            class="vahi-ucase vahi-m0" 
+            active-class="default-class vahi-active-btn"
+            v-else-if="$store.state.user.loggedIn">
+              <v-icon color="secondary" class="mr-2 vahi-locase">remove_red_eye</v-icon>
+              {{ $t('rateEyes') }}
+          </v-btn>
+          <v-btn 
+            :to="$vahi.path('/rate')" 
+            flat
+            class="vahi-ucase vahi-m0" 
+            active-class="default-class vahi-active-btn"
+            v-else>
               <v-icon color="success" class="mr-2 vahi-locase">vpn_key</v-icon>
               {{ $t('login') }}
-            </template>
           </v-btn>
           <v-spacer></v-spacer>
           <vahi-admin-dropdown-menu v-if="$store.state.admin.loggedIn"/>

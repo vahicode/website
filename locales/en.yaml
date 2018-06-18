@@ -94,6 +94,8 @@ stopUpload: Stop upload
 superadmin: Super admin
 superadminOnly: This page is for super administrators only
 tagline: This thing needs a tagline
+thankYou: Thank you
+thankYou-msg: You have rated all the eyes in our database. This completes this excercise.
 thisEye: This eye
 thisPageRequiresAuthentication: This page requires authentication
 toLoginAgainYouWillNeedYourInviteCode: To log in again you'll need your invite code.
