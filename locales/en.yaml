@@ -72,6 +72,7 @@ prop: Property
 randomInvite: Random invite
 randomPassword: Random password
 rate: Rate
+rateEyes: Rate eyes
 rateHaze: Rate haze
 rateIntegrity: Rate integrity
 rateVascularity: Rate vascularity
@@ -97,6 +98,7 @@ thisEye: This eye
 thisPageRequiresAuthentication: This page requires authentication
 toLoginAgainYouWillNeedYourInviteCode: To log in again you'll need your invite code.
 txt-footer: VaHI is a yada yada by such and such with the this of that FIXME
+uploadPictures: Upload pictures
 user: User
 userId: User ID
 username: Username

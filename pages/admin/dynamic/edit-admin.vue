@@ -1,8 +1,10 @@
 <template>
   <div>
-    <h1>{{ $t('admin') }} {{ api.username }}</h1>
+    <vahi-breadcrumbs :crumbs="crumbs">{{ $t('admin') }} {{ $route.params.id }}</vahi-breadcrumbs>
+    <vahi-wrapper-admin-required class="vahi-m600" super>
+    <h1 v-if="admin">{{ $t('admin') }} {{ admin.username }}</h1>
     <div v-if="remove">
-    <table class="table">
+    <table class="table" v-if="admin">
       <thead class="thead-dark">
         <tr>
           <th class="key">{{ $t('prop') }}</th>
@@ -12,27 +14,27 @@
     <tbody>
       <tr>
         <td class="key">{{ $t('id') }}</td>
-        <td class="val">{{ api.adminid }}</td>
+        <td class="val">{{ admin.adminid }}</td>
       </tr>
       <tr>
         <td class="key">{{ $t('username') }}</td>
-        <td class="val">{{ api.username }}</td>
+        <td class="val">{{ admin.username }}</td>
       </tr>
       <tr>
         <td class="key">{{ $t('role') }}</td>
-        <td class="val">{{ api.role }}</td>
+        <td class="val">{{ admin.role }}</td>
       </tr>
       <tr>
         <td class="key">{{ $t('userId') }}</td>
-        <td class="val">{{ api.id }}</td>
+        <td class="val">{{ admin.id }}</td>
       </tr>
       <tr>
         <td class="key">{{ $t('invite') }}</td>
-        <td class="val"><pre>{{ api.invite }}</pre></td>
+        <td class="val"><pre>{{ admin.invite }}</pre></td>
       </tr>
       <tr>
         <td class="key">{{ $t('notes') }}</td>
-        <td class="val">{{ api.notes }}</td>
+        <td class="val">{{ admin.notes }}</td>
       </tr>
     </tbody>
     </table>
@@ -50,15 +52,15 @@
     </blockquote>
     </div>
     <div v-else>
-    <v-form v-model="valid" @submit="submit">
+    <v-form v-model="valid" @submit="submit" v-if="admin">
       <h6> {{ $t('username') }}</h6>
         <v-text-field 
           :label="$t('username')"
-          v-model="api.username"
+          v-model="admin.username"
           required
         ></v-text-field>
        <h6>{{ $t('role') }}</h6>
-       <v-radio-group v-model="api.role">
+       <v-radio-group v-model="admin.role">
          <v-radio
            v-for="role in roles"
            :label="$t(role)"
@@ -100,11 +102,19 @@
       >{{ $t('saveFailed') }}
       <v-btn flat color="primary" @click.native="error = false"><v-icon>close</v-icon></v-btn>
     </v-snackbar>
+    </vahi-wrapper-admin-required>
   </div>
 </template>
 
 <script>
+import VahiBreadcrumbs from '~/components/VahiBreadcrumbs'
+import VahiWrapperAdminRequired from '~/components/VahiWrapperAdminRequired'
+
 export default  {
+  components: {
+    VahiBreadcrumbs,
+    VahiWrapperAdminRequired
+  },
   data () {
     return {
       valid: false,
@@ -113,43 +123,29 @@ export default  {
       password: '',
       loading: false,
       error: false,
-      remove: false
+      remove: false,
+      crumbs: [
+        { to: this.$vahi.path('/admin'), 'title': this.$t('administration') },
+        { to: this.$vahi.path('/admin/admins'), 'title': this.$t('admins') },
+      ]
     }
   },
   methods: {
     submit: function() {
       const self = this
       this.loading = true;
-      const ip = this.$axios.$post(process.env.api+'/admin/admin/'+this.api.id, {
-        username: this.api.username,
-        role: this.api.role,
-        password: this.password
-      })
+      let data = {
+        username: this.admin.username,
+        role: this.admin.role
+      }
+      if(this.changePassword) data.password = this.password
+      this.$vahi.adminUpdateAdmin(this.$route.params.id, data)
       .then(function (response) {
         self.loading = false;
         if(response.result === 'ok') {
+          self.success = true
           self.$router.push({
-            path: '/admin/show/admin/'+self.api.id
-          })
-        } else {
-          self.error = true
-        }
-      })
-      .catch(function (error) {
-        console.log(error)
-        self.loading = false;
-        self.error = true
-      });
-    },
-    deleteAdmin: function() {
-      const self = this
-      this.loading = true;
-      const ip = this.$axios.$delete(process.env.api+'/admin/admin/'+this.api.id)
-      .then(function (response) {
-        self.loading = false;
-        if(response.result === 'ok') {
-          self.$router.push({
-            path: '/admin/manage/admins'
+            path: '/admin/admins'
           })
         } else {
           self.error = true
@@ -171,17 +167,20 @@ export default  {
     }
   },
   asyncData: async function ({ app, route }) {
+    console.log('running asyncdata')
     return { 
-      api: await app.$axios.$get(process.env.api+'/admin/admin/'+route.params.id)
+      admin: await app.$vahi.adminLoadAdmin(route.params.id)
       .then(function (response) {
+        console.log('in async', response)
         if(response.result === 'ok') {
             return response
         } else {
-          self.error = true
+          app.error = true
         }
       })
       .catch(function (error) {
-        self.error = true
+        console.log('error async', error)
+        app.error = true
       })
     }
   }

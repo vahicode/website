@@ -14,12 +14,12 @@
     <template slot="items" slot-scope="props">
       <td><v-checkbox primary hide-details v-model="props.selected"></v-checkbox></td>
       <td>
-        <nuxt-link :to="$vahi.path('/admin/admins/'+props.item.id)">
+        <nuxt-link :to="$vahi.path('/admin/edit/admin/'+props.item.id)">
           {{ props.item.id }}
         </nuxt-link>
       </td>
       <td>
-        <nuxt-link :to="$vahi.path('/admin/admins/'+props.item.handle)">
+        <nuxt-link :to="$vahi.path('/admin/edit/admin/'+props.item.handle)">
           <b>{{ props.item.username }}</b>
         </nuxt-link>
       </td>

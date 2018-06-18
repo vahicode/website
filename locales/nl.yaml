@@ -72,6 +72,7 @@ prop: Eigenschap
 randomInvite: Random code
 randomPassword: Random paswoord
 rate: Beoordeel
+rateEyes: Ogen scoren
 rateHaze: Waas scoren
 rateIntegrity: Integriteit scoren
 rateVascularity: Vasculariteit scoren
@@ -97,6 +98,7 @@ thisEye: Dit oog
 thisPageRequiresAuthentication: Deze pagina vereist authenticatie
 toLoginAgainYouWillNeedYourInviteCode: Om je weer aan te melden heb je je uitnodigingscode nodig.
 txt-footer: VaHI is een yada yada door such and such met de this van FIXME
+uploadPictures: Foto's uploaden
 user: Gebruiker
 userId: Gebuikers ID
 username: Gebruikersnaam

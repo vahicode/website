@@ -147,6 +147,16 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      adminLoadAdmin(id) {
+        return new Promise(function(resolve, reject) {
+          ax.data.get('/admin/admin/'+id, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
       adminLoadEye(id) {
         return new Promise(function(resolve, reject) {
           ax.data.get('/admin/eye/'+id, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
@@ -170,6 +180,16 @@ export default ({ app, store, route }, inject) => {
       adminUpdateUser(id, payload) {
         return new Promise(function(resolve, reject) {
           ax.data.put('/admin/user/'+id, payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminUpdateAdmin(id, payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.put('/admin/admin/'+id, payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
             .then((res) => {
               resolve(res.data)
             })
