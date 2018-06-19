@@ -57,14 +57,10 @@ export default {
       },
     },
     methods: {
-        svgWidth: function () {
-         return (this.svgSize * this.scale) * (this.width/this.svgSize)
-        },
         svgViewBox: function () {
-          let gridW = this.svgSize / this.scale
-          let base = this.svgSize / this.scale * -1 
+          let base = this.svgSize / this.scale 
           let ratio = this.width/this.height
-          return (base * this.x)+' '+(base / ratio * this.y)+' '+(gridW)+' '+(gridW / ratio)
+          return (base * this.x * -1)+' '+(base / ratio * this.y * -1)+' '+(base)+' '+(base / ratio)
         },
         emitToggle: function(zone) {
             this.flash = 'flash';
