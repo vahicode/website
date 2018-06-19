@@ -26,24 +26,21 @@
         </v-btn>
       </p>
       <vahi-rating-progress :step="step" :total="eye.total" :done="eye.done" v-if="eye" />
-      <!-- width of this div is know even when pictures hasn't been loaded yet, so let's use that -->
-      <div ref="box" class="mb-3">
-        <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="grid-wrapper mt-5">
-          <!--<img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>-->
-          <vahi-grid 
-            v-if="eyeLoaded"
-            :height="picture.height" 
-            :width="picture.width" 
-            :scale="picture.scale" 
-            :x="picture.x" 
-            :y="picture.y" 
-            :rating="rating" 
-            :zones="zones(picture)" 
-            :pic="$vahi.eyeSrc(picture.hash)"
-            v-on:toggle="updateZone"/>
-        </div>
+      <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="mt-4">
+        <!--<img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>-->
+        <vahi-grid 
+          v-if="eyeLoaded"
+          :height="picture.height" 
+          :width="picture.width" 
+          :scale="picture.scale" 
+          :x="picture.x" 
+          :y="picture.y" 
+          :rating="rating" 
+          :zones="zones(picture)" 
+          :pic="$vahi.eyeSrc(picture.hash)"
+          v-on:toggle="updateZone"/>
       </div>
-      </section>
+    </section>
   </vahi-wrapper-login-required>
 </template>
 
