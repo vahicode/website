@@ -1,30 +1,37 @@
 <template>
-    <svg 
-      :style="'top: '+y+'px; left: '+x+'px;'"
-      id="eye"
-      xmlns="http://www.w3.org/2000/svg" 
-      xmlns:svg="http://www.w3.org/2000/svg" 
-      :width="width"
-      :height="width"
-      viewBox="0 0 1200 1200" 
-      :class="flash">
-        <template v-for="(d, index) in paths">
-            <path v-if="zones[index]" :key="'path-'+index" :d="d" @click="emitToggle(index)" :class="'rated-'+rating[index]" />
-        </template> 
-        <circle v-if="zones[13]" @click="emitToggle(13)" cx="600" cy="600" r="200" :class="'rated-'+rating[13]" />
-        <template v-for="(t, index) in text">
-            <text v-if="zones[index]" :key="'text-'+index" :x="t.x" :y="t.y" @click="emitToggle(index)">
-                {{ rating[index] }}
-            </text>
-        </template> 
-    </svg>
+  <svg 
+    :style="'background-image: url('+this.pic+'); background-size: contain;'"
+    id="eye"
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:svg="http://www.w3.org/2000/svg" 
+    :viewBox="svgViewBox()" 
+    :class="flash"
+    class="elevation-3">
+    <template v-for="(d, index) in paths">
+      <path v-if="zones[index]" :key="'path-'+index" :d="d" @click="emitToggle(index)" :class="'rated-'+rating[index]" />
+    </template> 
+    <circle v-if="zones[13]" @click="emitToggle(13)" cx="600" cy="600" r="200" :class="'rated-'+rating[13]" />
+    <template v-for="(t, index) in text">
+      <text v-if="zones[index]" :key="'text-'+index" :x="t.x" :y="t.y" @click="emitToggle(index)">
+        {{ rating[index] }}
+      </text>
+    </template> 
+  </svg>
 </template>
 
 <script>
 export default {
     name: 'VahiGrid',
     props: {
+      height: {
+        type: Number,
+        required: true
+      },
       width: {
+        type: Number,
+        required: true
+      },
+      scale: {
         type: Number,
         required: true
       },
@@ -44,8 +51,21 @@ export default {
         type: Object,
         required: true
       },
+      pic: {
+        type: String,
+        required: true
+      },
     },
     methods: {
+        svgWidth: function () {
+         return (this.svgSize * this.scale) * (this.width/this.svgSize)
+        },
+        svgViewBox: function () {
+          let gridW = this.svgSize / this.scale
+          let base = this.svgSize / this.scale * -1 
+          let ratio = this.width/this.height
+          return (base * this.x)+' '+(base / ratio * this.y)+' '+(gridW)+' '+(gridW / ratio)
+        },
         emitToggle: function(zone) {
             this.flash = 'flash';
             this.$emit('toggle', zone);
@@ -58,6 +78,7 @@ export default {
     data() {
         return {
             flash: '',
+            svgSize: 1200,
             text: {
                 1:  { x:  770, y:  180 },
                 2:  { x: 1070, y:  450 },
@@ -135,7 +156,7 @@ export default {
     text:hover {
         cursor: pointer;
     }
-    #eye {position: absolute;}
+    #eye {width: 100%;}
     #eye text { fill-opacity: 0; }
     #eye path, #eye circle { fill-opacity: 0; }
     #legend path, #legend circle { fill-opacity: 1; stroke-width: 0;}

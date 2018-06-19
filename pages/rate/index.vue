@@ -29,14 +29,17 @@
       <!-- width of this div is know even when pictures hasn't been loaded yet, so let's use that -->
       <div ref="box" class="mb-3">
         <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="grid-wrapper mt-5">
-          <img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>
+          <!--<img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>-->
           <vahi-grid 
             v-if="eyeLoaded"
-            :width="$refs.box.clientWidth*picture.scale" 
-            :x="$refs.box.clientWidth*picture.x" 
-            :y="$refs.box.clientWidth*(picture.height/picture.width)*picture.y" 
+            :height="picture.height" 
+            :width="picture.width" 
+            :scale="picture.scale" 
+            :x="picture.x" 
+            :y="picture.y" 
             :rating="rating" 
             :zones="zones(picture)" 
+            :pic="$vahi.eyeSrc(picture.hash)"
             v-on:toggle="updateZone"/>
         </div>
       </div>
@@ -167,11 +170,11 @@ export default {
 </script>
 
 <style>
-  div.grid-wrapper {
+  div.rid-wrapper {
     position: relative;
     margin: auto
   }
-  div.grid-wrapper img {
+  div.rid-wrapper img {
     width: 100%;
   }
 </style>
