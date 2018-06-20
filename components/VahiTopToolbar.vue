@@ -26,7 +26,7 @@
               {{ $t('rateEyes') }}
           </v-btn>
           <v-btn 
-            :to="$vahi.path('/rate')" 
+            :to="$vahi.path('/invite')" 
             flat
             class="vahi-ucase vahi-m0" 
             active-class="default-class vahi-active-btn"

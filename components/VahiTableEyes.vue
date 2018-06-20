@@ -29,7 +29,10 @@
           <v-icon v-if="$vahi.eyeIsCalibrated(props.item)" color="success">check_circle</v-icon>
           <v-icon v-else color="warning">panorama_fish_eye</v-icon>
         </td>
-        <td>{{ props.item.login }}</td>
+        <td>
+          <v-icon v-if="props.item.active === '1'" color="success">check_circle</v-icon>
+          <v-icon v-else color="warning">panorama_fish_eye</v-icon>
+        </td>
       </template>
       <template slot="pageText" slot-scope="props">
         {{ $t('rowsFromToOfTotal', {from: props.pageStart, to: props.pageStop, total: props.itemsLength}) }}
@@ -78,6 +81,7 @@ export default {
         { text: ' '+this.$t('pictures'), value: 'picture' },
         { text: ' '+this.$t('notes'), value: 'notes' },
         { text: ' '+this.$t('calibrated'), value: 'calibrated' },
+        { text: ' '+this.$t('active'), value: 'active' },
       ],
       selected: [],
       pagination: {
