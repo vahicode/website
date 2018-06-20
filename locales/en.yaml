@@ -30,6 +30,10 @@ contactUs: Contact us
 deactivate: Deactivate
 delete: Delete
 deleteForeverBeCareful: This data will be removed with no way to revover it. Proceed with caution.
+deleteUsers-msg1: 'Please clarify whether you want to merely delete these user accounts, or also delete all the ratings that belong to these user accounts.'
+deleteUsers-msg2: Note that you can't delete user ID 1 (the example user).
+deleteUsers-title: 'Delete users, or users and ratings?'
+deleteUsersAndRatings: Delete users and ratings
 disabled: Disabled
 dropFilesToUpload: Drop files to upload
 editAdmin: Edit admin
@@ -61,6 +65,7 @@ logout: Logout
 noUsersFound: No users found
 noWayBack: There is no way back from this
 notes: Notes
+onlyDeleteUsers: Only delete users
 or: or
 overall: Overall
 password: Password
@@ -76,6 +81,7 @@ rateEyes: Rate eyes
 rateHaze: Rate haze
 rateIntegrity: Rate integrity
 rateVascularity: Rate vascularity
+ratings: Ratings
 role: Role
 rowsFromToOfTotal: 'Rows {from} to {to} of {total}'
 rowsPerPage: Rows per page

@@ -288,23 +288,41 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
-      adminBulkRemoveUsers(users, value=true) {
+      adminBulkRemoveUsers(users) {
+        return new Promise(function(resolve, reject) {
+            console.log('in method plugin')
+          ax.data.post('/admin/bulk/delete/users', users, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminBulkRemoveRatings(users) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/bulk/delete/ratings', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminBulkRemoveUsersAndRatings(users) {
         return new Promise(function(resolve, reject) {
           const promises = []
-          for( let i in users) {
-            let user = users[i]
-            promises.push(
-              ax.data.delete(
-                '/admin/user/'+user.id,
-                { headers: {'Authorization': 'Bearer '+storage.get('token')} }
-              )
-            )
-          }
+          promises.push(ax.data.post('/admin/bulk/delete/users', users, { headers: {'Authorization': 'Bearer '+storage.get('token')} }))
+          promises.push(ax.data.post('/admin/bulk/delete/ratings', users, { headers: {'Authorization': 'Bearer '+storage.get('token')} }))
           Promise.all(promises)
             .then(() => {
               resolve(true)
             })
           .catch(() => { reject(false) })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
         })
       },
 
@@ -321,6 +339,16 @@ export default ({ app, store, route }, inject) => {
       addRating(payload) {
         return new Promise(function(resolve, reject) {
           ax.data.post('/rating', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminCountRatings(payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/ratings/count', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
             .then((res) => {
               resolve(res.data)
             })

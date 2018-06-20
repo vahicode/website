@@ -30,6 +30,10 @@ contactUs: Contacteer ons
 deactivate: Deactiveren
 delete: Verwijderen
 deleteForeverBeCareful: Deze gegevens zullen verwijderd worden zonder mogelijkheid om ze te herstellen. Wees voorzichtig.
+deleteUsers-msg1: 'Gelieve te kiezen of je alleen de gebruiker accounts will verwijderen, of ook alle scores van deze gebruikers.'
+deleteUsers-msg2: Merk op dat je de gebruiker met ID 1 (de voorbeeld gebruiker) niet kan verwijderen.
+deleteUsers-title: 'Gebruikers verwijderen, of gebruikers en scores verwijderen?'
+deleteUsersAndRatings: Gebruikers en scores verwijderen
 disabled: Gedesactiveerd
 dropFilesToUpload: Sleep afbeeldingen hiernaartoe om ze te uploaden
 editAdmin: Beheerder bewerken
@@ -61,6 +65,7 @@ logout: Afmelden
 noUsersFound: Geen gebruikers gevonden
 noWayBack: Dit kan niet ongedaan gemaakt worden
 notes: Notities
+onlyDeleteUsers: Alleen gebruikers verwijderen
 or: of
 overall: Algemeen
 password: Paswoord
@@ -76,6 +81,7 @@ rateEyes: Ogen scoren
 rateHaze: Waas scoren
 rateIntegrity: Integriteit scoren
 rateVascularity: Vasculariteit scoren
+ratings: Scores
 role: Rol
 rowsFromToOfTotal: 'Rijen {from} tot {to} van {total}'
 rowsPerPage: Rijen per pagina

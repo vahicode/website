@@ -30,11 +30,11 @@
         <!--<img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>-->
         <vahi-grid 
           v-if="eyeLoaded"
-          :height="picture.height" 
-          :width="picture.width" 
-          :scale="picture.scale" 
-          :x="picture.x" 
-          :y="picture.y" 
+          :height="(picture.height)" 
+          :width="(picture.width)" 
+          :scale="(picture.scale)" 
+          :x="(picture.x)" 
+          :y="(picture.y)" 
           :rating="rating" 
           :zones="zones(picture)" 
           :pic="$vahi.eyeSrc(picture.hash)"
