@@ -53,10 +53,23 @@ inactive: Inactive
 integrity: Integrity
 invalidInviteCode: Invalid invite code
 inviteCode: Invite code
-inviteOnlyLine1: VaHI is not available to the general public but only through an invite link.
-inviteOnlyLine2: If you have an invite you can
-inviteOnlyTitle: VaHI is invite-only
 lastLogin: Last login
+legend: Legend
+legend-h: Corneal haze
+legend-h-0: 'No haze, clear cornea'
+legend-h-1: 'Mild haze, iris details visible'
+legend-h-2: 'Moderate haze, iris details visible with difficulty'
+legend-h-3: 'Severe haze, no iris details visible'
+legend-i: FIXME
+legend-i-0: FIXME
+legend-i-1: FIXME
+legend-i-2: FIXME
+legend-i-3: FIXME
+legend-v: Corneal superficial vascularisation
+legend-v-0: 'No superficial vessels, clear cornea'
+legend-v-1: Up to 30% of the zone is covered by superficial vessels
+legend-v-2: 30-70% of the zone is covered by superficial vessels
+legend-v-3: 70-100% of the zone is covered by superficial vessels
 loggedIn: You are logged in
 login: Login
 loginFailed: Login failed
@@ -80,7 +93,7 @@ rate: Rate
 rateEyes: Rate eyes
 rateHaze: Rate haze
 rateIntegrity: Rate integrity
-rateVascularity: Rate vascularity
+rateVascularisation: Rate vascularisation
 ratings: Ratings
 role: Role
 rowsFromToOfTotal: 'Rows {from} to {to} of {total}'
@@ -100,11 +113,15 @@ stopUpload: Stop upload
 superadmin: Super admin
 superadminOnly: This page is for super administrators only
 tagline: This thing needs a tagline
+takePartMsg: 'Participants in the VaHI study have received a unique invite code. If you have such a code, you can participate.'
+takePartTitle: Can I take part in the VaHI study?
 thankYou: Thank you
 thankYou-msg: You have rated all the eyes in our database. This completes this excercise.
 thisEye: This eye
 thisPageRequiresAuthentication: This page requires authentication
 toLoginAgainYouWillNeedYourInviteCode: To log in again you'll need your invite code.
+tryVahiMsg: 'If you do not have an invite code, or if you do have one but would like to give it a try first, you can use VaHI in demo mode.<br>For that, simply use <b>vahi</b> as your invite code.'
+tryVahiTitle: Can I try VaHI?
 txt-footer: VaHI is a yada yada by such and such with the this of that FIXME
 uploadPictures: Upload pictures
 user: User
@@ -112,7 +129,7 @@ userId: User ID
 username: Username
 users: Users
 value: Value
-vascularity: Vascularity
+vascularisation: Vascularisation
 youAreCurrentlyLoggedIn: You are currently logged in
 youAreCurrentlyLoggedInAsAdmin: You are currently logged in as an administrator
 youAreNotAnAdmin: You are not an administrator

@@ -53,10 +53,23 @@ inactive: Inactief
 integrity: Integriteit
 invalidInviteCode: Ongeldige uitnodigingscode
 inviteCode: Uitnodigingscode
-inviteOnlyLine1: VaHI is niet publiek toegangkelijke maar enkel met een uitnodiging.
-inviteOnlyLine2: Als U een uitnodigingscode heeft kan U
-inviteOnlyTitle: VaHI vereist een uitnodiging
 lastLogin: Meest recente login
+legend: Legende
+legend-h: Corneal haze TODO
+legend-h-0: 'No haze, clear cornea TODO'
+legend-h-1: 'Mild haze, iris details visible TODO'
+legend-h-2: 'Moderate haze, iris details visible with difficulty TODO'
+legend-h-3: 'Severe haze, no iris details visible TODO'
+legend-i: FIXME TODO
+legend-i-0: FIXME TODO
+legend-i-1: FIXME TODO
+legend-i-2: FIXME TODO
+legend-i-3: FIXME TODO
+legend-v: Corneal superficial vascularisation TODO
+legend-v-0: 'No superficial vessels, clear cornea TODO'
+legend-v-1: Up to 30% of the zone is covered by superficial vessels TODO
+legend-v-2: 30-70% of the zone is covered by superficial vessels TODO
+legend-v-3: 70-100% of the zone is covered by superficial vessels TODO
 loggedIn: Je bent aangemeld
 login: Aanmelden
 loginFailed: Aanmelden mislukt
@@ -80,7 +93,7 @@ rate: Beoordeel
 rateEyes: Ogen scoren
 rateHaze: Waas scoren
 rateIntegrity: Integriteit scoren
-rateVascularity: Vasculariteit scoren
+rateVascularisation: Rate vascularisation TODO
 ratings: Scores
 role: Rol
 rowsFromToOfTotal: 'Rijen {from} tot {to} van {total}'
@@ -100,11 +113,15 @@ stopUpload: Upload stoppen
 superadmin: Super beheerder
 superadminOnly: Deze pagina is alleen beschikbaar voor super beheerders
 tagline: Dit ding heeft een tagline nodig
+takePartMsg: Deelnemers aan de VaHI studie hebben een unieke uitnodigingscode ontvangen. Als je zulke code hebt kan je deelnemen.
+takePartTitle: Kan ik deelnemen aan de VaHI studie?
 thankYou: Dankjewel
 thankYou-msg: Je hebt alle ogen in onze databank een sore gegeven. Dit is het einde van deze oefening.
 thisEye: Dit oog
 thisPageRequiresAuthentication: Deze pagina vereist authenticatie
 toLoginAgainYouWillNeedYourInviteCode: Om je weer aan te melden heb je je uitnodigingscode nodig.
+tryVahiMsg: 'Heb je geen uitnodigingscode, of heb je er wel een maar wil je graag eerst eens oefenen, dan kan je VaHI toch gebruiken in demo-mode.<br>Dit kan je doen door je aan te melden met <b>vahi</b> als uitnodigingscode.'
+tryVahiTitle: Kan ik VaHI uitproberen?
 txt-footer: VaHI is een yada yada door such and such met de this van FIXME
 uploadPictures: Foto's uploaden
 user: Gebruiker
@@ -112,7 +129,7 @@ userId: Gebuikers ID
 username: Gebruikersnaam
 users: Gebruikers
 value: Waarde
-vascularity: Vasculariteit
+vascularisation: Vascularisatie
 youAreCurrentlyLoggedIn: Je bent momenteel aangemeld
 youAreCurrentlyLoggedInAsAdmin: Je bent momenteel aangemeld als beheerder
 youAreNotAnAdmin: Je bent geen beheerder

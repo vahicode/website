@@ -7,14 +7,14 @@
     </blockquote>
     <section v-else>
       <h1 class="text-xs-center">
-            <span v-if="step === 1">{{ $t('rateVascularity') }}</span>
+            <span v-if="step === 1">{{ $t('rateVascularisation') }}</span>
             <span v-if="step === 2">{{ $t('rateHaze') }}</span>
             <span v-if="step === 3">{{ $t('rateIntegrity') }}</span>
       </h1>
       <p class="text-xs-center mt-3">
         <v-btn color="primary" flat outline @click="back()" v-if="step>1">
           <v-icon class="mr-3">arrow_back</v-icon>
-          <span v-if="step === 2">{{ $t('rateVascularity') }}</span>
+          <span v-if="step === 2">{{ $t('rateVascularisation') }}</span>
           <span v-if="step === 3">{{ $t('rateHaze') }}</span>
         </v-btn>
         <v-btn color="primary" @click="save()">
@@ -25,21 +25,40 @@
           <span v-if="step === 3">{{ $t('saveRating') }}</span>
         </v-btn>
       </p>
-      <vahi-rating-progress :step="step" :total="eye.total" :done="eye.done" v-if="eye" />
-      <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="mt-4">
-        <!--<img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>-->
-        <vahi-grid 
-          v-if="eyeLoaded"
-          :height="(picture.height)" 
-          :width="(picture.width)" 
-          :scale="(picture.scale)" 
-          :x="(picture.x)" 
-          :y="(picture.y)" 
-          :rating="rating" 
-          :zones="zones(picture)" 
-          :pic="$vahi.eyeSrc(picture.hash)"
-          v-on:toggle="updateZone"/>
-      </div>
+      <v-layout row wrap>
+        <v-flex xl8 lg9 md12 sm12 xs12>
+          <vahi-rating-progress :step="step" :total="eye.total" :done="eye.done" v-if="eye" />
+          <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="mt-4">
+            <!--<img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>-->
+            <vahi-grid 
+              v-if="eyeLoaded"
+              :height="(picture.height)" 
+              :width="(picture.width)" 
+              :scale="(picture.scale)" 
+              :x="(picture.x)" 
+              :y="(picture.y)" 
+              :rating="rating" 
+              :zones="zones(picture)" 
+              :pic="$vahi.eyeSrc(picture.hash)"
+              v-on:toggle="updateZone"/>
+          </div>
+        </v-flex>
+        <v-flex xl4 lg3 md12 xs12>
+          <h5 class="ml-4">
+            <span v-if="step === 1">{{ $t('legend-v') }}</span> 
+            <span v-if="step === 2">{{ $t('legend-h') }}</span> 
+            <span v-if="step === 3">{{ $t('legend-i') }}</span> 
+          </h5>
+          <ul class="legend">
+            <li v-for="n in 4" :key="n">
+              <v-avatar :size="(32)" :class="'legend-'+(n-1)">{{ (n-1) }}</v-avatar> 
+              <span v-if="step === 1">{{ $t('legend-v-'+(n-1)) }}</span>
+              <span v-if="step === 2">{{ $t('legend-h-'+(n-1)) }}</span>
+              <span v-if="step === 3">{{ $t('legend-i-'+(n-1)) }}</span>
+            </li>
+          </ul>
+        </v-flex>
+      </v-layout>
     </section>
   </vahi-wrapper-login-required>
 </template>
@@ -167,11 +186,27 @@ export default {
 </script>
 
 <style>
-  div.rid-wrapper {
-    position: relative;
-    margin: auto
+  ul.legend li {
+    list-style-type: none;
   }
-  div.rid-wrapper img {
-    width: 100%;
+  ul.legend li div {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: white;
+  }
+  .foo {
+    background: forestgreen;
+  }
+  .legend-0 {
+    background: #228B22; 
+  }
+  .legend-1 {
+    background: #CDBB32; 
+  }
+  .legend-2 {
+    background: #FF9000; 
+  }
+  .legend-3 {
+    background: #FF2D00; 
   }
 </style>

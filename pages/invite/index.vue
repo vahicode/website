@@ -12,7 +12,7 @@
         </v-btn>
       </div>
       <div v-else>
-        <h2 class="text-xs-center">{{ $t('enterInviteCode') }}</h2>
+        <h2 class="text-xs-center">{{ $t('enterInviteCode') }} (*)</h2>
         <blockquote v-if="error" class="vahi-bq warning vahi-m600 text-xs-left mb-3">
           <div v-if="reason === 'invite_inactive'">
             <h4>{{ $t('yourInviteIsInactive') }}</h4>
@@ -38,6 +38,10 @@
               {{ $t('login') }}
             </v-btn>
         </v-form>
+        <blockquote class="mt-4 vahi-m600 question">
+          <h4 class="mt-0">(*) {{ $t('tryVahiTitle') }}</h4>
+          <p v-html="$t('tryVahiMsg')"></p>
+        </blockquote>
       </div>
   </section>
 </template>

@@ -18,9 +18,12 @@
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
         </v-flex>
         <v-flex sm12 xl3 offset-xl1 lg4 offset-lg1 md4 offset-sm0 offset-md1>
-          <h4 class="mt-5">{{ $t('inviteOnlyTitle') }}</h4>
-          <p>{{ $t('inviteOnlyLine1') }}</p>
-          <p>{{ $t('inviteOnlyLine2') }} <nuxt-link to="/invite">{{ $t('loginHere') }}</nuxt-link></p>
+          <h4 class="mt-5">{{ $t('takePartTitle') }}</h4>
+          <p>{{ $t('takePartMsg') }}</p>
+          <p><v-btn to="/invite" flat outline><v-icon class="mr-3">vpn_key</v-icon>{{ $t('loginHere') }}</v-btn></p>
+          <h4 class="mt-5">{{ $t('tryVahiTitle') }}</h4>
+          <p v-html="$t('tryVahiMsg')"></p>
+          <p><v-btn to="/invite" flat outline><v-icon class="mr-3">vpn_key</v-icon>{{ $t('loginHere') }}</v-btn></p>
         </v-flex>
       </v-layout>
     </v-container>
