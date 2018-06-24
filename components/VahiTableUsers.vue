@@ -153,7 +153,6 @@ export default {
     bulkDeleteUsers: function() {
       this.loading = true
       this.removing = true
-      console.log('in method comp')
       this.$vahi.adminBulkRemoveUsers({users: this.selectedAsArray()})
       .then((result) => {
         this.loading = false
@@ -169,7 +168,6 @@ export default {
     bulkDeleteUsersAndRatings: function() {
       this.loading = true
       this.removing = true
-      console.log('in method component')
       this.$vahi.adminBulkRemoveUsersAndRatings({users: this.selectedAsArray()})
       .then((result) => {
         this.loading = false

@@ -1,5 +1,5 @@
 <template>
-  <vahi-wrapper-admin-required :callback="loadAdmins" super>
+  <vahi-wrapper-admin-required :callback="loadAdmins" su>
     <vahi-breadcrumbs :crumbs="crumbs">{{ $t('admins') }}</vahi-breadcrumbs>
     <h1 class="text-xs-center">{{ $t('admins') }}</h1>
     <vahi-table-admins :admins="admins" />

@@ -19,7 +19,7 @@
         </nuxt-link>
       </td>
       <td>
-        <nuxt-link :to="$vahi.path('/admin/edit/admin/'+props.item.handle)">
+        <nuxt-link :to="$vahi.path('/admin/edit/admin/'+props.item.id)">
           <b>{{ props.item.username }}</b>
         </nuxt-link>
       </td>

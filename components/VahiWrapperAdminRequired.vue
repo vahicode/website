@@ -1,13 +1,14 @@
 <template>
   <div>
-    <blockquote v-if="!$store.state.admin.loggedIn" class="vahi-bq">
+    <blockquote v-if="(su) ? !$store.state.admin.isSuperAdmin : !$store.state.admin.loggedIn" class="vahi-bq">
       <div v-if="!$store.state.admin.isFresh">
         <h3>{{ $t('justAMoment') }}</h3>
         <p>{{ $t('weAreLoadingDataFromTheBackend') }}</p>
         <v-progress-circular indeterminate color="primary"></v-progress-circular>
       </div>
       <div v-else>
-        <h3>{{ $t('youAreNotAnAdmin') }}</h3>
+        <h3 v-if="$store.state.admin.loggedIn">{{ $t('youAreNotASuperAdmin') }}</h3>
+        <h3 v-else>{{ $t('youAreNotAnAdmin') }}</h3>
         <p class="display-1">
         ¯\_(ツ)_/¯
         </p>
@@ -26,6 +27,10 @@ export default {
     callback: {
       type: Function,
       required: false
+    },
+    su: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -50,7 +55,6 @@ export default {
   },
   methods: {
     runCallback: function() {
-      console.log(this.callback)
       if(typeof this.callback !== 'undefined' && !this.callbackRan) {
         this.callback()
         this.callbackRan = true

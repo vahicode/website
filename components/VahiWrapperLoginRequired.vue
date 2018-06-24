@@ -9,7 +9,7 @@
       <div v-else>
         <h3>{{ $t('youAreNotLoggedIn') }}</h3>
         <p>
-        {{ $t('thisPageIsOnlyAvailableToVahiUsers') }}
+        {{ $t('youAreNotLoggedIn') }}
         </p>
         <div class="mt-5">
           <v-btn :to="$vahi.path('/invite')" large color="primary" class="mb-3">

@@ -20,10 +20,10 @@
         <v-flex sm12 xl3 offset-xl1 lg4 offset-lg1 md4 offset-sm0 offset-md1>
           <h4 class="mt-5">{{ $t('takePartTitle') }}</h4>
           <p>{{ $t('takePartMsg') }}</p>
-          <p><v-btn to="/invite" flat outline><v-icon class="mr-3">vpn_key</v-icon>{{ $t('loginHere') }}</v-btn></p>
+          <v-btn to="/invite" flat outline><v-icon class="mr-3">vpn_key</v-icon>{{ $t('loginHere') }}</v-btn>
           <h4 class="mt-5">{{ $t('tryVahiTitle') }}</h4>
           <p v-html="$t('tryVahiMsg')"></p>
-          <p><v-btn to="/invite" flat outline><v-icon class="mr-3">vpn_key</v-icon>{{ $t('loginHere') }}</v-btn></p>
+          <v-btn to="/invite" flat outline><v-icon class="mr-3">vpn_key</v-icon>{{ $t('loginHere') }}</v-btn>
         </v-flex>
       </v-layout>
     </v-container>

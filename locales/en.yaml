@@ -132,6 +132,7 @@ value: Value
 vascularisation: Vascularisation
 youAreCurrentlyLoggedIn: You are currently logged in
 youAreCurrentlyLoggedInAsAdmin: You are currently logged in as an administrator
+youAreNotASuperAdmin: You are not a super administrator
 youAreNotAnAdmin: You are not an administrator
 youAreNotLoggedIn: You are not logged in
 youNeedAnActiveInviteToParticipate: You need an active invite to participate

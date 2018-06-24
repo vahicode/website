@@ -1,7 +1,7 @@
 <template>
   <div>
     <vahi-breadcrumbs :crumbs="crumbs">{{ $t('admin') }} {{ $route.params.id }}</vahi-breadcrumbs>
-    <vahi-wrapper-admin-required class="vahi-m600" super>
+    <vahi-wrapper-admin-required class="vahi-m600" su>
     <h1 v-if="admin">{{ $t('admin') }} {{ admin.username }}</h1>
     <div v-if="remove">
     <table class="table" v-if="admin">
@@ -167,11 +167,9 @@ export default  {
     }
   },
   asyncData: async function ({ app, route }) {
-    console.log('running asyncdata')
     return { 
       admin: await app.$vahi.adminLoadAdmin(route.params.id)
       .then(function (response) {
-        console.log('in async', response)
         if(response.result === 'ok') {
             return response
         } else {
@@ -179,7 +177,6 @@ export default  {
         }
       })
       .catch(function (error) {
-        console.log('error async', error)
         app.error = true
       })
     }

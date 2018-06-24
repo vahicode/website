@@ -132,6 +132,7 @@ value: Waarde
 vascularisation: Vascularisatie
 youAreCurrentlyLoggedIn: Je bent momenteel aangemeld
 youAreCurrentlyLoggedInAsAdmin: Je bent momenteel aangemeld als beheerder
+youAreNotASuperAdmin: Je bent geen super-beheerder
 youAreNotAnAdmin: Je bent geen beheerder
 youAreNotLoggedIn: Je bent niet aangemeld
 youNeedAnActiveInviteToParticipate: Je hebt een actieve uitnodigingscode nodig om deel te nemen
