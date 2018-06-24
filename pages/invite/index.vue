@@ -23,14 +23,14 @@
             <p>{{ $t('youNeedAnActiveInviteToParticipate') }}</p>
           </div>
         </blockquote>
-        <v-form v-model="valid" @submit="login" class="vahi-m600">
+        <v-form v-model="valid" @submit.prevent="login" class="vahi-m600">
           <v-text-field 
             class="login" 
             :label="$t('inviteCode')"
             v-model="inviteCode"
             required
             autofocus
-            @keyup.enter="login"
+            @keyup.enter.stop="login"
             ></v-text-field>
             <v-btn color="primary" large @click="login" :disabled="(loading) ? true : false">
               <v-progress-circular indeterminate color="#fff" class="mr-3" v-if="loading" :size="20" :width="2"></v-progress-circular>
@@ -68,6 +68,7 @@ export default {
         this.$router.push(this.$vahi.path('/rate'))
       })
       .catch((result) => {
+        console.log(result)
         this.loading = false
         this.error = true
         this.reason = result.reason || 'unknown'
