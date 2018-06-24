@@ -356,6 +356,16 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      resetDemo() {
+        return new Promise(function(resolve, reject) {
+          ax.data.delete('/rating/demo', { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
       // Sync methods
       logout() {
         setToken('')

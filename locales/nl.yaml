@@ -95,6 +95,8 @@ rateHaze: Waas scoren
 rateIntegrity: Integriteit scoren
 rateVascularisation: Rate vascularisation TODO
 ratings: Scores
+resetDemo: Reset demo TODO
+resetDemo-txt: Je hebt alle foto's gescoord. Gelieve de demo de resetten zodat de volgende bezoeker meteen met de demo aan de slag kan.
 role: Rol
 rowsFromToOfTotal: 'Rijen {from} tot {to} van {total}'
 rowsPerPage: Rijen per pagina

@@ -95,6 +95,8 @@ rateHaze: Rate haze
 rateIntegrity: Rate integrity
 rateVascularisation: Rate vascularisation
 ratings: Ratings
+resetDemo: Reset demo
+resetDemo-txt: 'You''ve rated all images. Since you''re using the demo user, please reset the demo so the next person can use the demo too.'
 role: Role
 rowsFromToOfTotal: 'Rows {from} to {to} of {total}'
 rowsPerPage: Rows per page

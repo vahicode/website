@@ -1,10 +1,17 @@
 <template>
   <vahi-wrapper-login-required :callback="nextRating">
     <vahi-breadcrumbs>{{ $t('rateEyes') }}</vahi-breadcrumbs>
-    <blockquote v-if="allDone" class="success thanks"> 
-      <h3 class="text-xs-left">{{ $t('thankYou') }}</h3>
-      <p class="text-xs-left">{{ $t('thankYou-msg') }}</p>
-    </blockquote>
+    <div v-if="allDone"> 
+      <blockquote class="success thanks"> 
+        <h3 class="text-xs-left">{{ $t('thankYou') }}</h3>
+        <p class="text-xs-left">{{ $t('thankYou-msg') }}</p>
+      </blockquote>
+      <blockquote v-if="$store.state.user.id === '1'" class="primary reset pb-3"> 
+        <h3 class="text-xs-left">{{ $t('resetDemo') }}?</h3>
+        <p class="text-xs-left">{{ $t('resetDemo-txt') }}</p>
+        <v-btn class="white mt-3" dark flat outline @click="resetDemo" large><v-icon class="mr-3">settings_backup_restore</v-icon>{{ $t('resetDemo') }}</v-btn>
+      </blockquote>
+    </div>
     <section v-else>
       <h1 class="text-xs-center">
             <span v-if="step === 1">{{ $t('rateVascularisation') }}</span>
@@ -32,11 +39,11 @@
             <!--<img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>-->
             <vahi-grid 
               v-if="eyeLoaded"
-              :height="(picture.height)" 
-              :width="(picture.width)" 
-              :scale="(picture.scale)" 
-              :x="(picture.x)" 
-              :y="(picture.y)" 
+              :height="parseFloat(picture.height)" 
+              :width="parseFloat(picture.width)" 
+              :scale="parseFloat(picture.scale)" 
+              :x="parseFloat(picture.x)" 
+              :y="parseFloat(picture.y)" 
               :rating="rating" 
               :zones="zones(picture)" 
               :pic="$vahi.eyeSrc(picture.hash)"
@@ -88,6 +95,21 @@ export default {
     }
   },
   methods: {
+    resetDemo: function() {
+      this.$vahi.resetDemo()
+      .then((res) => {
+        if(res.result === 'ok') {
+          this.allDone = false
+          this.eyeLoaded = false
+          this.nextRating()
+        } else {
+          this.error = true
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    },
     resetRating: function() {
       for(let i=1; i<14; i++) {
         this.rating[i] = 0
