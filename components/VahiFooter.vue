@@ -5,11 +5,11 @@
         <v-flex xs12 py-3 text-xs-center>
           <nuxt-link :to="$vahi.path('/')"><vahi-logo :size="(60)" :grida="0" bg="#FFFFFF" :bga="(0.8)" /></nuxt-link>
             <p class="mt-3 mb-4">
-              <nuxt-link :to="$vahi.path('/contact')" class="vahi-white">{{ $t('contactUs') }}</nuxt-link>
+              <nuxt-link :to="$vahi.path('/contact')">{{ $t('contactUs') }}</nuxt-link>
               |
-              <a href="https://github.com/vahicode" target="_BLANK" class="vahi-white">{{ $t('sourceCode') }}</a> 
+              <a href="https://github.com/vahicode" target="_BLANK">{{ $t('sourceCode') }}</a> 
             </p>
-            <p v-html="$t('txt-footer')"></p>
+            <p style="max-width: 650px; margin: auto;" v-html="$t('txt-footer', people)"></p>
         </v-flex>
       </v-layout>
     </v-footer>
@@ -21,7 +21,16 @@ import VahiLogo from '~/components/VahiLogo'
 
 export default {
   name: 'VahiFooter',
-  components: { VahiLogo }
+  components: { VahiLogo },
+  data: function () {
+    return {
+      people: {
+        josephine: '<a href="https://www.researchgate.net/profile/Josephine_Behaegel">Joséphine Behaegel</a>',
+        sorcha: '<a href="https://www.researchgate.net/profile/Sorcha_Dhubhghaill">Prof. Dr. Sorcha Ní Dhubhghaill</a>',
+        joost: '<a href="https://github.com/joostdecock">Joost De Cock</a>'
+      }
+    }
+  }
 }
 </script>
 

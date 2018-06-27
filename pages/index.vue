@@ -5,7 +5,7 @@
         <v-layout>
           <v-flex xl10 offset-xl1 lg12 md12 sm12 xs12>
             <h1 class="display-4">VaHI</h1>
-            <h2 class="display-3">{{ $t('tagline') }}</h2>
+            <h3 class="display-2">{{ $t('tagline') }}</h3>
           </v-flex>
         </v-layout>
       </v-container>
@@ -52,5 +52,8 @@ div#banner {
 }
 div#hero {
   color: #FFF;
+}
+h3.display-2 {
+  max-width: 650px;
 }
 </style>

@@ -114,7 +114,7 @@ status: Status
 stopUpload: Stop upload
 superadmin: Super admin
 superadminOnly: This page is for super administrators only
-tagline: This thing needs a tagline
+tagline: A standardized grading system for limbal stem cell deficiency
 takePartMsg: 'Participants in the VaHI study have received a unique invite code. If you have such a code, you can participate.'
 takePartTitle: Can I take part in the VaHI study?
 thankYou: Thank you
@@ -124,7 +124,7 @@ thisPageRequiresAuthentication: This page requires authentication
 toLoginAgainYouWillNeedYourInviteCode: To log in again you'll need your invite code.
 tryVahiMsg: 'If you do not have an invite code, or if you do have one but would like to give it a try first, you can use VaHI in demo mode.<br>For that, simply use <b>vahi</b> as your invite code.'
 tryVahiTitle: Can I try VaHI?
-txt-footer: VaHI is a yada yada by such and such with the this of that FIXME
+txt-footer: 'VaHI is part of the doctoral dissertation of {josephine}<br>Supervisor: {sorcha}<br>Code by {joost}'
 uploadPictures: Upload pictures
 user: User
 userId: User ID
