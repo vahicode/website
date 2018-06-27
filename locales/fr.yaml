@@ -1,0 +1,141 @@
+Administration: Administration
+about: About
+accessDenied: Computer says no
+activate: Activate
+active: Active
+addAdmin: Add admin
+addAdmins: Add admins
+addEyeForEachPicture: Add eye for each picture
+addEyeWithSelectedPictures: Add eye with selected pictures
+addEyes: Add eyes
+addImages: Add images
+addPictures: Add pictures
+addUsers: Add users
+addedBy: Added by
+admin: Admin
+adminOnly: This page is for administrators only
+adminPassword: Admin password
+adminUsername: Admin username
+administration: Administration
+admins: Administrators
+all: All
+amountOfUsers: Amount of users
+calibrated: Calibrated
+cancel: Cancel
+changePassword: Change Password
+changesSaved: Changes saved
+clearAll: Clear all
+clickBelowToLogout: Click below to log out.
+contactUs: Contact us
+deactivate: Deactivate
+delete: Delete
+deleteForeverBeCareful: This data will be removed with no way to revover it. Proceed with caution.
+deleteUsers-msg1: 'Please clarify whether you want to merely delete these user accounts, or also delete all the ratings that belong to these user accounts.'
+deleteUsers-msg2: Note that you can't delete user ID 1 (the example user).
+deleteUsers-title: 'Delete users, or users and ratings?'
+deleteUsersAndRatings: Delete users and ratings
+disabled: Disabled
+dropFilesToUpload: Drop files to upload
+editAdmin: Edit admin
+editEye: Edit eye
+editLinkedUser: Edit linked user
+editUser: Edit user
+enterInviteCode: Please enter your invite code below
+enterUsernamePassword: Please enter your username and password
+eye: Eye
+eyes: Eyes
+failedToAddAdmin: Failed to add administrator
+failedToAddUsers: Failed to add users
+haze: Haze
+home: Home
+id: ID
+inactive: Inactive
+integrity: Integrity
+invalidInviteCode: Invalid invite code
+inviteCode: Invite code
+lastLogin: Last login
+legend: Legend
+legend-h: Corneal haze
+legend-h-0: 'No haze, clear cornea'
+legend-h-1: 'Mild haze, iris details visible'
+legend-h-2: 'Moderate haze, iris details visible with difficulty'
+legend-h-3: 'Severe haze, no iris details visible'
+legend-i: FIXME
+legend-i-0: FIXME
+legend-i-1: FIXME
+legend-i-2: FIXME
+legend-i-3: FIXME
+legend-v: Corneal superficial vascularisation
+legend-v-0: 'No superficial vessels, clear cornea'
+legend-v-1: Up to 30% of the zone is covered by superficial vessels
+legend-v-2: 30-70% of the zone is covered by superficial vessels
+legend-v-3: 70-100% of the zone is covered by superficial vessels
+loggedIn: You are logged in
+login: Login
+loginFailed: Login failed
+loginHere: login here
+logout: Logout
+noUsersFound: No users found
+noWayBack: There is no way back from this
+notes: Notes
+onlyDeleteUsers: Only delete users
+or: or
+overall: Overall
+password: Password
+picture: Picture
+pictures: Pictures
+placeGrid: Position the grid
+pleaseCompleteForm: Please complete the form below
+prop: Property
+randomInvite: Random invite
+randomPassword: Random password
+rate: Rate
+rateEyes: Rate eyes
+rateHaze: Rate haze
+rateIntegrity: Rate integrity
+rateVascularisation: Rate vascularisation
+ratings: Ratings
+resetDemo: Reset demo
+resetDemo-txt: 'You''ve rated all images. Since you''re using the demo user, please reset the demo so the next person can use the demo too.'
+role: Role
+rowsFromToOfTotal: 'Rows {from} to {to} of {total}'
+rowsPerPage: Rows per page
+save: Save
+saveFailed: Save failed
+savePicture: Save picture
+saveRating: Save ratings
+scale: Scale
+selectAll: Select all
+selectFiles: Select files
+selectZonesToRate: Select the zones to be rated in this picture
+sourceCode: Source code
+startUpload: Start upload
+status: Status
+stopUpload: Stop upload
+superadmin: Super admin
+superadminOnly: This page is for super administrators only
+tagline: A standardized grading system for limbal stem cell deficiency
+takePartMsg: 'Participants in the VaHI study have received a unique invite code. If you have such a code, you can participate.'
+takePartTitle: Can I take part in the VaHI study?
+thankYou: Thank you
+thankYou-msg: You have rated all the eyes in our database. This completes this excercise.
+thisEye: This eye
+thisPageRequiresAuthentication: This page requires authentication
+toLoginAgainYouWillNeedYourInviteCode: To log in again you'll need your invite code.
+tryVahiMsg: 'If you do not have an invite code, or if you do have one but would like to give it a try first, you can use VaHI in demo mode.<br>For that, simply use <b>vahi</b> as your invite code.'
+tryVahiTitle: Can I try VaHI?
+txt-footer: 'VaHI is part of the doctoral dissertation of {josephine}<br>Supervisor: {sorcha}<br>Code by {joost}'
+uploadPictures: Upload pictures
+user: User
+userId: User ID
+username: Username
+users: Users
+value: Value
+vascularisation: Vascularisation
+youAreCurrentlyLoggedIn: You are currently logged in
+youAreCurrentlyLoggedInAsAdmin: You are currently logged in as an administrator
+youAreNotASuperAdmin: You are not a super administrator
+youAreNotAnAdmin: You are not an administrator
+youAreNotLoggedIn: You are not logged in
+youNeedAnActiveInviteToParticipate: You need an active invite to participate
+yourInviteIsInactive: Your invite is inactive
