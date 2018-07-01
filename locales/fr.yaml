@@ -6,7 +6,7 @@ active: Actif
 addAdmin: ajouter administrateur
 addAdmins: ajouter admininstrateurs
 addEyeForEachPicture: Ajouter oeil pour chaque image
-addEyeWithSelectedPictures: Ajouter oeil avec l'image sélectionnée 
+addEyeWithSelectedPictures: Ajouter oeil pour l'image sélectionnée 
 addEyes: Ajouter yeux
 addImages: Ajouter images
 addPictures: Ajouter images
@@ -31,11 +31,11 @@ deactivate: Désactiver
 delete: Effacer
 deleteForeverBeCareful: Attention. Les données seront effacées definitivement. 
 deleteUsers-msg1: 'Veuillez préciser si vous voulez uniquement effacer les comptes d'utilisateur ou aussi toutes les évaluations liées à ces comptes.'
-deleteUsers-msg2: Remarquez que vous ne pouvez pas effacer utilisateur ID 1 (utilisateur exemple).
+deleteUsers-msg2: Remarquez que vous ne pouvez pas effacer utilisateur ID 1 (utilisateur démo).
 deleteUsers-title: 'Effacer utilisateurs, ou utilisateurs et évaluations?'
 deleteUsersAndRatings: Effacer utilisateurs et évaluations
 disabled: Désactivé
-dropFilesToUpload: Déposez ici les fichier pour upload
+dropFilesToUpload: Déposez ici les fichiers pour upload
 editAdmin: Editer administrateur
 editEye: Editer oeil
 editLinkedUser: Editer utilisateur lié
@@ -98,7 +98,7 @@ ratings: Evaluations
 resetDemo: Réinitialiser démo
 resetDemo-txt: 'Vous avez évalué toutes les images. Vu que vous utilisez le compte démo veuillez rénitialiser la démo afin que la prochaine personne puisse aussi utiliser la démo.'
 role: Rôle
-rowsFromToOfTotal: 'Lignes {from} à {to} de {total}'
+rowsFromToOfTotal: 'Lignes {from} à {to} des {total}'
 rowsPerPage: Lignes par page
 save: Sauvegarder
 saveFailed: Sauvegarde échouée
