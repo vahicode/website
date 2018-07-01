@@ -1,40 +1,40 @@
 Administration: Administration
-about: About
-accessDenied: Computer says no
-activate: Activate
-active: Active
-addAdmin: Add admin
-addAdmins: Add admins
-addEyeForEachPicture: Add eye for each picture
-addEyeWithSelectedPictures: Add eye with selected pictures
-addEyes: Add eyes
-addImages: Add images
-addPictures: Add pictures
-addUsers: Add users
-addedBy: Added by
-admin: Admin
-adminOnly: This page is for administrators only
-adminPassword: Admin password
-adminUsername: Admin username
+about: A propos
+accessDenied: Accès refusé
+activate: Activer
+active: Actif
+addAdmin: ajouter administrateur
+addAdmins: ajouter admininstrateurs
+addEyeForEachPicture: Ajouter oeil pour chaque image
+addEyeWithSelectedPictures: Ajouter oeil avec l'image sélectionnée 
+addEyes: Ajouter yeux
+addImages: Ajouter images
+addPictures: Ajouter images
+addUsers: Ajouter utilisateurs
+addedBy: Ajouté par
+admin: Administrateur
+adminOnly: Cette page est uniquement pour administrateurs 
+adminPassword: Admin mot de passe
+adminUsername: Admin nom d'utilisateur
 administration: Administration
-admins: Administrators
-all: All
-amountOfUsers: Amount of users
-calibrated: Calibrated
-cancel: Cancel
-changePassword: Change Password
-changesSaved: Changes saved
-clearAll: Clear all
-clickBelowToLogout: Click below to log out.
-contactUs: Contact us
-deactivate: Deactivate
-delete: Delete
-deleteForeverBeCareful: This data will be removed with no way to revover it. Proceed with caution.
-deleteUsers-msg1: 'Please clarify whether you want to merely delete these user accounts, or also delete all the ratings that belong to these user accounts.'
-deleteUsers-msg2: Note that you can't delete user ID 1 (the example user).
-deleteUsers-title: 'Delete users, or users and ratings?'
-deleteUsersAndRatings: Delete users and ratings
-disabled: Disabled
+admins: Administrateurs
+all: Tous
+amountOfUsers: Nombre d'utilisateurs
+calibrated: Calibré
+cancel: Annuler
+changePassword: Mot de passe changé
+changesSaved: Changements sauvegardés
+clearAll: Effacer tout
+clickBelowToLogout: Clickez ci dessous pour quitter
+contactUs: Contactez nous
+deactivate: Désactiver
+delete: Effacer
+deleteForeverBeCareful: Attention. Les données seront effacées definitivement. 
+deleteUsers-msg1: 'Veuillez préciser si vous voulez uniquement effacer les comptes d'utilisateur ou aussi toutes les évaluations liées à ces comptes.'
+deleteUsers-msg2: Remarquez que vous ne pouvez pas effacer utilisateur ID 1 (utilisateur exemple).
+deleteUsers-title: 'Effacer utilisateurs, ou utilisateurs et évaluations?'
+deleteUsersAndRatings: Effacer utilisateurs et évaluations
+disabled: Désactivé
 dropFilesToUpload: Drop files to upload
 editAdmin: Edit admin
 editEye: Edit eye
