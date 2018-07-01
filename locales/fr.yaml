@@ -35,107 +35,107 @@ deleteUsers-msg2: Remarquez que vous ne pouvez pas effacer utilisateur ID 1 (uti
 deleteUsers-title: 'Effacer utilisateurs, ou utilisateurs et évaluations?'
 deleteUsersAndRatings: Effacer utilisateurs et évaluations
 disabled: Désactivé
-dropFilesToUpload: Drop files to upload
-editAdmin: Edit admin
-editEye: Edit eye
-editLinkedUser: Edit linked user
-editUser: Edit user
-enterInviteCode: Please enter your invite code below
-enterUsernamePassword: Please enter your username and password
-eye: Eye
-eyes: Eyes
-failedToAddAdmin: Failed to add administrator
-failedToAddUsers: Failed to add users
+dropFilesToUpload: Déposez ici les fichier pour upload
+editAdmin: Editer administrateur
+editEye: Editer oeil
+editLinkedUser: Editer utilisateur lié
+editUser: Editer utilisateur
+enterInviteCode: Veuillez donner votre code d'invitation
+enterUsernamePassword: Veuillez donner votre nom d'utilisateur et mot de passe
+eye: Oeil
+eyes: Yeux
+failedToAddAdmin: Echec d'ajout d'un administrateur
+failedToAddUsers: Echec d'ajout d'utilisateurs
 haze: Haze
 home: Home
 id: ID
-inactive: Inactive
-integrity: Integrity
-invalidInviteCode: Invalid invite code
-inviteCode: Invite code
-lastLogin: Last login
-legend: Legend
+inactive: Inactif
+integrity: Intégrité
+invalidInviteCode: Code d'invitation invalide
+inviteCode: Code d'invitation
+lastLogin: Dernier login
+legend: Légende
 legend-h: Corneal haze
 legend-h-0: 'No haze, clear cornea'
 legend-h-1: 'Mild haze, iris details visible'
 legend-h-2: 'Moderate haze, iris details visible with difficulty'
 legend-h-3: 'Severe haze, no iris details visible'
-legend-i: FIXME
-legend-i-0: FIXME
-legend-i-1: FIXME
-legend-i-2: FIXME
-legend-i-3: FIXME
-legend-v: Corneal superficial vascularisation
-legend-v-0: 'No superficial vessels, clear cornea'
-legend-v-1: Up to 30% of the zone is covered by superficial vessels
-legend-v-2: 30-70% of the zone is covered by superficial vessels
-legend-v-3: 70-100% of the zone is covered by superficial vessels
-loggedIn: You are logged in
-login: Login
-loginFailed: Login failed
-loginHere: login here
-logout: Logout
-noUsersFound: No users found
-noWayBack: There is no way back from this
+legend-i: Corneal integrity
+legend-i-0: 'Intact epithelium'
+legend-i-1: 'stippling fluorescein staining'
+legend-i-2: 'whorl-like epitheliopathy'
+legend-i-3: 'epithelial defect(s)'
+legend-v: Vascularisation cornéenne superficielle
+legend-v-0: 'Pas de vaisseaux superficiels, cornée claire'
+legend-v-1: Jusqu'à 30% de la zone est recouverte par des vaisseaux superficiels
+legend-v-2: 30 à 70% de la zone est recouverte par des vaisseaux superficiels
+legend-v-3: 70-100% de la zone est recouverte par des vaisseaux superficiels
+loggedIn: Vous êtes connecté
+login: Connexion
+loginFailed: Connexion échouée
+loginHere: Connectez-vous ici
+logout: Déconnexion
+noUsersFound: Pas d'utilisateurs trouvés
+noWayBack: Retour pas possible
 notes: Notes
-onlyDeleteUsers: Only delete users
-or: or
-overall: Overall
-password: Password
-picture: Picture
-pictures: Pictures
-placeGrid: Position the grid
-pleaseCompleteForm: Please complete the form below
-prop: Property
-randomInvite: Random invite
-randomPassword: Random password
-rate: Rate
-rateEyes: Rate eyes
-rateHaze: Rate haze
-rateIntegrity: Rate integrity
-rateVascularisation: Rate vascularisation
-ratings: Ratings
-resetDemo: Reset demo
-resetDemo-txt: 'You''ve rated all images. Since you''re using the demo user, please reset the demo so the next person can use the demo too.'
-role: Role
-rowsFromToOfTotal: 'Rows {from} to {to} of {total}'
-rowsPerPage: Rows per page
-save: Save
-saveFailed: Save failed
-savePicture: Save picture
-saveRating: Save ratings
-scale: Scale
-selectAll: Select all
-selectFiles: Select files
-selectZonesToRate: Select the zones to be rated in this picture
-sourceCode: Source code
-startUpload: Start upload
-status: Status
-stopUpload: Stop upload
+onlyDeleteUsers: Uniquement effacer utilisateurs
+or: ou
+overall: Général
+password: Mot de passe
+picture: Image
+pictures: Images
+placeGrid: Positionnez la grille
+pleaseCompleteForm: Veuillez compléter les données ci dessous
+prop: Propriété
+randomInvite: Code aléatoire
+randomPassword: Mot de passe alétoire
+rate: Evaluer
+rateEyes: Evaluez yeux
+rateHaze: Evaluez haze
+rateIntegrity: Evaluez intégrité
+rateVascularisation: Evaluez vascularisation
+ratings: Evaluations
+resetDemo: Réinitialiser démo
+resetDemo-txt: 'Vous avez évalué toutes les images. Vu que vous utilisez le compte démo veuillez rénitialiser la démo afin que la prochaine personne puisse aussi utiliser la démo.'
+role: Rôle
+rowsFromToOfTotal: 'Lignes {from} à {to} de {total}'
+rowsPerPage: Lignes par page
+save: Sauvegarder
+saveFailed: Sauvegarde échouée
+savePicture: Sauvegarder image
+saveRating: Sauvegarder évaluations
+scale: Echelle
+selectAll: Sélectionner tout
+selectFiles: Sélectionnez fichiers
+selectZonesToRate: Sélectionnez les zones à évaluer dans cette image
+sourceCode: Code source
+startUpload: Commencer upload
+status: Statut
+stopUpload: Arrêter upload
 superadmin: Super admin
-superadminOnly: This page is for super administrators only
-tagline: A standardized grading system for limbal stem cell deficiency
-takePartMsg: 'Participants in the VaHI study have received a unique invite code. If you have such a code, you can participate.'
-takePartTitle: Can I take part in the VaHI study?
-thankYou: Thank you
-thankYou-msg: You have rated all the eyes in our database. This completes this excercise.
-thisEye: This eye
-thisPageRequiresAuthentication: This page requires authentication
-toLoginAgainYouWillNeedYourInviteCode: To log in again you'll need your invite code.
-tryVahiMsg: 'If you do not have an invite code, or if you do have one but would like to give it a try first, you can use VaHI in demo mode.<br>For that, simply use <b>vahi</b> as your invite code.'
-tryVahiTitle: Can I try VaHI?
-txt-footer: 'VaHI is part of the doctoral dissertation of {josephine}<br>Supervisor: {sorcha}<br>Code by {joost}'
-uploadPictures: Upload pictures
-user: User
-userId: User ID
-username: Username
-users: Users
-value: Value
+superadminOnly: Cette page est pour super administrateurs uniquement
+tagline: Un module d'évaluation standardisé pour déficience de cellules souches limbiques
+takePartMsg: 'Les participants à l'étude VaHI ont reçu un code d'invitation unique. Si vous avez un code vous pouvez participer.'
+takePartTitle: Puis-je participer à l'étude VaHI?
+thankYou: Merci
+thankYou-msg: Vous avez évalué tous les yeux dans notre base de données. Ceci est la fin de l'exercice.
+thisEye: Cet oeil
+thisPageRequiresAuthentication: Cette page nécessite authentification
+toLoginAgainYouWillNeedYourInviteCode: Afin de se reconnecter vous avez besoin de votre code d'invitation.
+tryVahiMsg: 'Si vous n'avez pas de code d'invitation, ou si vous en avez un mais vous préférez vous exercer d'abord, vous pouvez employer VaHI en mode démo. Pour ceci, employez <b>vahi</b> comme code d'invitation.'
+tryVahiTitle: Puis-je essayer VaHI?
+txt-footer: 'VaHI fait partie de la thèse de doctorat de {josephine}<br>Supervisor: {sorcha}<br>Code by {joost}'
+uploadPictures: Upload images
+user: Utilisateur
+userId: ID d'utilisateur
+username: Nom d'utilisateur
+users: Utilisateurs
+value: Valeur
 vascularisation: Vascularisation
-youAreCurrentlyLoggedIn: You are currently logged in
-youAreCurrentlyLoggedInAsAdmin: You are currently logged in as an administrator
-youAreNotASuperAdmin: You are not a super administrator
-youAreNotAnAdmin: You are not an administrator
-youAreNotLoggedIn: You are not logged in
-youNeedAnActiveInviteToParticipate: You need an active invite to participate
-yourInviteIsInactive: Your invite is inactive
+youAreCurrentlyLoggedIn: Vous êtes connecté
+youAreCurrentlyLoggedInAsAdmin: Vous êtes connecté en tant qu'administrateur
+youAreNotASuperAdmin: Vous n'êtes pas un super adiminstrateur
+youAreNotAnAdmin: Vous n'êtes pas un adiminstrateur
+youAreNotLoggedIn: Vous n'êtes pas connecté
+youNeedAnActiveInviteToParticipate: Vous avez besoin d'un code d'invitation actif pour participer
+yourInviteIsInactive: Votre invitation est inactive
