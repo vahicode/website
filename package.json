@@ -1,7 +1,7 @@
 {
-  "name": "cells",
+  "name": "vahi",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "A standardized grading system for limbal stem cell deficiency",
   "author": "Joost De Cock <joost@decock.org>",
   "private": true,
   "scripts": {
