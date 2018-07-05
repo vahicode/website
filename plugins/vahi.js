@@ -55,6 +55,10 @@ export default ({ app, store, route }, inject) => {
         return new Promise(function(resolve, reject) {
           ax.data.post('/login', {invite})
             .then((res) => {
+              // Remove data for potention admin login
+              setToken('')
+              store.dispatch('adminLogout')
+              // Then create user data
               setToken(res.data.token)
               store.dispatch('userLogin', {id: res.data.id})
               resolve(res.data)
