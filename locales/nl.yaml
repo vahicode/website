@@ -60,11 +60,11 @@ legend-h-0: 'No haze, clear cornea TODO'
 legend-h-1: 'Mild haze, iris details visible TODO'
 legend-h-2: 'Moderate haze, iris details visible with difficulty TODO'
 legend-h-3: 'Severe haze, no iris details visible TODO'
-legend-i: Corneal integrity
-legend-i-0: 'Intact epithelium'
-legend-i-1: 'stippling fluorescein staining'
-legend-i-2: 'whorl-like epitheliopathy'
-legend-i-3: 'epithelial defect(s)'
+legend-i: Corneal integrity TODO
+legend-i-0: Intact epithelium TODO
+legend-i-1: stippling fluorescein staining TODO
+legend-i-2: whorl-like epitheliopathy TODO
+legend-i-3: epithelial defect(s) TODO
 legend-v: Corneal superficial vascularisation TODO
 legend-v-0: 'No superficial vessels, clear cornea TODO'
 legend-v-1: Up to 30% of the zone is covered by superficial vessels TODO

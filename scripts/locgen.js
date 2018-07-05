@@ -2,7 +2,7 @@ const yaml = require('js-yaml');
 const axios = require('axios');
 const fs   = require('fs');
 
-const locales = ['en', 'nl']
+const locales = ['en', 'fr', 'nl']
 
 const stats = {}
 const translations = {}

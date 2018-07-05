@@ -61,10 +61,10 @@ legend-h-1: 'Mild haze, iris details visible'
 legend-h-2: 'Moderate haze, iris details visible with difficulty'
 legend-h-3: 'Severe haze, no iris details visible'
 legend-i: Corneal integrity
-legend-i-0: 'Intact epithelium'
-legend-i-1: 'stippling fluorescein staining'
-legend-i-2: 'whorl-like epitheliopathy'
-legend-i-3: 'epithelial defect(s)'
+legend-i-0: Intact epithelium
+legend-i-1: stippling fluorescein staining
+legend-i-2: whorl-like epitheliopathy
+legend-i-3: epithelial defect(s)
 legend-v: Corneal superficial vascularisation
 legend-v-0: 'No superficial vessels, clear cornea'
 legend-v-1: Up to 30% of the zone is covered by superficial vessels

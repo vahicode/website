@@ -27,6 +27,10 @@ module.exports = {
             name: 'English',
           },
           { 
+            code: 'fr',
+            name: 'Français',
+          },
+          { 
             code: 'nl',
             name: 'Nederlands',
           },
@@ -36,6 +40,7 @@ module.exports = {
           fallbackLocale: 'en',
           messages: {
             'en': require('./locales/dist/en.json'),
+            'fr': require('./locales/dist/fr.json'),
             'nl': require('./locales/dist/nl.json'),
           }
         }

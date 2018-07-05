@@ -1,4 +1,4 @@
-Administration: Administration
+Administration: Administration DONE
 about: A propos
 accessDenied: Accès refusé
 activate: Activer
@@ -6,17 +6,17 @@ active: Actif
 addAdmin: ajouter administrateur
 addAdmins: ajouter admininstrateurs
 addEyeForEachPicture: Ajouter oeil pour chaque image
-addEyeWithSelectedPictures: Ajouter oeil pour l'image sélectionnée 
+addEyeWithSelectedPictures: Ajouter oeil pour l'image sélectionnée
 addEyes: Ajouter yeux
 addImages: Ajouter images
 addPictures: Ajouter images
 addUsers: Ajouter utilisateurs
 addedBy: Ajouté par
 admin: Administrateur
-adminOnly: Cette page est uniquement pour administrateurs 
+adminOnly: Cette page est uniquement pour administrateurs
 adminPassword: Admin mot de passe
 adminUsername: Admin nom d'utilisateur
-administration: Administration
+administration: Administration DONE
 admins: Administrateurs
 all: Tous
 amountOfUsers: Nombre d'utilisateurs
@@ -29,8 +29,8 @@ clickBelowToLogout: Clickez ci dessous pour quitter
 contactUs: Contactez nous
 deactivate: Désactiver
 delete: Effacer
-deleteForeverBeCareful: Attention. Les données seront effacées definitivement. 
-deleteUsers-msg1: 'Veuillez préciser si vous voulez uniquement effacer les comptes d'utilisateur ou aussi toutes les évaluations liées à ces comptes.'
+deleteForeverBeCareful: Attention. Les données seront effacées definitivement.
+deleteUsers-msg1: Veuillez préciser si vous voulez uniquement effacer les comptes d'utilisateur ou aussi toutes les évaluations liées à ces comptes.
 deleteUsers-msg2: Remarquez que vous ne pouvez pas effacer utilisateur ID 1 (utilisateur démo).
 deleteUsers-title: 'Effacer utilisateurs, ou utilisateurs et évaluations?'
 deleteUsersAndRatings: Effacer utilisateurs et évaluations
@@ -46,25 +46,25 @@ eye: Oeil
 eyes: Yeux
 failedToAddAdmin: Echec d'ajout d'un administrateur
 failedToAddUsers: Echec d'ajout d'utilisateurs
-haze: Haze
-home: Home
-id: ID
+haze: Haze TODO
+home: Home TODO
+id: ID DONE
 inactive: Inactif
 integrity: Intégrité
 invalidInviteCode: Code d'invitation invalide
 inviteCode: Code d'invitation
 lastLogin: Dernier login
 legend: Légende
-legend-h: Corneal haze
-legend-h-0: 'No haze, clear cornea'
-legend-h-1: 'Mild haze, iris details visible'
-legend-h-2: 'Moderate haze, iris details visible with difficulty'
-legend-h-3: 'Severe haze, no iris details visible'
-legend-i: Corneal integrity
-legend-i-0: 'Intact epithelium'
-legend-i-1: 'stippling fluorescein staining'
-legend-i-2: 'whorl-like epitheliopathy'
-legend-i-3: 'epithelial defect(s)'
+legend-h: Corneal haze TODO
+legend-h-0: 'No haze, clear cornea TODO'
+legend-h-1: 'Mild haze, iris details visible TODO'
+legend-h-2: 'Moderate haze, iris details visible with difficulty TODO'
+legend-h-3: 'Severe haze, no iris details visible TODO'
+legend-i: Corneal integrity TODO
+legend-i-0: Intact epithelium TODO
+legend-i-1: stippling fluorescein staining TODO
+legend-i-2: whorl-like epitheliopathy TODO
+legend-i-3: epithelial defect(s) TODO
 legend-v: Vascularisation cornéenne superficielle
 legend-v-0: 'Pas de vaisseaux superficiels, cornée claire'
 legend-v-1: Jusqu'à 30% de la zone est recouverte par des vaisseaux superficiels
@@ -77,7 +77,7 @@ loginHere: Connectez-vous ici
 logout: Déconnexion
 noUsersFound: Pas d'utilisateurs trouvés
 noWayBack: Retour pas possible
-notes: Notes
+notes: Notes DONE
 onlyDeleteUsers: Uniquement effacer utilisateurs
 or: ou
 overall: Général
@@ -96,7 +96,7 @@ rateIntegrity: Evaluez intégrité
 rateVascularisation: Evaluez vascularisation
 ratings: Evaluations
 resetDemo: Réinitialiser démo
-resetDemo-txt: 'Vous avez évalué toutes les images. Vu que vous utilisez le compte démo veuillez rénitialiser la démo afin que la prochaine personne puisse aussi utiliser la démo.'
+resetDemo-txt: Vous avez évalué toutes les images. Vu que vous utilisez le compte démo veuillez rénitialiser la démo afin que la prochaine personne puisse aussi utiliser la démo.
 role: Rôle
 rowsFromToOfTotal: 'Lignes {from} à {to} des {total}'
 rowsPerPage: Lignes par page
@@ -112,17 +112,17 @@ sourceCode: Code source
 startUpload: Commencer upload
 status: Statut
 stopUpload: Arrêter upload
-superadmin: Super admin
+superadmin: Super admin DONE
 superadminOnly: Cette page est pour super administrateurs uniquement
 tagline: Un module d'évaluation standardisé pour déficience de cellules souches limbiques
-takePartMsg: 'Les participants à l'étude VaHI ont reçu un code d'invitation unique. Si vous avez un code vous pouvez participer.'
+takePartMsg: Les participants à l'étude VaHI ont reçu un code d'invitation unique. Si vous avez un code vous pouvez participer.'
 takePartTitle: Puis-je participer à l'étude VaHI?
 thankYou: Merci
 thankYou-msg: Vous avez évalué tous les yeux dans notre base de données. Ceci est la fin de l'exercice.
 thisEye: Cet oeil
 thisPageRequiresAuthentication: Cette page nécessite authentification
 toLoginAgainYouWillNeedYourInviteCode: Afin de se reconnecter vous avez besoin de votre code d'invitation.
-tryVahiMsg: 'Si vous n'avez pas de code d'invitation, ou si vous en avez un mais vous préférez vous exercer d'abord, vous pouvez employer VaHI en mode démo. Pour ceci, employez <b>vahi</b> comme code d'invitation.'
+tryVahiMsg: 'Si vous n''avez pas de code d''invitation, ou si vous en avez un mais vous préférez vous exercer d''abord, vous pouvez employer VaHI en mode démo. Pour ceci, employez <b>vahi</b> comme code d''invitation.'
 tryVahiTitle: Puis-je essayer VaHI?
 txt-footer: 'VaHI fait partie de la thèse de doctorat de {josephine}<br>Supervisor: {sorcha}<br>Code by {joost}'
 uploadPictures: Upload images
@@ -131,7 +131,7 @@ userId: ID d'utilisateur
 username: Nom d'utilisateur
 users: Utilisateurs
 value: Valeur
-vascularisation: Vascularisation
+vascularisation: Vascularisation DONE
 youAreCurrentlyLoggedIn: Vous êtes connecté
 youAreCurrentlyLoggedInAsAdmin: Vous êtes connecté en tant qu'administrateur
 youAreNotASuperAdmin: Vous n'êtes pas un super adiminstrateur
