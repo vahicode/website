@@ -38,7 +38,7 @@
       </v-btn>
     </div>
     <v-container fluid grid-list-lg>
-      <v-layout row wrap>
+      <v-layout row wrap v-if="pictures">
         <v-flex 
           class="xs6 xl4"
         v-for="picture in pictures"
@@ -82,7 +82,8 @@ export default {
         app.error = true
       })
       console.log(data);
-      return {pictures: data.pictures, eyes: data.eyes} 
+      if(typeof data !== 'undefined') return {pictures: data.pictures, eyes: data.eyes} 
+      else return {}
   },
   data () {
     return {
