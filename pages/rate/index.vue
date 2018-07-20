@@ -32,11 +32,10 @@
           <span v-if="step === 3">{{ $t('saveRating') }}</span>
         </v-btn>
       </p>
-      <v-layout row wrap>
+      <v-layout row wrap v-if="eye.pictures">
         <v-flex xl8 lg9 md12 sm12 xs12>
           <vahi-rating-progress :step="step" :total="eye.total" :done="eye.done" v-if="eye" />
-          <div v-for="(picture, index) in eye.pictures" :key="'picture-'+index" class="mt-4">
-            <!--<img class="elevation-3" :src="$vahi.eyeSrc(picture.hash)" id="picture"/>-->
+          <div v-for="(picture, index) in eye.pictures.vh" :key="'picture-'+index" class="mt-4" v-if="step<3">
             <vahi-grid 
               v-if="eyeLoaded"
               :height="parseFloat(picture.height)" 
@@ -48,6 +47,11 @@
               :zones="zones(picture)" 
               :pic="$vahi.eyeSrc(picture.hash)"
               v-on:toggle="updateZone"/>
+          </div>
+          <div v-for="(picture, index) in eye.pictures.i" :key="'picture-'+index" class="mt-4" v-if="step==3">
+            <a @click.stop="toggleIrating()">
+            <img :class="'elevation-3 irate irate-'+rating[1]" :src="$vahi.eyeSrc(picture.hash)" id="picture" />
+            </a>
           </div>
         </v-flex>
         <v-flex xl4 lg3 md12 xs12>
@@ -66,6 +70,9 @@
           </ul>
         </v-flex>
       </v-layout>
+      <pre>{{vrating}}</pre>
+      <pre>{{hrating}}</pre>
+      <pre>{{irating}}</pre>
     </section>
   </vahi-wrapper-login-required>
 </template>
@@ -154,8 +161,6 @@ export default {
           break
         case 3:
           this.irating = this.copyRating(this.rating)
-          this.resetRating()
-          this.step = 1
           this.$vahi.addRating({
             v: this.vrating,
             h: this.hrating,
@@ -165,6 +170,8 @@ export default {
           .then((res) => {
             if(res.result === 'ok') {
               this.eyeLoaded = false
+              this.resetRating()
+              this.step = 1
               this.nextRating()
             } else {
               this.error = true
@@ -182,6 +189,17 @@ export default {
         zones[i] = (pic['zone'+i] === '1') ? 1 : 0
       }
       return zones
+    },
+    toggleIrating: function() {
+      let newRating;
+      if(this.rating[1] === 3) {
+        newRating = 0;
+      } else {
+        newRating = this.rating[1] + 1;
+      }
+      for(let i = 1; i < 14; i++) {
+        this.rating[i] = newRating;
+      }
     },
     updateZone: function(zone) {
       if(this.rating[zone] === 3) this.rating[zone] = 0
@@ -231,4 +249,11 @@ export default {
   .legend-3 {
     background: #FF2D00; 
   }
+  img.irate {
+    border: 10px solid white;
+  }
+  img.irate-0 { border-color: #228B22; }
+  img.irate-1 { border-color: #CDBB32; }
+  img.irate-2 { border-color: #FF9000; }
+  img.irate-3 { border-color: #FF2D00; }
 </style>
