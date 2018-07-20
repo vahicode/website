@@ -16,7 +16,27 @@
         </v-badge>
         {{ $t('addEyeWithSelectedPictures') }}
       </v-btn>
+      <v-btn large :disabled="this.selected==0" v-if="assign==0" color="warning" @click="assign = !assign">
+        <v-badge left color="info" :value="this.selected!=0">
+          <span slot="badge">{{ selected }}</span>
+          <v-icon class="mr-3">add_a_photo</v-icon>
+        </v-badge>
+        {{ $t('addSelectedPicturesToAnEye') }}
+      </v-btn>
     </p>
+    <div v-if="assign">
+      <v-radio-group v-model="eye">
+        <v-radio v-for="eye in eyes" :key="eye.id" :label="`${$t('eye')} ${eye.id},  ${eye.notes}`" :value="eye.id" ></v-radio>
+      </v-radio-group>
+      <v-btn large :disabled="this.selected==0 || !eye" v-if="assign==1" color="warning" @click="assignSelected()">
+        <v-progress-circular indeterminate color="#fff" class="ml-4" v-if="loading" :size="20" :width="2"></v-progress-circular>
+        <v-badge v-else left color="info" :value="this.selected!=0">
+          <span slot="badge">{{ selected }}</span>
+          <v-icon class="mr-3">add_a_photo</v-icon>
+        </v-badge>
+        {{ $t('addSelectedPicturesToAnEye') }}
+      </v-btn>
+    </div>
     <v-container fluid grid-list-lg>
       <v-layout row wrap>
         <v-flex 
@@ -54,20 +74,22 @@ export default {
     VahiBreadcrumbs
   },
   asyncData: async function ({ app, route }) {
-    return { 
-      pictures: await app.$vahi.adminLoadOrphanPictures()
+      let data = await app.$vahi.adminLoadOrphanPictures()
       .then(function (res) {
-        return res.pictures 
+        return res 
       })
       .catch(function (error) {
         app.error = true
       })
-    }
+      console.log(data);
+      return {pictures: data.pictures, eyes: data.eyes} 
   },
   data () {
     return {
       loading: false,
+      eye: false,
       selected: 0,
+      assign: 0,
       crumbs: [{to: this.$vahi.path('/admin'), 'title': this.$t('administration')}]
     }
   },
@@ -85,6 +107,30 @@ export default {
         if(self.pictures[key].selected === true) toBundle.push(key)
       })
       this.$vahi.adminBundlePictures({pictures: toBundle})
+      .then(function (response) {
+        self.loading = false;
+        if(response.result === 'ok') {
+          self.$router.push({
+            path: '/admin/eyes'
+          })
+        } else {
+          self.error = true
+        }
+      })
+      .catch(function (error) {
+        self.loading = false;
+        self.error = true
+      });
+
+    },
+    assignSelected: function() {
+      const self = this
+      self.loading = true;
+      const toBundle = []
+      Object.keys(this.pictures).forEach(function (key) {
+        if(self.pictures[key].selected === true) toBundle.push(key)
+      })
+      this.$vahi.adminAssignPictures({pictures: toBundle, eye: this.eye})
       .then(function (response) {
         self.loading = false;
         if(response.result === 'ok') {

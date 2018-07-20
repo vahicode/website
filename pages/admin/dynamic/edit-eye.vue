@@ -18,7 +18,7 @@
             class="xs6 xl4"
           v-for="picture in eye.pictures"
           :key="picture.hash"
-          > <nuxt-link to='#' class="nodeco" :class="(picture.integrity === 1) ? 'integrity' : ''" @click.native="togglePicture(picture.id)" :ref="'picture-'+picture.id">
+          > <nuxt-link to='#' class="nodeco" :class="(picture.integrity == 1) ? 'integrity' : ''" @click.native="togglePicture(picture.id)" :ref="'picture-'+picture.id">
             <v-card>
               <v-card-media :src="$vahi.eyeSrc(picture.hash)" height="300px" class="text-xs-center">
                 <v-icon class="imgicon" color="success">check_circle</v-icon>
@@ -72,6 +72,7 @@ export default  {
       roles: ['disabled','admin','superadmin'],
       changePassword: false,
       password: '',
+      integrity: false,
       loading: false,
       error: false,
       remove: false,
@@ -84,10 +85,10 @@ export default  {
   methods: {
     togglePicture: function(id) {
       for(let pic in this.eye.pictures) {
-        if(this.eye.pictures[pic].id === id) this.eye.pictures[pic].integrity = 1;
-        else this.eye.pictures[pic].integrity = 0;
-        console.log('in toggle', id, pic.id, pic);
-        console.log(this.eye.pictures[pic].integrity);
+        if(this.eye.pictures[pic].id === id) {
+          this.eye.pictures[pic].integrity = 1;
+          this.integrity = id;
+        } else this.eye.pictures[pic].integrity = 0;
       }
     },
     submit: function() {
@@ -95,7 +96,8 @@ export default  {
       this.loading = true;
       this.$vahi.adminUpdateEye(this.$route.params.id, {
         notes: this.eye.notes,
-        active: this.eye.active
+        active: this.eye.active,
+        integrity: this.integrity
       })
       .then(function (response) {
         self.loading = false;

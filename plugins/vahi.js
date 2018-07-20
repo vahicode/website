@@ -241,6 +241,16 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      adminAssignPictures(payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/eyes/assign', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
       adminAddUsers(payload) {
         return new Promise(function(resolve, reject) {
           ax.data.post('/admin/users', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })

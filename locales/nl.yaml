@@ -10,6 +10,7 @@ addEyeWithSelectedPictures: Voeg een oog toe met de geselecteerde foto's
 addEyes: Ogen toevoegen
 addImages: Foto's toevoegen
 addPictures: Foto's toevoegen
+addSelectedPicturesToAnEye: Voeg de geselecteerde foto's toe aan een oog
 addUsers: Gebruikers toevoegen
 addedBy: Toegevoegd door
 admin: Beheerder

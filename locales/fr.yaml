@@ -10,6 +10,7 @@ addEyeWithSelectedPictures: Ajouter oeil pour l'image sélectionnée
 addEyes: Ajouter yeux
 addImages: Ajouter images
 addPictures: Ajouter images
+addSelectedPicturesToAnEye: Add selcted pictures to an eye TODO
 addUsers: Ajouter utilisateurs
 addedBy: Ajouté par
 admin: Administrateur
