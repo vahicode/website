@@ -10,6 +10,24 @@
         v-model="eye.active"
         color="success"
       ></v-switch>
+      <h6> {{ $t('integrity') }}</h6>
+      <p> {{ $t('pleaseSelectThePictureToBeUsedForIntegrityRating') }}</p>
+      <v-container fluid grid-list-lg>
+        <v-layout row wrap>
+          <v-flex 
+            class="xs6 xl4"
+          v-for="picture in eye.pictures"
+          :key="picture.hash"
+          > <nuxt-link to='#' class="nodeco" :class="(picture.integrity === 1) ? 'integrity' : ''" @click.native="togglePicture(picture.id)" :ref="'picture-'+picture.id">
+            <v-card>
+              <v-card-media :src="$vahi.eyeSrc(picture.hash)" height="300px" class="text-xs-center">
+                <v-icon class="imgicon" color="success">check_circle</v-icon>
+		        	</v-card-media>
+            </v-card>
+          </nuxt-link>
+          </v-flex>
+        </v-layout>
+      </v-container>
       <h6> {{ $t('notes') }}</h6>
         <v-text-field 
           :label="$t('notes')"
@@ -64,6 +82,14 @@ export default  {
     }
   },
   methods: {
+    togglePicture: function(id) {
+      for(let pic in this.eye.pictures) {
+        if(this.eye.pictures[pic].id === id) this.eye.pictures[pic].integrity = 1;
+        else this.eye.pictures[pic].integrity = 0;
+        console.log('in toggle', id, pic.id, pic);
+        console.log(this.eye.pictures[pic].integrity);
+      }
+    },
     submit: function() {
       const self = this
       this.loading = true;
@@ -106,26 +132,24 @@ export default  {
   }
 }
 </script>
-
 <style scoped>
-  table.table thead th.key {
-    text-align: right;
+  p.thetitle {
     font-size: 1rem;
   }
-  table.table thead th.val {
-    text-align: left;
-    font-size: 1rem;
+  p.theadmin {
+    font-size: 0.6rem;
   }
-  table.table tbody td.key {
-    font-weight: bold;
-    max-width: 150px;
-    text-align: right;
-    font-size: 0.8rem;
+  a.nodeco {
+    text-decoration: none;
   }
-  table.table tbody td.val {
-    font-size: 0.8rem;
+  i.imgicon {
+    display: none
   }
-  table.table tbody td.edit {
-    padding: 0.75rem 0 0 0;
+  a.integrity i.imgicon {
+    display: block; 
+    margin: auto;
+    font-size: 100px;
+    background-color: #ffffffaa;
+    border-radius: 50%;
   }
 </style>

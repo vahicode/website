@@ -86,6 +86,7 @@ picture: Image
 pictures: Images
 placeGrid: Positionnez la grille
 pleaseCompleteForm: Veuillez compléter les données ci dessous
+pleaseSelectThePictureToBeUsedForIntegrityRating: Please select the picture to be used for integrity rating. TODO
 prop: Propriété
 randomInvite: Code aléatoire
 randomPassword: Mot de passe alétoire
