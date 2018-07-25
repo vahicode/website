@@ -56,21 +56,21 @@ invalidInviteCode: Ongeldige uitnodigingscode
 inviteCode: Uitnodigingscode
 lastLogin: Meest recente login
 legend: Legende
-legend-h: Corneal haze TODO
-legend-h-0: 'No haze, clear cornea TODO'
-legend-h-1: 'Mild haze, iris details visible TODO'
-legend-h-2: 'Moderate haze, iris details visible with difficulty TODO'
-legend-h-3: 'Severe haze, no iris details visible TODO'
-legend-i: Corneal integrity TODO
-legend-i-0: Intact epithelium TODO
-legend-i-1: stippling fluorescein staining TODO
-legend-i-2: whorl-like epitheliopathy TODO
-legend-i-3: epithelial defect(s) TODO
-legend-v: Corneal superficial vascularisation TODO
-legend-v-0: 'No superficial vessels, clear cornea TODO'
-legend-v-1: Up to 30% of the zone is covered by superficial vessels TODO
-legend-v-2: 30-70% of the zone is covered by superficial vessels TODO
-legend-v-3: 70-100% of the zone is covered by superficial vessels TODO
+legend-h: Corneale waas
+legend-h-0: Geen waas, heldere cornea
+legend-h-1: Milde waas, iris details zichtbaar
+legend-h-2: Matige waas, iris details met moeite zichtbaar
+legend-h-3: Ernstige waas, iris details niet zichtbaar
+legend-i: Corneale integriteit 
+legend-i-0: Intact epitheel
+legend-i-1: Punctata
+legend-i-2: Kransvormige epitheliopathie/pooling
+legend-i-3: Epitheel defect(en)
+legend-v: Corneale superficiële bloedvaatjes 
+legend-v-0: Geen corneale superficiële bloedvaatjes, heldere cornea
+legend-v-1: Tot 30% van de zone ingenomen door superficiële bloedvaatjes
+legend-v-2: 30-70% van de zone ingenomen door superficiële bloedvaatjes
+legend-v-3: 70-100% van de zone ingenomen door superficiële bloedvaatjes
 loggedIn: Je bent aangemeld
 login: Aanmelden
 loginFailed: Aanmelden mislukt
@@ -95,7 +95,7 @@ rate: Beoordeel
 rateEyes: Ogen scoren
 rateHaze: Waas scoren
 rateIntegrity: Integriteit scoren
-rateVascularisation: Rate vascularisation TODO
+rateVascularisation: Gradeer vascularisatie
 ratings: Scores
 resetDemo: Reset demo TODO
 resetDemo-txt: Je hebt alle foto's gescoord. Gelieve de demo de resetten zodat de volgende bezoeker meteen met de demo aan de slag kan.
