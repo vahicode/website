@@ -10,7 +10,7 @@ addEyeWithSelectedPictures: Ajouter oeil pour l'image sélectionnée
 addEyes: Ajouter yeux
 addImages: Ajouter images
 addPictures: Ajouter images
-addSelectedPicturesToAnEye: Ajouter images selectionnées à un oeil. TOCHECK 
+addSelectedPicturesToAnEye: Ajouter images selectionnées à un oeil. TOCHECK
 addUsers: Ajouter utilisateurs
 addedBy: Ajouté par
 admin: Administrateur
@@ -30,6 +30,9 @@ clickBelowToLogout: Clickez ci dessous pour quitter
 contactUs: Contactez nous
 deactivate: Désactiver
 delete: Effacer
+deleteEyes-msg1: 'Please clarify whether you want to merely delete these eyes, or also delete all the ratings for these eyes. TODO'
+deleteEyes-title: 'Delete eyes, or eyes and ratings? TODO'
+deleteEyesAndRatings: Delete eyes and ratings TODO
 deleteForeverBeCareful: Attention. Les données seront effacées definitivement.
 deleteUsers-msg1: Veuillez préciser si vous voulez uniquement effacer les comptes d'utilisateur ou aussi toutes les évaluations liées à ces comptes.
 deleteUsers-msg2: Remarquez que vous ne pouvez pas effacer utilisateur ID 1 (utilisateur démo).
@@ -56,18 +59,18 @@ invalidInviteCode: Code d'invitation invalide
 inviteCode: Code d'invitation
 lastLogin: Dernier login
 legend: Légende
-legend-h: Brume cornéene (TOCHECK) 
-legend-h-0: Pas de brume cornéenne, cornée claire. (TOCHECK)
-legend-h-1: Brume cornéenne minimale, details d'iris visible.  (TOCHECK)
-legend-h-2: Brume cornéene modéré, details d'iris visible avec difficulté. (TOCHECK)
-legend-h-3: Brume cornéenne sévère, details d'iris pas visible. (TOCHECK)
+legend-h: Brume cornéene (TOCHECK)
+legend-h-0: 'Pas de brume cornéenne, cornée claire. (TOCHECK)'
+legend-h-1: 'Brume cornéenne minimale, details d''iris visible.  (TOCHECK)'
+legend-h-2: 'Brume cornéene modéré, details d''iris visible avec difficulté. (TOCHECK)'
+legend-h-3: 'Brume cornéenne sévère, details d''iris pas visible. (TOCHECK)'
 legend-i: Intégrité cornéenne. (TOCHECK)
 legend-i-0: Epithélium intact (TOCHECK)
 legend-i-1: Stippling fluorescein staining (TODO NOIDEA)
 legend-i-2: Epithéliopathie comme une spire (TOCHECK NOBETTERIDEA)
 legend-i-3: Erosion épithélial (TOCHECK)
 legend-v: Vascularisation cornéenne superficielle
-legend-v-0: Pas de vaisseaux superficiels, cornée claire
+legend-v-0: 'Pas de vaisseaux superficiels, cornée claire'
 legend-v-1: Jusqu'à 30% de la zone est recouverte par des vaisseaux superficiels
 legend-v-2: 30 à 70% de la zone est recouverte par des vaisseaux superficiels
 legend-v-3: 70-100% de la zone est recouverte par des vaisseaux superficiels
@@ -76,6 +79,8 @@ login: Connexion
 loginFailed: Connexion échouée
 loginHere: Connectez-vous ici
 logout: Déconnexion
+noEyesFound: No eyes found TODO
+noPicturesFound: No pictures found TODO
 noUsersFound: Pas d'utilisateurs trouvés
 noWayBack: Retour pas possible
 notes: Notes DONE
@@ -88,6 +93,7 @@ pictures: Images
 placeGrid: Positionnez la grille
 pleaseCompleteForm: Veuillez compléter les données ci dessous
 pleaseSelectThePictureToBeUsedForIntegrityRating: Choisissez l'image à utiliser pour l'evaluation de l'intégrité (TOCHECK)
+prop: Property TODO
 randomInvite: Code aléatoire
 randomPassword: Mot de passe alétoire
 rate: Evaluer

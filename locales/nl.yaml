@@ -30,6 +30,9 @@ clickBelowToLogout: Klik op de knop hieronder om je af te melden
 contactUs: Contacteer ons
 deactivate: Deactiveren
 delete: Verwijderen
+deleteEyes-msg1: 'Please clarify whether you want to merely delete these eyes, or also delete all the ratings for these eyes. TODO'
+deleteEyes-title: 'Delete eyes, or eyes and ratings? TODO'
+deleteEyesAndRatings: Delete eyes and ratings TODO
 deleteForeverBeCareful: Deze gegevens zullen verwijderd worden zonder mogelijkheid om ze te herstellen. Wees voorzichtig.
 deleteUsers-msg1: 'Gelieve te kiezen of je alleen de gebruiker accounts will verwijderen, of ook alle scores van deze gebruikers.'
 deleteUsers-msg2: Merk op dat je de gebruiker met ID 1 (de voorbeeld gebruiker) niet kan verwijderen.
@@ -57,17 +60,17 @@ inviteCode: Uitnodigingscode
 lastLogin: Meest recente login
 legend: Legende
 legend-h: Corneale waas
-legend-h-0: Geen waas, heldere cornea
-legend-h-1: Milde waas, iris details zichtbaar
-legend-h-2: Matige waas, iris details met moeite zichtbaar
-legend-h-3: Ernstige waas, iris details niet zichtbaar
-legend-i: Corneale integriteit 
+legend-h-0: 'Geen waas, heldere cornea'
+legend-h-1: 'Milde waas, iris details zichtbaar'
+legend-h-2: 'Matige waas, iris details met moeite zichtbaar'
+legend-h-3: 'Ernstige waas, iris details niet zichtbaar'
+legend-i: Corneale integriteit
 legend-i-0: Intact epitheel
 legend-i-1: Punctata
 legend-i-2: Kransvormige epitheliopathie/pooling
 legend-i-3: Epitheel defect(en)
-legend-v: Corneale superficiële bloedvaatjes 
-legend-v-0: Geen corneale superficiële bloedvaatjes, heldere cornea
+legend-v: Corneale superficiële bloedvaatjes
+legend-v-0: 'Geen corneale superficiële bloedvaatjes, heldere cornea'
 legend-v-1: Tot 30% van de zone ingenomen door superficiële bloedvaatjes
 legend-v-2: 30-70% van de zone ingenomen door superficiële bloedvaatjes
 legend-v-3: 70-100% van de zone ingenomen door superficiële bloedvaatjes
@@ -76,6 +79,8 @@ login: Aanmelden
 loginFailed: Aanmelden mislukt
 loginHere: Meld je hier aan
 logout: Afmelden
+noEyesFound: No eyes found TODO
+noPicturesFound: No pictures found TODO
 noUsersFound: Geen gebruikers gevonden
 noWayBack: Dit kan niet ongedaan gemaakt worden
 notes: Notities

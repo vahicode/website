@@ -304,7 +304,6 @@ export default ({ app, store, route }, inject) => {
 
       adminBulkRemoveUsers(users) {
         return new Promise(function(resolve, reject) {
-            console.log('in method plugin')
           ax.data.post('/admin/bulk/delete/users', users, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
             .then((res) => {
               resolve(res.data)
@@ -333,6 +332,63 @@ export default ({ app, store, route }, inject) => {
               resolve(true)
             })
           .catch(() => { reject(false) })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminBulkRemovePictures(pictures) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/bulk/delete/pictures', pictures, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminBulkRemoveEyes(eyes) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/bulk/delete/eyes', eyes, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminBulkRemoveEyesAndRatings(eyes) {
+        return new Promise(function(resolve, reject) {
+          const promises = []
+          promises.push(ax.data.post('/admin/bulk/delete/eyes', eyes, { headers: {'Authorization': 'Bearer '+storage.get('token')} }))
+          promises.push(ax.data.post('/admin/bulk/delete/ratings', eyes, { headers: {'Authorization': 'Bearer '+storage.get('token')} }))
+          Promise.all(promises)
+            .then(() => {
+              resolve(true)
+            })
+          .catch(() => { reject(false) })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminBulkSetEyeNotes(payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/bulk/eyes/notes', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
+      adminBulkDetachEyePictures(payload) {
+        return new Promise(function(resolve, reject) {
+          ax.data.post('/admin/bulk/eyes/detach', payload, { headers: {'Authorization': 'Bearer '+storage.get('token')} })
             .then((res) => {
               resolve(res.data)
             })

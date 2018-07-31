@@ -30,6 +30,9 @@ clickBelowToLogout: Click below to log out.
 contactUs: Contact us
 deactivate: Deactivate
 delete: Delete
+deleteEyes-msg1: 'Please clarify whether you want to merely delete these eyes, or also delete all the ratings for these eyes.'
+deleteEyes-title: 'Delete eyes, or eyes and ratings?'
+deleteEyesAndRatings: Delete eyes and ratings
 deleteForeverBeCareful: This data will be removed with no way to revover it. Proceed with caution.
 deleteUsers-msg1: 'Please clarify whether you want to merely delete these user accounts, or also delete all the ratings that belong to these user accounts.'
 deleteUsers-msg2: Note that you can't delete user ID 1 (the example user).
@@ -76,6 +79,8 @@ login: Login
 loginFailed: Login failed
 loginHere: login here
 logout: Logout
+noEyesFound: No eyes found
+noPicturesFound: No pictures found
 noUsersFound: No users found
 noWayBack: There is no way back from this
 notes: Notes
