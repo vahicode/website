@@ -70,9 +70,6 @@
           </ul>
         </v-flex>
       </v-layout>
-      <pre>{{vrating}}</pre>
-      <pre>{{hrating}}</pre>
-      <pre>{{irating}}</pre>
     </section>
   </vahi-wrapper-login-required>
 </template>
