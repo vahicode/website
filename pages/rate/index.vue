@@ -68,6 +68,11 @@
               <span v-if="step === 3">{{ $t('legend-i-'+(n-1)) }}</span>
             </li>
           </ul>
+          <div class="ml-4">
+            <img src="/img/legend/v.jpg" v-if="step === 1" />
+            <img src="/img/legend/h.jpg" v-if="step === 2" />
+            <img src="/img/legend/i.jpg" v-if="step === 3" />
+          </div>
         </v-flex>
       </v-layout>
     </section>
