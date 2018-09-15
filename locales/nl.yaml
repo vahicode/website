@@ -39,6 +39,7 @@ deleteUsers-msg2: Merk op dat je de gebruiker met ID 1 (de voorbeeld gebruiker) 
 deleteUsers-title: 'Gebruikers verwijderen, of gebruikers en scores verwijderen?'
 deleteUsersAndRatings: Gebruikers en scores verwijderen
 disabled: Gedesactiveerd
+download: Download TODO
 dropFilesToUpload: Sleep afbeeldingen hiernaartoe om ze te uploaden
 editAdmin: Beheerder bewerken
 editEye: Oog bewerken
@@ -46,6 +47,7 @@ editLinkedUser: Gelinkte gebuiker bewerken
 editUser: Gebruiker bewerken
 enterInviteCode: Gelieve je uitnodigingscode in te voeren
 enterUsernamePassword: Gelieve je gebruikersnaam en paswoord in te voeren
+exportData: Data exporteren
 eye: Oog
 eyes: Ogen
 failedToAddAdmin: Toevoegen beheerder mislukt

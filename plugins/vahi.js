@@ -396,6 +396,16 @@ export default ({ app, store, route }, inject) => {
         })
       },
 
+      adminExportData() {
+        return new Promise(function(resolve, reject) {
+          ax.data.get('/admin/download/data', { headers: {'Authorization': 'Bearer '+storage.get('token')} })
+            .then((res) => {
+              resolve(res.data)
+            })
+          .catch((error) => { reject(error) })
+        })
+      },
+
       loadRating() {
         return new Promise(function(resolve, reject) {
           ax.data.get('/rating', { headers: {'Authorization': 'Bearer '+storage.get('token')} })

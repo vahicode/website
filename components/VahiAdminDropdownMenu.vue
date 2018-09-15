@@ -42,8 +42,13 @@
         <v-list-tile-action><v-icon>account_box</v-icon></v-list-tile-action>
         <v-list-tile-content>{{ $t('admins') }}</v-list-tile-content>
       </v-list-tile>
-      <v-divider></v-divider>
       </div>
+      <v-divider></v-divider>
+      <v-list-tile :to="$vahi.path('/admin/export')" exact>
+        <v-list-tile-action><v-icon>cloud_download</v-icon></v-list-tile-action>
+        <v-list-tile-content>{{ $t('exportData') }}</v-list-tile-content>
+      </v-list-tile>
+      <v-divider></v-divider>
       <v-list-tile :to="$vahi.path('/admin')" exact>
         <v-list-tile-action><v-icon>power_settings_new</v-icon></v-list-tile-action>
         <v-list-tile-content>{{ $t('logout') }}</v-list-tile-content>

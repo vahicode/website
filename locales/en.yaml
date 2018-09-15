@@ -39,6 +39,7 @@ deleteUsers-msg2: Note that you can't delete user ID 1 (the example user).
 deleteUsers-title: 'Delete users, or users and ratings?'
 deleteUsersAndRatings: Delete users and ratings
 disabled: Disabled
+download: Download
 dropFilesToUpload: Drop files to upload
 editAdmin: Edit admin
 editEye: Edit eye
@@ -46,6 +47,7 @@ editLinkedUser: Edit linked user
 editUser: Edit user
 enterInviteCode: Please enter your invite code below
 enterUsernamePassword: Please enter your username and password
+exportData: Export data
 eye: Eye
 eyes: Eyes
 failedToAddAdmin: Failed to add administrator

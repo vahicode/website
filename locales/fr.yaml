@@ -39,6 +39,7 @@ deleteUsers-msg2: Remarquez que vous ne pouvez pas effacer utilisateur ID 1 (uti
 deleteUsers-title: 'Effacer utilisateurs, ou utilisateurs et évaluations?'
 deleteUsersAndRatings: Effacer utilisateurs et évaluations
 disabled: Désactivé
+download: Download TODO
 dropFilesToUpload: Déposez ici les fichiers pour upload
 editAdmin: Editer administrateur
 editEye: Editer oeil
@@ -46,6 +47,7 @@ editLinkedUser: Editer utilisateur lié
 editUser: Editer utilisateur
 enterInviteCode: Veuillez donner votre code d'invitation
 enterUsernamePassword: Veuillez donner votre nom d'utilisateur et mot de passe
+exportData: Export data TODO
 eye: Oeil
 eyes: Yeux
 failedToAddAdmin: Echec d'ajout d'un administrateur
