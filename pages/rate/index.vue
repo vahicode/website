@@ -47,6 +47,7 @@
               :zones="zones(picture)" 
               :pic="$vahi.eyeSrc(picture.hash)"
               v-on:toggle="updateZone"/>
+              <div class="vahi-score">{{ $t('score') }}: {{ totalRating() }}/39</div>
           </div>
           <div v-for="(picture, index) in eye.pictures.i" :key="'picture-'+index" class="mt-4" v-if="step==3">
             <a @click.stop="toggleIrating()">
@@ -100,7 +101,8 @@ export default {
       vrating: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 },
       hrating: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 },
       irating: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0 },
-      allDone: false
+      allDone: false,
+      total: 0
     }
   },
   methods: {
@@ -110,6 +112,7 @@ export default {
         if(res.result === 'ok') {
           this.allDone = false
           this.eyeLoaded = false
+          this.total = 0;
           this.nextRating()
         } else {
           this.error = true
@@ -119,6 +122,13 @@ export default {
         console.log(error)
       })
     },
+    totalRating: function() {
+      let total = 0;
+      for(let i=1; i<14; i++) {
+        total += this.rating[i];
+      }
+      return total;
+    },
     resetRating: function() {
       for(let i=1; i<14; i++) {
         this.rating[i] = 0
@@ -126,11 +136,13 @@ export default {
         this.hrating[i] = 0
         this.irating[i] = 0
       }
+      this.total = 0;
     },
     loadRating: function(rating) {
       for(let i=1; i<14; i++) {
         this.rating[i] = rating[i]
       }
+      this.total = this.totalRating();
     },
     copyRating: function(rating) {
       return JSON.parse(JSON.stringify(rating))
@@ -258,4 +270,11 @@ export default {
   img.irate-1 { border-color: #CDBB32; }
   img.irate-2 { border-color: #FF9000; }
   img.irate-3 { border-color: #FF2D00; }
+
+  div.vahi-score {
+    text-align: right;
+    display: block;
+    font-size: 90%;
+  }
+
 </style>
