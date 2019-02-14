@@ -24,6 +24,11 @@
           <h4 class="mt-5">{{ $t('tryVahiTitle') }}</h4>
           <p v-html="$t('tryVahiMsg')"></p>
           <v-btn to="/invite" flat outline><v-icon class="mr-3">vpn_key</v-icon>{{ $t('loginHere') }}</v-btn>
+          <div style="max-width: 350px; margin: 3rem auto 1rem;">
+            <a href="https://www.arrestblindness.eu/">
+              <img src="/img/arrestblindness.png" alt="Arrest blindness logo" />
+            </a>
+          </div>
         </v-flex>
       </v-layout>
     </v-container>

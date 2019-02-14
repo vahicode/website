@@ -1,6 +1,11 @@
 <template>
   <section class="text-xs-center">
     <vahi-breadcrumbs>{{ $t('login') }}</vahi-breadcrumbs>
+      <div style="max-width: 350px; margin: 1rem auto;">
+        <a href="https://www.arrestblindness.eu/">
+          <img src="/img/arrestblindness.png" alt="Arrest blindness logo" />
+        </a>
+      </div>
       <h1>VaHI</h1>
       <div v-if="$store.state.user.loggedIn" class="vahi-m600">
         <h2>{{ $t('youAreCurrentlyLoggedIn') }}</h2>
