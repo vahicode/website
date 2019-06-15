@@ -32,6 +32,8 @@ npm install
   - You can now run `npm run dev` to serve the site on [localhost:3000](http://localhost:3000/)
   - Or run `npm run generate` to generate a static site.
 
+The static site (the result of `npm run generate` can be hosted by any webserver, or by a static hosting service such as [Netlify](https://www.netlify.com/) which is free for open-source projects, and comes highly recommended.
+
 ## Translations
 
 We use [vue-i18n](https://github.com/kazupon/vue-i18n) for translations. If you'd like to add a language, you can simply copy [the English language file](https://github.com/vahicode/website/blob/master/locales/en.yaml) and translate it. 
