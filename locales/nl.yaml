@@ -134,7 +134,7 @@ thisPageRequiresAuthentication: Deze pagina vereist authenticatie
 toLoginAgainYouWillNeedYourInviteCode: Om je weer aan te melden heb je je uitnodigingscode nodig.
 tryVahiMsg: 'Heb je geen uitnodigingscode, of heb je er wel een maar wil je graag eerst eens oefenen, dan kan je VaHI toch gebruiken in demo-mode.<br>Dit kan je doen door je aan te melden met <b>vahi</b> als uitnodigingscode.'
 tryVahiTitle: Kan ik VaHI uitproberen?
-txt-footer: 'VaHI maakt deel uit van de doctoraatsthesis van {josephine}<br>Begeleider: {sorcha}<br>Code door {joost}'
+txt-footer: 'VaHI maakt deel uit van de doctoraatsthesis van {josephine}<br>Begeleiders: {sorcha} & {carina}<br>Code door {joost}'
 uploadPictures: Foto's uploaden
 user: Gebruiker
 userId: Gebuikers ID
