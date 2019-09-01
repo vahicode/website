@@ -134,7 +134,7 @@ thisPageRequiresAuthentication: This page requires authentication
 toLoginAgainYouWillNeedYourInviteCode: To log in again you'll need your invite code.
 tryVahiMsg: 'If you do not have an invite code, or if you do have one but would like to give it a try first, you can use VaHI in demo mode.<br>For that, simply use <b>vahi</b> as your invite code.'
 tryVahiTitle: Can I try VaHI?
-txt-footer: 'VaHI is part of the doctoral dissertation of {josephine}<br>Supervisor: {sorcha}<br>Code by {joost}'
+txt-footer: 'VaHI is part of the doctoral dissertation of {josephine}<br>Supervisors: {sorcha} & {carina}<br>Code by {joost}'
 uploadPictures: Upload pictures
 user: User
 userId: User ID
