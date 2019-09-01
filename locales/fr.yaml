@@ -134,7 +134,7 @@ thisPageRequiresAuthentication: Cette page nécessite authentification
 toLoginAgainYouWillNeedYourInviteCode: Afin de se reconnecter vous avez besoin de votre code d'invitation.
 tryVahiMsg: 'Si vous n''avez pas de code d''invitation, ou si vous en avez un mais vous préférez vous exercer d''abord, vous pouvez employer VaHI en mode démo. Pour ceci, employez <b>vahi</b> comme code d''invitation.'
 tryVahiTitle: Puis-je essayer VaHI?
-txt-footer: 'VaHI fait partie de la thèse de doctorat de {josephine}<br>Supervisor: {sorcha}<br>Code by {joost}'
+txt-footer: 'VaHI fait partie de la thèse de doctorat de {josephine}<br>Supervisors: {sorcha} & {carina}<br>Code by {joost}'
 uploadPictures: Upload images
 user: Utilisateur
 userId: ID d'utilisateur
