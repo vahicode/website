@@ -27,6 +27,8 @@ export default {
       people: {
         josephine: '<a href="https://www.researchgate.net/profile/Josephine_Behaegel">Joséphine Behaegel</a>',
         sorcha: '<a href="https://www.researchgate.net/profile/Sorcha_Dhubhghaill">Prof. Dr. Sorcha Ní Dhubhghaill</a>',
+        carina: '<a href="https://www.researchgate.net/profile/Carina_Koppen">Prof. Dr. Carina Koppen</a>',
+        
         joost: '<a href="https://github.com/joostdecock">Joost De Cock</a>'
       }
     }
